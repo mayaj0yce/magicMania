@@ -11,6 +11,6 @@ holden melander @essence1987
 
 mj thayne @mayaj0yce
 
-name kester @imdawizard 
+Nate kester ([@imdawizard])
 
 
