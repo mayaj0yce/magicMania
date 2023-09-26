@@ -23,7 +23,7 @@ function LandingPage() {
         </Link>
 
         {/* Card Search */}
-        <Link to="/card-search">
+        <Link to="/cardSearch">
           <div className="option">
           <img src="../../assets/images/magicCardInHand.jpg" alt="Person holding back of magic card close to screen" />
             <h3>Card Search</h3>
