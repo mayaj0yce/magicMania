@@ -1,6 +1,9 @@
 import React from "react";
 import {HashRouter as Router, Route, Routes} from "react-router-dom";
 import LandingPage from "./components/pages/landingPage";
+import CardSearch from "./components/pages/cardSearch";
+import UserPage from "./components/pages/userPage"
+
 
 function App() {
   return (
@@ -9,6 +12,8 @@ function App() {
         {/* <Header /> */}
         <Routes>
           <Route path="/" element={<LandingPage />} />
+          <Route exact path='/cardSearch' element={<CardSearch />}/>
+          <Route exact path='/User' element={<UserPage/>}/>
           {/* <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/resume" element={<Resume />} /> */}
