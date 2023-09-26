@@ -11,6 +11,6 @@ holden melander @essence1987
 
 mj thayne @mayaj0yce
 
-Nate kester ([@imdawizard])
+[Nate kester](https://github.com/imdawizard)
 
 mateo lilo @liloNStitch1975
