@@ -2,11 +2,12 @@ import React from "react";
 import {HashRouter as Router, Route, Routes} from "react-router-dom";
 import LandingPage from "./components/pages/landingPage";
 import CardSearch from "./components/pages/cardSearch";
-import UserPage from "./components/pages/userPage"
+import UserPage from "./components/pages/userPage";
 import KeywordSearch from "./components/pages/keyword-search";
 
 function App() {
   return (
+    <div>
     <Router>
       <div className="App">
         {/* <Header /> */}
@@ -22,6 +23,7 @@ function App() {
         {/* <Footer /> */}
       </div>
     </Router>
+    </div>
   );
 }
 
