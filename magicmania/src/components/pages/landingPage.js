@@ -15,7 +15,7 @@ function LandingPage() {
         <p>Choose an option below to start your adventure</p>
 
         {/* Keyword Search */}
-        <Link to="/keyword-search">
+        <Link to="/keywordSearch">
           <div className="option">
             <h3>Keyword Search</h3>
             <p>Search for keywords on Magic cards</p>
