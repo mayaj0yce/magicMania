@@ -1,46 +1,47 @@
 import React, { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './Header.css';
 import LogoPic from '../assets/images/logoimg.png'
-import { FaBars } from 'react-icons/fa'
+import { FaBars, FaTimes } from 'react-icons/fa'
+
+const NavLinks = () => {
+    return (
+        <>
+        <Link to="/" className='navLink hovernow'>Home</Link>
+        <Link to="/login"className='navLink hovernow'>Login</Link>
+        <Link to="/signup"className='navLink hovernow'>Signup</Link>
+        </>
+    );
+};
 
 const Header = () => {
-    const [showNav, setShowNav] = useState(false);
-    const location = useLocation();
+    const [isOpen, setIsOpen] = useState(false);
 
     const toggleNav = () => {
-        setShowNav(!showNav);
+        setIsOpen(!isOpen);
     };
 
     return (
-        <header>
-            <div className='flex justify-between items-center w-full h-20 fixed px-4 fullNav'>
-                <div>
-                    <img src={LogoPic} alt="logo" className='logoPic'/>
+        <header className=''>
+            <div className='flex justify-between items-center w-full h-20 fixed flex-wrap whole-nav'>
+                <div className='px-4'>
+                    <Link to="/"><img src={LogoPic} alt="logo" className='logoPic'/></Link>
                 </div>
-                <button onClick={toggleNav} className={`toggle-button ${showNav ? 'active' : ''}`}>
-                    <FaBars size={25}/>
-                </button>
-                <nav className={`nav-links ${showNav ? 'active' : ''}`}>
-                    <ul>
-                        <li>
-                            <Link
-                            to="/"
-                            onClick={toggleNav}
-                            className={location.pathname === '/' ? 'active' : ''}
-                            >
-                                
-                            </Link>
-                        </li>
-                        <li>
-                            <Link
-                            to="/login">
-                                Login
-                            </Link>
-                        </li>
-                    </ul>
-                    
+                <nav className=' flex w-1/4 justify-end px-4'>
+                    <div className='hidden md:flex justify-between text-xl allNavLinks'>
+                        <NavLinks />
+                    </div>
+                    <div className='md:hidden'>
+                        <button onClick={toggleNav}>
+                            {isOpen ? <FaTimes size={25}/> : <FaBars size={25}/>}
+                        </button>
+                    </div>
                 </nav>
+                {isOpen && (
+                    <div className='flex flex-col items-center top-0 left-0 w-full py-2 rounded justify-center nav-dropdown'>
+                        <NavLinks />
+                    </div>
+                )}
             </div>
         </header>
     )
