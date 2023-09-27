@@ -1,9 +1,74 @@
+.whole-nav {
+    background-image: linear-gradient(to bottom right, #814ae8, #80eaff);
+}
 
+.navLink {
+    border: black solid 1px;
+    padding: 6px;
+    transition: transform .4s;
+    border-radius: 6px;
+}
 
-.fullNav {
-    background-color: #e5e5e5;
+.allNavLinks {
+    width: 65%;
 }
 
 .logoPic {
     max-width: 130px;
+}
+
+.hovernow {
+    margin: 10px;
+    box-shadow: 0 1px 2px rgb(56, 148, 233);
+    transition: box-shadow 0.5s ease-in-out;
+}
+
+.hovernow:hover {
+    box-shadow: 0 5px 15px rgba(39, 128, 245, 0.8);
+}
+
+.nav-dropdown {
+    background-image: linear-gradient(to bottom right, #814ae8, #80eaff);
+}
+
+
+/* landing page css */
+.landingPageAll {
+    padding-top: 8rem;
+}
+
+.mainTitle {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.subtitle {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.goBtn {
+    align-items: center;
+    justify-content: space-evenly;
+    text-align: center;
+}
+
+.arrow {
+    padding-left: 4px;
+}
+
+.keywordCard {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.keywordImg {
+    height: 235px;
+}
+
+.cardImg {
+    height: 235px;
 }

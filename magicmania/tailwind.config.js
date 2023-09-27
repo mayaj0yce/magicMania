@@ -11,10 +11,11 @@ module.exports = {
         themegreen: '#9bd3ae',
         themered: '#e1685a',
         themegrey: '#cbc1bf',
+        themelightgrey: '#e5e5e5',
       }
     },
   },
-  plugins: [require("tw-elements/dist/plugin.cjs")],
+  plugins: [require("daisyui")],
   darkMode: "class"
 };
 
