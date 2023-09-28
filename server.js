@@ -1,9 +1,28 @@
 const express = require('express');
+const { ApolloServer } = require('apollo-server-express');
+const mongoose = require('./db/connection');
+
+// Import typeDefs and resolvers
+const typeDefs = require('./graphql/schema');
+const resolvers = require('./graphql/resolvers');
+
+// Create an instance of Express
 const app = express();
 const port = process.env.PORT || 3001; 
 
 // Middleware to parse JSON requests
 app.use(express.json());
+
+// Create an instance of Apollo Server
+const server = new ApolloServer({
+  typeDefs,
+  resolvers,
+});
+
+// Start the Apollo server and then Apply the Apollo Server instance as middleware to Express
+server.start().then(() => {
+  server.applyMiddleware({ app });
+});
 
 // Define API routes here
 
