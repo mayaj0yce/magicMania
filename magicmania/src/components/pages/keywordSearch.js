@@ -1,22 +1,35 @@
 import React, { useState } from 'react';
+import { useQuery } from '@apollo/client';
+import { SEARCH_KEYWORD } from '../../graphql/queries'; // Import the query
 
 function KeywordSearch() {
   // State to store the keyword entered by the user
-  const [keyword, setKeyword] = useState('');
-
+  const [keyword, setKeyword] = useState(""); // Initialize to an empty string
   const [showConfirmMessage, setshowConfirmMessage] = useState(false);
-  
+  const [keywordData, setKeywordData] = useState(null);
+
   // Function to handle keyword input changes
   const handleKeywordChange = (e) => {
     setKeyword(e.target.value);
   };
-  
+
+  // GraphQL query to search for a keyword
+  const { loading, error, data } = useQuery(SEARCH_KEYWORD, {
+    variables: { keyword },
+    skip: !keyword, // Only send the query if keyword is not empty
+  });
+
   // Function to handle keyword search
   const handleKeywordSearch = (e) => {
     e.preventDefault();
-    // Add logic for fetching keyword data here
-    console.log(`Searching for cards with keyword: ${keyword}`);
-    setshowConfirmMessage(true);
+
+    if (data && data.searchKeyword) {
+      setKeywordData(data.searchKeyword);
+      setshowConfirmMessage(true);
+    } else {
+      setKeywordData(null); // Set to null when no data is available
+      setshowConfirmMessage(false);
+    }
   };
 
   return (
@@ -36,12 +49,18 @@ function KeywordSearch() {
             />
             <button type="submit">Search</button>
           </div>
-       </form>
-      
+        </form>
 
         {/* Display Search Results */}
-        {/* Implement code to display search results here and delete following line */}
-        {showConfirmMessage && <p>Showing results for {keyword}</p>}
+        {loading && <p>Loading...</p>}
+        {error && <p>Error: {error.message}</p>}
+        {showConfirmMessage && keywordData && (
+          <div>
+            <h3>Keyword: {keywordData.Keyword}</h3>
+            <p>Description: {keywordData.Description}</p>
+            {keywordData.Example && <p>Example: {keywordData.Example}</p>}
+          </div>
+        )}
       </main>
     </div>
   );
