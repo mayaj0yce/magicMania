@@ -1,5 +1,7 @@
 .whole-nav {
     background-image: linear-gradient(to bottom right, #814ae8, #80eaff);
+    position: sticky;
+    top: 0;
 }
 
 .navLink {
@@ -35,6 +37,8 @@
 /* landing page css */
 .landingPageAll {
     padding-top: 8rem;
+    text-align: center;
+    background-color: white;
 }
 
 .mainTitle {
@@ -71,4 +75,9 @@
 
 .cardImg {
     height: 235px;
+}
+
+/* signup page styling */
+.wholeSignup {
+    margin-top: -100px !important;
 }

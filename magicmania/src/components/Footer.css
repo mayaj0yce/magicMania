@@ -1,3 +1,9 @@
 .myfooter {
     row-gap: 1.5rem !important;
+    padding: 1rem !important;
+    bottom: 0;
+}
+
+.team-footer {
+    display: flex;
 }
