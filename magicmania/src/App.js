@@ -7,6 +7,7 @@ import UserPage from "./components/pages/userPage";
 import LoginPage from "./components/pages/loginPage";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import Signup from "./components/pages/signup";
 import './index.css'
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
           <Route exact path='/cardSearch' element={<CardSearch />}/>
           <Route exact path='/User' element={<UserPage/>}/>
           <Route exact path='/login' element={<LoginPage />} />
+          <Route exact path='/signup' element={<Signup />} />
 
           {/* <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/contact" element={<Contact />} />
