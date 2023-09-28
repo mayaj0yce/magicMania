@@ -60,9 +60,9 @@ function LoginPage() {
 
       {/* Display Login Result */}
       {loginSuccess && <p>Login successful!</p>}
-      {!loginSuccess && loginSuccess !== null && (
+      {/* {!loginSuccess && loginSuccess !== null && (
         <p>Login failed. Please check your username and password.</p>
-      )}
+      )} */}
 
 
     </div>
