@@ -10,6 +10,14 @@ const resolvers = {
         throw new Error('Error fetching magic words: ' + error);
       }
     },
+    searchKeyword: async (_, { keyword }) => {
+      try {
+        const magicWord = await MagicWord.findOne({ Keyword: keyword });
+        return magicWord;
+      } catch (error) {
+        throw new Error('Error fetching magic word by keyword: ' + error);
+      }
+    },
   },
 };
 
