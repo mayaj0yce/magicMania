@@ -24,9 +24,7 @@ function App() {
           <Route exact path='/login' element={<LoginPage />} />
           <Route exact path='/signup' element={<Signup />} />
 
-          {/* <Route path="/portfolio" element={<Portfolio />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/resume" element={<Resume />} /> */}
+         
         </Routes>
         <Footer />
       </div>
