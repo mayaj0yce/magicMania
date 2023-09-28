@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import '../Header.css'
 
 function LoginPage() {
   // State to store the user's credentials
@@ -33,29 +34,38 @@ function LoginPage() {
     <div>
 
       {/* Login Form */}
-      <main>
-        <h2>Please Log In</h2>
-        <div>
-          <label htmlFor="username">Username:</label>
-          <input
-            type="text"
-            id="username"
-            placeholder="Enter your username"
-            value={username}
-            onChange={handleUsernameChange}
-          />
+      <main className="flex justify-center items-center h-screen wholeSignup">
+        <div className="bg-white p-5 rounded-lg shadow-md w-96">
+          <h2 className="text-2xl font-semibold mb-4">Please Log In</h2>
+          <div className="mb-4">
+            <label htmlFor="username">Username:</label>
+            <input
+              type="text"
+              id="username"
+              placeholder="Enter your username"
+              value={username}
+              onChange={handleUsernameChange}
+              className="w-full p-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-300"
+            />
+          </div>
+          <div className="mb-4">
+            <label htmlFor="password">Password:</label>
+            <input
+              type="password"
+              id="password"
+              placeholder="Enter your password"
+              value={password}
+              onChange={handlePasswordChange}
+              className="w-full p-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-300"
+            />
+          </div>
+          <button 
+          onClick={handleLogin} 
+          className="w-full bg-blue-500 text-white p-2 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring"
+          >
+            Login
+          </button>
         </div>
-        <div>
-          <label htmlFor="password">Password:</label>
-          <input
-            type="password"
-            id="password"
-            placeholder="Enter your password"
-            value={password}
-            onChange={handlePasswordChange}
-          />
-        </div>
-        <button onClick={handleLogin}>Login</button>
       </main>
 
       {/* Display Login Result */}
