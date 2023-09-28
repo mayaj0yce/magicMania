@@ -35,6 +35,8 @@
 /* landing page css */
 .landingPageAll {
     padding-top: 8rem;
+    text-align: center;
+    background-color: white;
 }
 
 .mainTitle {

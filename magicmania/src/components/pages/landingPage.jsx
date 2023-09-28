@@ -8,7 +8,8 @@ import '../Header.css'
 function LandingPage() {
   return (
     <div className='landingPageAll '>
-      <h2 className='mainTitle text-4xl'>Welcome to MagicMania</h2>
+      <h2 className='mainTitle text-4xl'>Welcome to</h2>
+      <span className='text-5xl justify-center mainTitle'>MagicMania</span>
           <p className='subtitle text-2xl'>Choose an option below to start your adventure</p>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-4 ">
         {/* Keyword Search*/}
@@ -16,7 +17,7 @@ function LandingPage() {
           <h3 className="mb-2 text-2xl font-medium leading-tight text-gray-800">
             Keyword Search
           </h3>
-          <Link to="/keyword-search">
+          <Link to="/keywordSearch">
             <p className='text-xl'>Search for keywords on Magic cards</p>
             <img src={KeyWordImage} className='keywordImg mx-auto' alt="card w magnifyingglass"/>
             <button
@@ -36,7 +37,7 @@ function LandingPage() {
           <h3 className="mb-2 text-2xl font-medium leading-tight text-gray-800">
             Card Search
           </h3>
-          <Link to="/card-search">
+          <Link to="/cardSearch">
             <p className='text-xl'>Search for Magic cards and build your own deck!</p>
             <img src={CardSearchImage} className='cardImg mx-auto' alt="cards"/>
             <button
