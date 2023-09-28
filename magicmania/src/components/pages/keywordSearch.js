@@ -4,7 +4,7 @@ import { SEARCH_KEYWORD } from '../../graphql/queries'; // Import the query
 
 function KeywordSearch() {
   // State to store the keyword entered by the user
-  const [keyword, setKeyword] = useState(""); // Initialize to an empty string
+  const [keyword, setKeyword] = useState("");
   const [showConfirmMessage, setshowConfirmMessage] = useState(false);
   const [keywordData, setKeywordData] = useState(null);
 
@@ -16,21 +16,20 @@ function KeywordSearch() {
   // GraphQL query to search for a keyword
   const { loading, error, data } = useQuery(SEARCH_KEYWORD, {
     variables: { keyword },
-    skip: !keyword, // Only send the query if keyword is not empty
+    skip: !showConfirmMessage, // Skip the query if showConfirmMessage is false
   });
 
   // Function to handle keyword search
   const handleKeywordSearch = (e) => {
     e.preventDefault();
+    setshowConfirmMessage(true); // Set showConfirmMessage to true on search
 
-    if (data && data.searchKeyword) {
-      setKeywordData(data.searchKeyword);
-      setshowConfirmMessage(true);
-    } else {
-      setKeywordData(null); // Set to null when no data is available
-      setshowConfirmMessage(false);
-    }
+    // The GraphQL query will now be triggered automatically because of the skip condition.
   };
+
+  console.log('Current Keyword:', keyword);
+  console.log('Show Confirm Message:', showConfirmMessage);
+  console.log('GraphQL Data:', data);
 
   return (
     <div className='w-screen h-screen'>
