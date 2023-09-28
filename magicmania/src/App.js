@@ -14,7 +14,7 @@ function App() {
   return (
     <Router>
       <div className="App">
-      {/* <Header /> */}
+      <Header />
         <Routes>
           <Route exact path="/" element={<LandingPage />} />
           <Route exact path="/keywordSearch" element={<KeywordSearch />} />
