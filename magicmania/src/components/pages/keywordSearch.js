@@ -2,6 +2,11 @@ import React, { useState } from 'react';
 import { useQuery } from '@apollo/client';
 import { SEARCH_KEYWORD } from '../../graphql/queries'; // Import the query
 
+function capitalizeFirstLetter(input) {
+  // Function to capitalize the first letter of a string
+  return input.charAt(0).toUpperCase() + input.slice(1);
+}
+
 function KeywordSearch() {
   // State to store the keyword entered by the user
   const [keyword, setKeyword] = useState("");
@@ -18,7 +23,7 @@ function KeywordSearch() {
 
   // GraphQL query to search for a keyword
   const { loading, error, data } = useQuery(SEARCH_KEYWORD, {
-    variables: { keyword },
+    variables: { keyword: capitalizeFirstLetter(keyword) }, // Capitalize the keyword
     skip: !searchInProgress, // Skip the query if searchInProgress is false
     onCompleted: (data) => {
       // Update the keywordData state when the query completes
