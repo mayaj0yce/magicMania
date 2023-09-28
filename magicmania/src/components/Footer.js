@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import { AiFillGithub } from 'react-icons/ai'
-import './Footer.css'
+import './Footer.css';
 
 const Footer = () => {
   return (
