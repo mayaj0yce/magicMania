@@ -1,0 +1,1 @@
+// add props pass in to show cards on both the search and the user pages       
