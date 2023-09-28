@@ -8,6 +8,9 @@ function KeywordSearch() {
   const [showConfirmMessage, setshowConfirmMessage] = useState(false);
   const [keywordData, setKeywordData] = useState(null);
 
+  // State to track if the search is in progress
+  const [searchInProgress, setSearchInProgress] = useState(false);
+
   // Function to handle keyword input changes
   const handleKeywordChange = (e) => {
     setKeyword(e.target.value);
@@ -16,20 +19,27 @@ function KeywordSearch() {
   // GraphQL query to search for a keyword
   const { loading, error, data } = useQuery(SEARCH_KEYWORD, {
     variables: { keyword },
-    skip: !showConfirmMessage, // Skip the query if showConfirmMessage is false
+    skip: !searchInProgress, // Skip the query if searchInProgress is false
+    onCompleted: (data) => {
+      // Update the keywordData state when the query completes
+      setKeywordData(data.searchKeyword);
+      // Reset searchInProgress to false after the query completes
+      setSearchInProgress(false);
+    },
   });
 
   // Function to handle keyword search
   const handleKeywordSearch = (e) => {
     e.preventDefault();
-    setshowConfirmMessage(true); // Set showConfirmMessage to true on search
-
-    // The GraphQL query will now be triggered automatically because of the skip condition.
+    if (!loading) {
+      setshowConfirmMessage(true); // Set showConfirmMessage to true on search
+      setSearchInProgress(true); // Set searchInProgress to true when search starts
+    }
   };
 
   console.log('Current Keyword:', keyword);
   console.log('Show Confirm Message:', showConfirmMessage);
-  console.log('GraphQL Data:', data);
+  console.log('GraphQL Data:', keywordData);
 
   return (
     <div className='w-screen h-screen'>
@@ -46,7 +56,9 @@ function KeywordSearch() {
               value={keyword}
               onChange={handleKeywordChange}
             />
-            <button type="submit">Search</button>
+            <button type="submit" disabled={searchInProgress}>
+              {searchInProgress ? 'Searching...' : 'Search'}
+            </button>
           </div>
         </form>
 
