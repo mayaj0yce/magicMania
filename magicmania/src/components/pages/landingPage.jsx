@@ -42,7 +42,7 @@ function LandingPage() {
             <img src={CardSearchImage} className='cardImg mx-auto' alt="cards"/>
             <button
               type="button"
-              className="bg-themeblue hover:bg-blue-300 text-white text-xl font-bold rounded focus:outline-none focus:ring-2 focus:ring-blue-400 goBtn w-fit px-6 py-3 mx-auto flex items-center cursor-pointer"
+              className="bg-blue-500 hover:bg-blue-600 text-white text-xl font-bold rounded focus:outline-none focus:ring-2 focus:ring-blue-400 goBtn w-fit px-6 py-3 mx-auto flex items-center cursor-pointer"
             >
               Go  
               <span className='arrow'>
