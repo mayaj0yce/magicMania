@@ -9,12 +9,12 @@ function LandingPage() {
   return (
     <div className='landingPageAll '>
       <h2 className='mainTitle text-4xl'>Welcome to</h2>
-      <span className='text-5xl justify-center mainTitle'>MagicMania</span>
+      <span className='text-5xl justify-center mainTitle font-semibold'>MagicMania</span>
           <p className='subtitle text-2xl'>Choose an option below to start your adventure</p>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-4 ">
         {/* Keyword Search*/}
         <div className="bg-white rounded-lg shadow-md p-4 flex flex-col justify-center items-center">
-          <h3 className="mb-2 text-2xl font-medium leading-tight text-gray-800">
+          <h3 className="mb-2 text-2xl font-semibold leading-tight text-gray-800">
             Keyword Search
           </h3>
           <Link to="/keywordSearch">
@@ -34,7 +34,7 @@ function LandingPage() {
 
         {/* Card Search */}
         <div className="bg-white rounded-lg shadow-md p-4 flex flex-col justify-center items-center">
-          <h3 className="mb-2 text-2xl font-medium leading-tight text-gray-800">
+          <h3 className="mb-2 text-2xl font-semibold leading-tight text-gray-800">
             Card Search
           </h3>
           <Link to="/cardSearch">

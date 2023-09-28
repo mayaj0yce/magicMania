@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import '../Header.css'
 
 function KeywordSearch() {
   // State to store the keyword entered by the user
@@ -20,7 +21,7 @@ function KeywordSearch() {
   };
 
   return (
-    <div className='w-screen h-screen'>
+    <div className='w-screen h-custom'>
       {/* Header */}
 
       {/* Search Form */}

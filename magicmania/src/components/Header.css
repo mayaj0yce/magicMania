@@ -1,3 +1,8 @@
+/* custom height */
+.h-custom {
+    height: 80vh;
+}
+
 .whole-nav {
     background-image: linear-gradient(to bottom right, #814ae8, #80eaff);
     position: sticky;
@@ -75,6 +80,7 @@
 
 .cardImg {
     height: 235px;
+    padding-left: 23px;
 }
 
 /* signup page styling */
