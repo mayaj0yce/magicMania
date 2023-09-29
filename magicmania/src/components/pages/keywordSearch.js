@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import '../Header.css'
 import { useQuery } from '@apollo/client';
 import { SEARCH_KEYWORD } from '../../graphql/queries'; // Import the query
 
@@ -47,7 +48,7 @@ function KeywordSearch() {
   console.log('GraphQL Data:', keywordData);
 
   return (
-    <div className='w-screen h-screen'>
+    <div className='w-screen h-custom'>
       {/* Header */}
 
       {/* Search Form */}
