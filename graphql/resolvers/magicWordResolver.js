@@ -1,4 +1,4 @@
-const MagicWord = require('../db/models/magicWords');
+const MagicWord = require('../../db/models/magicWords');
 
 const resolvers = {
   Query: {
