@@ -60,4 +60,4 @@ function generateToken(user) {
     return token;
 }
 
-module.export = resolvers;
+module.exports = resolvers;
