@@ -73,6 +73,8 @@ function CardSearch() {
                         {card.imageUrl && (
                             <img src={card.imageUrl} alt={card.name} />
                         )}
+                        {/* IF LOGGED IN THEN SHOW */}
+                         <button>Add To Deck</button>
                         <hr />
                     </li>
                     ))}
@@ -80,6 +82,8 @@ function CardSearch() {
                 ) : (
                 <p>No results found.</p>
                 )}
+
+               
             </div>
         </div>
     )
