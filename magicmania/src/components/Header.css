@@ -88,3 +88,31 @@
 .wholeSignup {
     margin-top: -100px !important;
 }
+
+/* card search page */
+.card-card {
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: solid red;
+}
+
+@media (min-width: 1024px) {
+    .card-text {
+        width: 60%;
+    }
+}
+
+.card-text {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ind-text {
+    font-weight: 500;
+}
+
+.card-img {
+   
+}
