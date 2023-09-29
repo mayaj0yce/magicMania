@@ -19,6 +19,8 @@ const cardDisplay = [
     card2: '2',
   }
 ]
+
+
 const NavLinks = () => {
   return (
     <>

@@ -26,7 +26,7 @@ function App() {
             <Route exact path="/User" element={<UserPage />} />
             <Route exact path="/login" element={<LoginPage />} />
             <Route exact path="/signup" element={<Signup />} />
-            <Route exact path="/fulldeck" element={<FullDeck />} />
+            <Route exact path="/fullDeck" element={<FullDeck />} />
           </Routes>
           <Footer />
         </div>

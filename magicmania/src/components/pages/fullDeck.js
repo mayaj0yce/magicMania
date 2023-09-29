@@ -17,6 +17,7 @@ function FullDeck() {
                     card2={cardDisplay[0].card2}>
                 </CardDisplay>
             </div>
+            <button className="heartshape">add</button>
         </div>
     )
 }

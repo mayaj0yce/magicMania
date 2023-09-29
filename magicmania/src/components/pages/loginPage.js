@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import '../Header.css'
+import '../Header.css';
+import { Link } from 'react-router-dom';
+// import showUser from './userPage';
 
 function LoginPage() {
   // State to store the user's credentials
@@ -28,6 +30,15 @@ function LoginPage() {
     } else {
       setLoginSuccess(false);
     }
+  };
+
+  const NavLinks = () => {
+    return (
+      <>
+        <Link to='/User' className="navLink hovernow">Login
+          </Link>
+      </>
+    );
   };
 
   return (
@@ -63,7 +74,7 @@ function LoginPage() {
           onClick={handleLogin} 
           className="w-full bg-blue-500 text-white p-2 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring"
           >
-            Login
+          <NavLinks />  
           </button>
         </div>
       </main>
