@@ -10,7 +10,7 @@ const NavLinks = () => {
         <Link to="/" className='navLink hovernow'>Home</Link>
         <Link to="/login"className='navLink hovernow'>Login</Link>
         <Link to="/signup"className='navLink hovernow'>Signup</Link>
-        {/* <Link to="/User"className='navLink hovernow'>UserPage</Link> */}
+        <Link to="/User"className='navLink hovernow'>UserPage</Link>
         </>
     );
 };
