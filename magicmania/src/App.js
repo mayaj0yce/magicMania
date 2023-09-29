@@ -22,7 +22,7 @@ function App() {
             <Route exact path="/" element={<LandingPage />} />
             <Route exact path="/keywordSearch" element={<KeywordSearch />} />
             <Route exact path="/cardSearch" element={<CardSearch />} />
-            {/* <Route exact path="/User" element={<UserPage />} /> */}
+            <Route exact path="/User" element={<UserPage />} />
             <Route exact path="/login" element={<LoginPage />} />
             <Route exact path="/signup" element={<Signup />} />
           </Routes>
