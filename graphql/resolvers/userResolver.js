@@ -1,5 +1,5 @@
 const User = require('../../db/models/user');
-const bycrypt = require('bycrypt');
+const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
 const resolvers = {
@@ -21,7 +21,7 @@ const resolvers = {
             const token = generateToken(savedUser);
 
             return {
-                user: savedUseer,
+                user: savedUser,
                 token,
             };
     },
@@ -60,4 +60,4 @@ function generateToken(user) {
     return token;
 }
 
-module.export = resolvers;
+module.exports = resolvers;
