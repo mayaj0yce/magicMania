@@ -1,16 +1,16 @@
 const { gql } = require('apollo-server-express');
 
 const typeDefs = gql`
-  type MagicWords {
-    id: ID!
-    Keyword: String!
-    Description: String!
-    Example: String
-  }
+type MagicWord {
+  Keyword: String
+  Description: String
+  Example: String
+}
 
-  type Query {
-    magicWords: [MagicWords]
-  }
+type Query {
+  magicWords: [MagicWord]
+  searchKeyword(keyword: String!): MagicWord
+}
 `;
 
 module.exports = typeDefs;
