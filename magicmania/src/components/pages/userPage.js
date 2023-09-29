@@ -22,14 +22,16 @@ const cardDisplay = [
 const NavLinks = () => {
   return (
     <>
-      <Link to='/FullDeck' className="navLink hovernow">FullDeck</Link>
+      <Link to='/FullDeck' className="navLink hovernow">
+        FullDeck
+        </Link>
     </>
   );
 };
+
+
+
 function showUser() {
-
-
-
   return (
     <div className="userPage">
       <main className="block userInfo">
