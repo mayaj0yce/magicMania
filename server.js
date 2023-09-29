@@ -3,8 +3,10 @@ const { ApolloServer } = require('apollo-server-express');
 const mongoose = require('./db/connection');
 
 // Import typeDefs and resolvers
-const typeDefs = require('./graphql/schema');
-const resolvers = require('./graphql/resolvers');
+const typeDefs = require('./graphql/schemas/typeDefs');
+const resolvers = require('./graphql/resolvers/magicWordResolver');
+const userResolvers = require('./graphql/resolvers/userResolver');
+const useerShema = require('./graphql/schemas/userSchema');
 
 // Create an instance of Express
 const app = express();

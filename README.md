@@ -5,12 +5,12 @@ packages used
 
 
 ## Authors
-camille ramos @camilleramos1
+[Camille Ramos](https://github.com/camilleramos1)
 
-holden melander @essence1987
+[Holden Melander](https://github.com/essence1987)
 
-mj thayne @mayaj0yce
+[MJ Thayne](https://github.com/mayaj0yce)
 
-[Nate kester](https://github.com/imdawizard)
+[Nate Kester](https://github.com/imdawizard)
 
-mateo lilo @liloNStitch1975
+[Mateo Lilo](https://github.com/liloNStitch1975)
