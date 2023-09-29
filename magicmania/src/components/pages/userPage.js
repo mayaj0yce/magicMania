@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { UserInfo } from "../userInfo";
-
+import { CardDisplay} from '../cardDisplay';
 
 const userInfo = [
     {
@@ -10,6 +10,15 @@ const userInfo = [
     //use effect run once upon page load 
     // query data base for logged in user and send that data to the props
 ]
+
+const cardDisplay = [
+  {
+    card: '1',
+    card2: '2',
+  }
+]
+
+
 
 function showUser() {
 
@@ -25,7 +34,12 @@ function showUser() {
                     </UserInfo>
             </main>
             <div class='block showCards'>
-                <h1>cards here</h1>
+                <CardDisplay
+                  card={cardDisplay[0].card}
+                  card2={cardDisplay[0].card2}>
+                </CardDisplay>
+
+
             </div>
         </div>
     )
