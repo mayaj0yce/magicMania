@@ -11,6 +11,7 @@ function LandingPage() {
       <h2 className='mainTitle text-4xl'>Welcome to</h2>
       <span className='text-5xl justify-center mainTitle font-semibold'>MagicMania</span>
       <p className='subtitle text-2xl'>Choose an option below to start your adventure</p>
+      
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-4 ">
         {/* Keyword Search*/}
         <div className="bg-white rounded-lg shadow-md p-4 flex flex-col justify-center items-center">

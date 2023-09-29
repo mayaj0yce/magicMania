@@ -14,18 +14,15 @@ const userInfo = [
 function showUser() {
 
 
-  
+
     return (
-        <div>
+        <div className="userPage">
             <main className="block userInfo">
-                {/* this is where the username and the email for the user go */}
-                {/* {userInfo((p) => { */}
-                    {/* return */}
+              <h2 className="text-5xl justify-center mainTitle font-semibold">Welcome, </h2>
                       <UserInfo
                         username={userInfo[0].username}
                         email={userInfo[0].email}>
                     </UserInfo>
-                {/* })} */}
             </main>
             <div class='block showCards'>
                 <h1>cards here</h1>

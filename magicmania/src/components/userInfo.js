@@ -5,9 +5,9 @@ import React from 'react';
 export const UserInfo =
     (props) => {
         return (
-            <div className="block">
-                <h1> {props.username}</h1>
-                <h2>{props.email}</h2>
+            <div  className='justify-center'>
+                <h1 className='subtitle text-2xl'> {props.username}</h1>
+                <h2 className=''>{props.email}</h2>
 
             </div>
         )
