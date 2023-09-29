@@ -21,7 +21,7 @@ const resolvers = {
             const token = generateToken(savedUser);
 
             return {
-                user: savedUseer,
+                user: savedUser,
                 token,
             };
     },
