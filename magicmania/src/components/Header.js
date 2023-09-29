@@ -23,10 +23,10 @@ const Header = () => {
     };
 
     return (
-        <header className=''>
+        <header className='pb-2'>
             <div className='flex justify-between items-center w-full h-20 fixed flex-wrap whole-nav'>
                 <div className='px-4'>
-                    <Link to="/"><img src={LogoPic} alt="logo" className='logoPic'/></Link>
+                    <Link to="/"><img src={LogoPic} alt="logo" className=' logoPic'/></Link>
                 </div>
                 <nav className=' flex w-1/4 justify-end px-4'>
                     <div className='hidden md:flex justify-between text-xl allNavLinks'>
@@ -39,7 +39,7 @@ const Header = () => {
                     </div>
                 </nav>
                 {isOpen && (
-                    <div className='flex flex-col items-center top-0 left-0 w-full py-2 rounded justify-center nav-dropdown'>
+                    <div className='flex flex-col flex-wrap items-center top-0 left-0 w-full py-2 rounded justify-center nav-dropdown'>
                         <NavLinks />
                     </div>
                 )}

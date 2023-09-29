@@ -16,9 +16,9 @@
     border-radius: 6px;
 }
 
-.allNavLinks {
+/* .allNavLinks {
     width: 65%;
-}
+} */
 
 .logoPic {
     max-width: 130px;
@@ -41,7 +41,7 @@
 
 /* landing page css */
 .landingPageAll {
-    padding-top: 8rem;
+    padding-top: 6rem;
     text-align: center;
     background-color: white;
 }
@@ -56,6 +56,7 @@
     text-align: center;
     justify-content: center;
     align-items: center;
+    padding-bottom: 22px;
 }
 
 .goBtn {
