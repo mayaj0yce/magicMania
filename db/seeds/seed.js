@@ -439,6 +439,407 @@ const initialData = [
     Description: 'Double strike allows a creature to deal damage twice in a single attack step by having it deal damage during the first strike phase and the regular damage phase.',
     Example: 'No example available at this time.',
   },
+  {
+    Keyword: 'Dredge',
+    Description: 'Dredge is a recursion mechanic, where the owner of a card in a graveyard with Dredge can return the card to their hand by choosing to skip their draw and mill a number of cards.',
+    Example: 'Dredge 3 (If you would draw a card, you may mill three cards instead. If you do, return this card from your graveyard to your hand.)',
+  },
+  {
+    Keyword: 'Echo',
+    Description: 'Echo is a keyword ability on permanents that requires the permanent\'s controller to pay its echo cost at the beginning of their next upkeep after they gain control of it, or sacrifice it.',
+    Example: 'Echo 2 (At the beginning of your upkeep, if this came under your control since the beginning of your last upkeep, sacrifice it unless you pay its echo cost.)',
+  },
+  {
+    Keyword: 'Embalm',
+    Description: 'The embalm ability can only be activated if the creature is in your graveyard. When activated, the card is exiled but it creates a token copy of that creature. Moreover, this creature token has three changes: it has no mana cost, it is a zombie in addition to its other creature types, and it becomes a monocolored white creature.',
+    Example: 'Tap 1 White (Exile this card from your graveyard: Create a token that\'s a copy of it, except it\'s a white Zombie Cat with no mana cost. Embalm only as a sorcery.)',
+  },
+  {
+    Keyword: 'Emerge',
+    Description: 'A keyword ability that lets a player cast a spell for less by sacrificing a creature.',
+    Example: 'Tap 9 Forest (You may cast this spell by sacrificing a creature and paying the emerge cost reduced by that creature\'s mana value.)',
+  },
+  {
+    Keyword: 'Eminence',
+    Description: 'Eminence gives an advantageous tribal effect whether the creature is played as a commander or as a creature.',
+    Example: 'Eminence — As long as The Ur-Dragon is in the command zone or on the battlefield, other Dragon spells you cast cost 1 less to cast.',
+  },
+  {
+    Keyword: 'Enchant',
+    Description: 'Enchant is a keyword ability that restricts what an Aura can target and be attached to. Aura is an enchantment type.',
+    Example: 'Enchant artifact At the beginning of the upkeep of enchanted artifact\'s controller, Warp Artifact deals 1 damage to that player.',
+  },
+  {
+    Keyword: 'Encore',
+    Description: 'Encore is an activated ability that can be activated only if the creature card that has it is in your graveyard. You can pay a creature\'s encore cost and exile it from your graveyard to create a number of token copies of it equal to your number of opponents. Each of those tokens has haste, must attack that player, and is sacrificed during the end step.',
+    Example: 'Encore 3 (Exile this card from your graveyard: For each opponent, create a token copy that attacks that opponent this turn if able. They gain haste. Sacrifice them at the beginning of the next end step. Activate only as a sorcery.)',
+  },
+  {
+    Keyword: 'Enlist',
+    Description: 'Enlist represents an optional cost to attack. As you attack with a creature with enlist, you can tap a different untapped creature you control that isn\'t attacking. When you enlist a creature, the attacking creature that has the enlist ability gets +X/+0 until end of turn, where X is the power of the enlisted creature.',
+    Example: 'Enlist (As this creature attacks, you may tap a nonattacking creature you control without summoning sickness. When you do, add its power to this creature\'s until end of turn.)',
+  },
+  {
+    Keyword: 'Enrage',
+    Description: 'Enrage gives an advantageous effect when the creature with the ability is dealt damage. It appears in red, white, and green.',
+    Example: 'Enrage — Whenever Ripjaw Raptor is dealt damage, draw a card.',
+  },
+  {
+    Keyword: 'Entwine',
+    Description: 'As you cast a spell with entwine, if you pay the additional entwine cost, instead of choosing only one of the modes of the spell, you choose all of them. In all cases but one, this is two options, and hence the reminder uses "both".',
+    Example: 'Entwine — Sacrifice three lands. (Choose both if you pay the entwine cost.)',
+  },
+  {
+    Keyword: 'Epic',
+    Description: 'An epic spell is copied in its controller\'s upkeep on every turn for the rest of the game. If it has any targets, the player may choose new targets for the copy. In exchange for this powerful ability, the player can\'t cast spells for the rest of the game.',
+    Example: 'Epic (For the rest of the game, you can\'t cast spells. At the beginning of each of your upkeeps, copy this spell except for its epic ability.)',
+  },
+  {
+    Keyword: 'Equip',
+    Description: 'Equip is a keyword ability found on artifacts with the subtype "Equipment." By paying the equip cost, you can attach the artifact to a creature you control, which is referred to in the text as the "equipped creature." Equipping can only be activated at sorcery speed. When an equipped creature leaves the battlefield, unlike Auras, the equipment remains on the battlefield.',
+    Example: 'Equip 2 (Equipped creature can\'t be blocked and has shroud. (It can\'t be the target of spells or abilities.))',
+  },
+  {
+    Keyword: 'Escalate',
+    Description: 'By paying the escalate cost, additional modes may be activated.',
+    Example: 'Escalate 2 (Pay this cost for each mode chosen beyond the first.) Target player gains 4 life. Untap up to two target creatures. Target opponent sacrifices an attacking creature.',
+  },
+  {
+    Keyword: 'Escape',
+    Description: 'Spells with escape can be cast from the graveyard for their escape cost. The cost includes exiling a number of other cards from the graveyard. If a creature escapes, it may receive an additional bonus.',
+    Example: 'Escape 3. Exile four other cards from your graveyard (You may cast this card from your graveyard for its escape cost.)',
+  },
+  {
+    Keyword: 'Eternalize',
+    Description: 'The eternalize ability only can be activated if the creature is in your graveyard. When activated, the card is exiled but it creates a token copy of that creature. Moreover, this creature token has four changes: its power and toughness becomes 4/4, it has no mana cost, it is a zombie in addition to its other creature types, and it becomes a monocolored black creature.',
+    Example: 'Eternalize 6 (Exile this card from your graveyard: Create a token that\'s a copy of it, except it\'s a 4/4 black Zombie Cat with no mana cost. Eternalize only as a sorcery.)',
+  },
+  {
+    Keyword: 'Evoke',
+    Description: 'Evoke is a keyword ability that allows a player to pay an alternative cost for a creature spell that possesses this ability; however, if the evoke cost is paid, the creature is sacrificed when it enters the battlefield.',
+    Example: 'When Wispmare enters the battlefield, destroy target enchantment. Evoke 1 (You may cast this spell for its evoke cost. If you do, it\'s sacrificed when it enters the battlefield.)',
+  },
+  {
+    Keyword: 'Evolve',
+    Description: 'A creature with evolve gains additional +1/+1 counters whenever another, bigger creature enters the battlefield under the same player\'s control.',
+    Example: 'Evolve (Whenever a creature enters the battlefield under your control, if that creature has greater power or toughness than this creature, put a +1/+1 counter on this creature.) Whenever a +1/+1 counter is placed on Fathom Mage, you may draw a card.',
+  },
+  {
+    Keyword: 'Exalted',
+    Description: 'Whenever a creature you control attacks alone, that creature gets +1/+1 until end of turn for each instance of exalted on the battlefield under your control.',
+    Example: 'Exalted (Whenever a creature you control attacks alone, that creature gets +1/+1 until end of turn.)',
+  },
+  {
+    Keyword: 'Exchange',
+    Description: 'To swap two things, such as objects, sets of objects, or life totals.',
+    Example: 'No example available at this time.',
+  },
+  {
+    Keyword: 'Exert',
+    Description: 'When a creature with the exert ability is exerted, then an ability is triggered and the creature doesn\'t untap at the beginning of its controller\'s next untap step.',
+    Example: 'You may exert Glory-Bound Initiate as it attacks. When you do, it gets +1/+3 and gains lifelink until end of turn. (An exerted creature won\'t untap during your next untap step.)',
+  },
+  {
+    Keyword: 'Exile',
+    Description: 'The exile zone is essentially a holding area for objects. Some spells and abilities exile an object without any way to return that object to another zone. Other spells and abilities exile an object only temporarily.',
+    Example: 'Exile target nonwhite attacking creature. You gain life equal to its toughness.',
+  },
+  {
+    Keyword: 'Exploit',
+    Description: 'When a creature with exploit enters the battlefield, the player may sacrifice a creature. Each creature with exploit has another ability that gives the player a benefit when it "exploits a creature." This means when the player sacrificed a creature because of its exploit ability.',
+    Example: 'Exploit (When this creature enters the battlefield, you may sacrifice a creature.) When Silumgar Butcher exploits a creature, target creature gets -3/-3 until end of turn.',
+  },
+  {
+    Keyword: 'Explore',
+    Description: 'If a creature you control explores, you reveal the top card of your library. If the revealed card is a land, representing your creature finding some new territory you can check out, put that card into your hand. If it\'s not a land card, your creature comes back empty-handed but still benefits from the attempt.',
+    Example: 'When Tishana\'s Wayfinder enters the battlefield, it explores. (Reveal the top card of your library. Put that card into your hand if it\'s a land. Otherwise put a +1/+1 counter on this creature, then put the card back or put it into your graveyard.)',
+  },
+  {
+    Keyword: 'Extort',
+    Description: 'Extort allows players to pay additional energy for spells they cast and create a small life-draining effect.',
+    Example: 'Extort (Whenever you cast a spell, you may pay 1. If you do, each opponent loses 1 life and you gain that much life.)',
+  },
+  {
+    Keyword: 'Fabricate',
+    Description: 'The fabricate ability triggers when the creature enters the battlefield, but you don\'t choose counters or tokens until that ability resolves. That means your opponent will have an opportunity to respond to the ability before you make that choice and before the +1/+1 counters or Servo tokens exist. If the creature with fabricate isn\'t on the battlefield as the fabricate ability resolves, you must choose to create the Servo tokens.',
+    Example: 'Fabricate N (When this permanent enters the battlefield, you may put N +1/+1 counters on it. If you don\'t, create N 1/1 colorless Servo artifact creature tokens.)',
+  },
+  {
+    Keyword: 'Fading',
+    Description: 'During each of its controller\'s upkeeps, that player removes one fade counter from the permanent. If the player cannot remove a fade counter, they must sacrifice the permanent. This acts as a countdown to destroying the permanent on the player\'s next turn after the countdown reaches zero, which players found unintuitive.',
+    Example: 'Fading 3 (This creature enters the battlefield with three fade counters on it. At the beginning of your upkeep, remove a fade counter from it. If you can\'t, sacrifice it.)',
+  },
+  {
+    Keyword: 'Fateful hour',
+    Description: 'Fateful hour abilities work as long as you have 5 life or less. As soon as your life total drops to 5 or less, they immediately kick in. As soon as your life total becomes 6 or higher, fateful hour abilities stop working.',
+    Example: 'Creatures you control get +1/+1 until end of turn. Fateful hour — If you have 5 or less life, those creatures gain indestructible until end of turn. (Damage and effects that say "destroy" don\'t destroy them.)',
+  },
+  {
+    Keyword: 'Fateseal',
+    Description: 'Fateseal is a keyword action similar to scry. The only difference between them is that when you scry, you affect your own library, and when you fateseal, you affect an opponent\'s library.',
+    Example: 'All Slivers have "When this permanent comes into play, fateseal 1." (To fateseal 1, its controller looks at the top card of an opponent\'s library, then they may put that card on the bottom of that library.)',
+  },
+  {
+    Keyword: 'Fear',
+    Description: 'Fear is a keyword ability found primarily on black creatures. It is an evasion ability that allows a creature to only be blocked by black or artifact creatures.',
+    Example: 'Fear (This creature can\'t be blocked except by artifact creatures and/or black creatures.)',
+  },
+  {
+    Keyword: 'Ferocious',
+    Description: 'Ferocious triggers an advantage for the player if they control a creature with power 4 or greater. It could appear on any card type, though it has yet to appear on artifacts (or battles, due to recency).',
+    Example: 'Ferocious — Whenever Heir of the Wilds attacks, if you control a creature with power 4 or greater, Heir of the Wilds gets +1/+1 until end of turn.',
+  },
+  {
+    Keyword: 'Fight',
+    Description: 'When two creatures fight, each deals damage equal to its power to the other.',
+    Example: 'Target creature fights another target creature. (Each deals damage equal to its power to the other.)',
+  },
+  {
+    Keyword: 'First strike',
+    Description: 'A creature with first strike deals combat damage before creatures without first strike. The ability usually represents a creature\'s exceptional speed or skill; or possession of long range weapons, such as spears, lances, or bows. The most common creature types to have first strike are Knights and Soldiers.',
+    Example: 'First strike (This creature deals combat damage before creatures without first strike.)',
+  },
+  {
+    Keyword: 'Flanking',
+    Description: 'Flanking is a triggered ability that triggers during the declare blockers step. It checks if the creature without flanking is blocking a creature with flanking. If it is, the creature without flanking gets -1/-1 until end of turn.',
+    Example: 'Flanking (Whenever a creature without flanking blocks this creature, the blocking creature gets -1/-1 until end of turn.)',
+  },
+  {
+    Keyword: 'Flash',
+    Description: 'Flash is a static ability that functions in any zone from which you could play the card it\'s on. It lets a player play a card any time they could cast an instant.',
+    Example: 'Flash (You may cast this spell any time you could cast an instant.)',
+  },
+  {
+    Keyword: 'Flashback',
+    Description: 'Flashback is a keyword ability on instants and sorceries that allows the player to pay an alternative cost to cast the spell directly from their graveyard. The spell card is exiled when the spell leaves the stack.',
+    Example: 'Destroy target enchantment. Flashback 1 Forest (You may cast this card from your graveyard for its flashback cost. Then exile it.)',
+  },
+  {
+    Keyword: 'Flying',
+    Description: 'Flying is an evergreen evasion ability that makes creatures without flying unable to block creatures with flying. It has been in Magic since the original Alpha set.',
+    Example: 'Flying (This creature can\'t be blocked except by creatures with flying or reach.)',
+  },
+  {
+    Keyword: 'Food',
+    Description: 'A Food token is a colorless artifact token with “2, Tap, Sacrifice this artifact: You gain 3 life.”',
+    Example: 'Tap 2 Energy, Sacrifice this artifact: You gain 3 life.',
+  },
+  {
+    Keyword: 'For Mirrodin!',
+    Description: 'When a card with For Mirrodin! enters the battlefield, it creates a 2/2 red Rebel creature token and attaches itself to it.',
+    Example: 'For mirrodin! (When this Equipment enters the battlefield, create a 2/2 red Rebel creature token, then attach this to it.)',
+  },
+  {
+    Keyword: 'Forecast',
+    Description: 'Forecast is an activated ability that a player can only use when the card is in their hand, and only during their upkeep. What the individual card does is usually related to what it does normally, either a scaled-down effect of the spell, or something that supports the spell once it\'s cast.',
+    Example: 'Forecast - Tap 3 Water, Reveal Pride of the Clouds from your hand: Create a 1/1 white and blue Bird creature token with flying. (Activate this ability only during your upkeep and only once each turn.)',
+  },
+  {
+    Keyword: 'Forestcycling',
+    Description: 'Forestcycling is a variant of the cycling ability. Unlike cycling (which allows you to draw a card), forestcycling allows you to search your library for a Forest card. The card you find can be a basic Forest or any land card with the Forest land type.',
+    Example: 'No example available at this time.',
+  },
+  {
+    Keyword: 'Forestwalk',
+    Description: 'See Landwalk.',
+    Example: 'This creature can\'t be blocked as long as defending player controls a Forest.',
+  },
+  {
+    Keyword: 'Foretell',
+    Description: 'During your turn, you may pay 2 and exile a card with foretell from your hand face down. You may cast it on a later turn for its foretell cost (the mana cost listed as part of the foretell keyword). Foretelling is optional, so you can always cast the spell as normal if you want a more immediate impact.',
+    Example: 'Foretell Tap 2 Forest (During your turn, you may pay 2 and exile this card from your hand face down. Cast it on a later turn for its foretell cost.)',
+  },
+  {
+    Keyword: 'Formidable',
+    Description: 'Some formidable abilities are activated abilities that require creatures you control to have a total power of 8 or greater. Once you activate these abilities, it doesn\'t matter what happens to the total power of creatures you control. Other formidable abilities are triggered abilities with an “intervening if” clause. Such abilities check the total power of creatures you control twice: once at the appropriate time to see if the ability will trigger, and again as the ability tries to resolve. If at that time, the total power of creatures you control is no longer 8 or greater, the ability will have no effect.',
+    Example: 'Formidable — When Stampeding Elk Herd attacks, if creatures you control have total power 8 or greater, creatures you control gain trample until end of turn.',
+  },
+  {
+    Keyword: 'Fortify',
+    Description: 'Fortify is a keyword ability that appears on Fortifications. It\'s exactly the same as equip, except that it affects a land instead of a creature.',
+    Example: 'Fortify Tap 3 (Attach to target land you control. Fortify only as a sorcery. This card enters the battlefield unattached and stays on the battlefield if the land leaves.)',
+  },
+  {
+    Keyword: 'Frenzy',
+    Description: 'A keyword ability that can make a creature better in combat. If a creature has multiple instances of frenzy, each triggers separately.',
+    Example: 'All Sliver creatures have frenzy 1. (Whenever a Sliver attacks and isn\'t blocked, it gets +1/+0 until end of turn.)',
+  },
+  {
+    Keyword: 'Friends forever',
+    Description: '“Friends forever” is a variant of the partner ability. Friends forever modifies the rules for deck construction in the Commander variant, and it functions before the game begins. Rather than a single legendary creature card, you may designate two legendary creature cards as your commander if each has “friends forever.”',
+    Example: 'Friends forever (You can have two commanders if both have friends forever.)',
+  },
+  {
+    Keyword: 'Fuse',
+    Description: 'Fuse is a static ability found on some split cards that applies while the card with fuse is in a player’s hand. If a player casts a split card with fuse from their hand, the player may choose to cast both halves of that split card rather than choose one half. This choice is made before putting the split card with fuse onto the stack. The resulting spell is a fused split spell.',
+    Example: 'Fuse (You may cast one or both halves from your hand.)',
+  },
+  {
+    Keyword: 'Goad',
+    Description: 'Goad causes a creature to be goaded until a player\'s next turn. A goaded creature has to attack a player (not a planeswalker or battle) other than you if it can. If the creature can\'t attack a player other than you, then it must attack you or a planeswalker if it can. This is most likely when the game is down to two players. The controller of a goaded creature still chooses who the creature attacks.',
+    Example: 'When Jeering Homunculus enters the battlefield, you may goad target creature. (Until your next turn, that creature attacks each combat if able and attacks a player other than you if able.)',
+  },
+  {
+    Keyword: 'Graft',
+    Description: 'Graft represents both a static ability and a triggered ability. “Graft N” means “This permanent enters the battlefield with N +1/+1 counters on it” and “Whenever another creature enters the battlefield, if this permanent has a +1/+1 counter on it, you may move a +1/+1 counter from this permanent onto that creature.” If a permanent has multiple instances of graft, each one works separately.',
+    Example: 'Graft 3 (This creature enters the battlefield with three +1/+1 counters on it. Whenever another creature enters the battlefield, you may move a +1/+1 counter from this creature onto it.)',
+  },
+  {
+    Keyword: 'Grandeur',
+    Description: 'The grandeur ability can be activated only while the creature that has it is on the battlefield. To activate the ability, a different card with the same name must be discarded.',
+    Example: 'Grandeur — Discard another card named Tarox Bladewing: Tarox Bladewing gets +X/+X until end of turn, where X is its power.',
+  },
+  {
+    Keyword: 'Gravestorm',
+    Description: 'Gravestorm is a triggered keyword ability. It\'s similar to storm, except that instead of counting the number of spells casted that turn, it counts the number of permanents put into a graveyard from the battlefield that turn.',
+    Example: 'Gravestorm (When you cast this spell, copy it for each permanent put into a graveyard this turn. You may choose new targets for the copies.)',
+  },
+  {
+    Keyword: 'Haste',
+    Description: 'Haste is a keyword ability that allows a creature to circumvent summoning sickness. Creatures with haste can attack or use activated abilities with the Tap or Untap symbol in the activation cost even if they have not been continuously controlled by a player since the beginning of that player\'s most recent turn.',
+    Example: 'Haste (This creature can attack and Tap as soon as it comes under your control.)',
+  },
+  {
+    Keyword: 'Haunt',
+    Description: 'Haunt works by allowing a permanent\'s "enters the battlefield"-ability (ETB) or spell effect to go off twice. It allows a card to be exiled from a graveyard "haunting" a creature, and when that creature dies, a triggered ability of the haunting card is put on the stack and allows a second usage of the card.',
+    Example: 'Haunt (When this creature dies, exile it haunting target creature.) When this card comes into play or the creature it haunts is put into a graveyard, target player loses 2 life and you gain 2 life.',
+  },
+  {
+    Keyword: 'Hellbent',
+    Description: 'Hellbent is an ability word that indicates that a card is better if its controller has no cards in their hand.',
+    Example: 'Hellbent — Demon\'s Jester gets +2/+1 as long as you have no cards in hand.',
+  },
+  {
+    Keyword: 'Heroic',
+    Description: 'A creature with heroic gives the controlling player powerful benefits every time they cast a spell that targets it.',
+    Example: 'Heroic — Whenever you cast a spell that targets Favored Hoplite, put a +1/+1 counter on Favored Hoplite and prevent all damage that would be dealt to it this turn.',
+  },
+  {
+    Keyword: 'Hero\'s Reward',
+    Description: 'A Hero\'s Reward offers a boon when the card leaves the battlefield or when it is put into the graveyard from anywhere.',
+    Example: 'Hero\'s Reward — When Snapping Fang Head leaves the battlefield, each player gains 4 life and draws a card.',
+  },
+  {
+    Keyword: 'Hexproof',
+    Description: 'Hexproof is an evergreen keyword ability that prevents a permanent or player from being the target of spells or abilities played by opponents.',
+    Example: 'Hexproof (This creature can\'t be the target of spells or abilities your opponents control.)',
+  },
+  {
+    Keyword: 'Hexproof from',
+    Description: 'Introduced in the 78th expansion pack, "hexproof from [quality]" as a variant of the hexproof ability. For example, "hexproof from black" means "this permanent can\'t be the target of black spells your opponents control or abilities of black sources your opponents control."',
+    Example: 'Hexproof from black (This creature can\'t be the target of black spells or abilities your opponents control.)',
+  },
+  {
+    Keyword: 'Hidden agenda',
+    Description: 'Hidden agenda is a static ability that functions as a conspiracy card with hidden agenda is put into the command zone. It allows you to secretly choose a card name, and creatures you control with the chosen name have haste.',
+    Example: 'Hidden agenda (Start the game with this conspiracy face down in the command zone and secretly name a card. You may turn this conspiracy face up any time and reveal the chosen name.) Creatures you control with the chosen name have haste.',
+  },
+  {
+    Keyword: 'Hideaway',
+    Description: 'When a permanent enters the battlefield, at that time, you may look at the top N cards of your library, exile one face down, then put the rest on the bottom of your library in a random order. Usually, a second ability on each card interacts with the exiled card when certain conditions are met.',
+    Example: 'Hideaway 4 (When this land enters the battlefield, look at the top four cards of your library, exile one face down, then put the rest on the bottom of your library.) When this card leaves the battlefield, put the exiled card into its owner\'s hand.',
+  },
+  {
+    Keyword: 'Horsemanship',
+    Description: 'Horsemanship is a keyword ability on creatures that serves as an evasion ability. Attacking creatures with horsemanship cannot be blocked by creatures without horsemanship.',
+    Example: 'Horsemanship (This creature can\'t be blocked except by creatures with horsemanship.)',
+  },
+  {
+    Keyword: 'Imprint',
+    Description: 'Some abilities associated with the imprint ability word are triggered, commonly by entering the battlefield; and some are activated abilities, but both exile cards from some zone. All cards with imprint are permanents, and all have a second ability that refers to the exiled card in some respect.',
+    Example: 'Imprint — When Phyrexian Ingester enters the battlefield, you may exile target nontoken creature. Phyrexian Ingester gets +X/+Y, where X is the exiled creature card\'s power and Y is its toughness.',
+  },
+  {
+    Keyword: 'Improvise',
+    Description: 'It allows a player to tap artifacts rather than pay some of the mana cost of a spell. Each artifact tapped after activating mana abilities pays for 1 energy.',
+    Example: 'Improvise (Your artifacts can help cast this spell. Each artifact you tap after you\'re done activating mana abilities pays for 1.)',
+  },
+  {
+    Keyword: 'Incubate',
+    Description: 'A keyword action that creates an Incubator token with a specified number of +1/+1 counters on it.',
+    Example: 'Target opponent reveals their hand. You may choose a creature or battle card from it. If you do, that player discards that card. If you don\'t, incubate 3. (Create an Incubator token with three +1/+1 counters on it and “Pay 2: Transform this artifact.” It transforms into a 0/0 Phyrexian artifact creature.)',
+  },
+  {
+    Keyword: 'Indestructible',
+    Description: 'Indestructible is an evergreen keyword ability. Indestructible permanents can\'t be destroyed by rules or effects. They can still be put into their owner\'s graveyard by other means.',
+    Example: 'Indestructible (Effects that say "destroy" don\'t destroy this artifact.)',
+  },
+  {
+    Keyword: 'Infect',
+    Description: 'A creature with infect deals damage to creatures in the form of -1/-1 counters and players in the form of poison counters. If a player has ten or more poison counters, they lose the game. In Two-Headed Giant, it\'s fifteen or more.',
+    Example: 'Infect (This creature deals damage to creatures in the form of -1/-1 counters and to players in the form of poison counters.)',
+  },
+  {
+    Keyword: 'Ingest',
+    Description: 'Ingest is a keyword ability that triggers when a creature with ingest deals combat damage to a player. That player exiles the top card of their library.',
+    Example: 'Ingest (Whenever this creature deals combat damage to a player, that player exiles the top card of their library.)',
+  },
+  {
+    Keyword: 'Inspired',
+    Description: 'Whenever an inspired creature becomes untapped, it does something. Inspired abilities trigger no matter how the creature becomes untapped: by the turn-based action at the beginning of the untap step or by a spell or ability.',
+    Example: 'Inspired — Whenever Pheres-Band Tromper becomes untapped, put a +1/+1 counter on it.',
+  },
+  {
+    Keyword: 'Intensity',
+    Description: 'Intensity is a card designation that starts at a certain value ("Starting Intensity") and will perpetually change based on the card\'s rules text.',
+    Example: '"Starting Intensity 1: Whenever Bellowsbreath Ogre attacks, it deals damage equal to its intensity to any target, then perpetually increase its intensity by 1."',
+  },
+  {
+    Keyword: 'Intimidate',
+    Description: 'A creature with intimidate can\'t be blocked except by artifact creatures and/or creatures that share a color with it.',
+    Example: 'Intimidate (This creature can\'t be blocked except by artifact creatures and/or creatures that share a color with it.)',
+  },
+  {
+    Keyword: 'Investigate',
+    Description: 'To investigate, you create a Clue token. Clues are colorless artifacts, which have the ability "Pay 2, Sacrifice this artifact: Draw a card."',
+    Example: 'Investigate. (Create a colorless Clue artifact token with "2, Sacrifice this artifact: Draw a card.")',
+  },
+  {
+    Keyword: 'Islandcycling',
+    Description: 'Islandcycling is a variant of the cycling ability. Unlike cycling (which allows you to draw a card), islandcycling allows you to search your library for an Island card. The card you find can be a basic Island or any land card with the Island land type.',
+    Example: 'Plainscycling 2, islandcycling 2 (2, Discard this card: Search your library for a Plains or Island card, reveal it, put it into your hand, then shuffle your library.)',
+  },
+  {
+    Keyword: 'Islandwalk',
+    Description: 'See Landwalk. This creature can\'t be blocked as long as defending player controls an Island.',
+    Example: 'Islandwalk (This creature can\'t be blocked as long as defending player controls an Island.)',
+  },
+  {
+    Keyword: 'Join forces',
+    Description: 'Join forces allows multiple players to pay mana to increase the effectiveness of the same card. All join forces cards included in the set have symmetric effects that benefit all players equally.',
+    Example: 'Join forces — Starting with you, each player may pay any amount of mana. Each player puts the top X cards of their library into their graveyard, where X is the total amount of mana paid this way.',
+  },
+  {
+    Keyword: 'Jump-start',
+    Description: 'Jump-start is a keyword ability on instants and sorceries that allows the player to cast a spell from their graveyard for the additional cost of discarding a card.',
+    Example: 'Jump-start (You may cast this card from your graveyard by discarding a card in addition to paying its other costs. Then exile this card.)',
+  },
+  {
+    Keyword: 'Kicker',
+    Description: 'Kicker is a keyword ability that allows the player to pay an optional cost when casting a spell to achieve an additional effect.',
+    Example: 'Multikicker 1 Red (You may pay an additional 1 Red any number of times as you cast this spell.) Skitter of Lizards enters the battlefield with a +1/+1 counter on it for each time it was kicked.',
+  },
+  {
+    Keyword: 'Kinfall',
+    Description: 'Kinfall is a mix-up of the Kinship and Landfall abilities. Whenever a creature enters the battlefield under your control, if it shares a creature type with the creature with Kinfall, a certain action may be performed.',
+    Example: 'Kinfall — Whenever a creature enters the battlefield under your control, if it shares a creature type with Plane-Merge Elf, creatures you control get +1/+1 until end of turn.',
+  },
+  {
+    Keyword: 'Kinship',
+    Description: 'Kinship is an ability word that indicates a group of similar triggered abilities that appear on Morningtide creatures. Each of them works the same way except for the bonus you might get.',
+    Example: 'Kinship — At the beginning of your upkeep, you may look at the top card of your library. If it shares a creature type with Wandering Graybeard, you may reveal it. If you do, you gain 4 life.',
+  },
+  {
+    Keyword: 'Landcycling',
+    Description: 'Unlike the normal cycling ability, basic landcycling doesn\'t allow you to draw a card. Instead, it lets you search your library for a basic land card. The card you find can be a basic Island or any land card with the Island land type.',
+    Example: 'Islandwalk (This creature can\'t be blocked as long as defending player controls an Island.)',
+  },
+  {
+    AbilityWord: 'Landfall',
+    Description: 'The landfall ability word rewards a player each time a land enters the battlefield under their control. Generally being a sorcery-speed action means most landfall abilities are geared toward proactive gameplay (usually attacking) and incentivize playing more lands, even in aggressive decks.',
+    Example: 'Landfall — Whenever a land enters the battlefield under your control, Plated Geopede gets +2/+2 until end of turn.',
+  },
+  
 ];
 
 // Seed the database
