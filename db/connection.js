@@ -14,6 +14,7 @@ db.on('error', (error) => {
 db.once('open', () => {
   console.log('Connected to MongoDB');
   // You can run your seeding script here, after the connection is established
+  require('./seeds/index');
 });
 
 module.exports = mongoose;

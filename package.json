@@ -1,7 +1,7 @@
 {
   "scripts": {
     "start": "node server.js",
-    "seed": "node db/seeds/seed.js"
+    "seed": "node db/seeds/magicWordsSeed.js && node db/seeds/userSeed.js"
   },
   "dependencies": {
     "@apollo/client": "^3.8.4",
