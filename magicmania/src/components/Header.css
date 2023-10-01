@@ -1,5 +1,12 @@
+/* custom height */
+.h-custom {
+    height: 80vh;
+}
+
 .whole-nav {
     background-image: linear-gradient(to bottom right, #814ae8, #80eaff);
+    position: sticky;
+    top: 0;
 }
 
 .navLink {
@@ -9,9 +16,9 @@
     border-radius: 6px;
 }
 
-.allNavLinks {
+/* .allNavLinks {
     width: 65%;
-}
+} */
 
 .logoPic {
     max-width: 130px;
@@ -34,7 +41,9 @@
 
 /* landing page css */
 .landingPageAll {
-    padding-top: 8rem;
+    padding-top: 6rem;
+    text-align: center;
+    background-color: white;
 }
 
 .mainTitle {
@@ -47,6 +56,7 @@
     text-align: center;
     justify-content: center;
     align-items: center;
+    padding-bottom: 22px;
 }
 
 .goBtn {
@@ -71,4 +81,10 @@
 
 .cardImg {
     height: 235px;
+    padding-left: 23px;
+}
+
+/* signup page styling */
+.wholeSignup {
+    margin-top: -100px !important;
 }

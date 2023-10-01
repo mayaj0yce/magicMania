@@ -1,26 +1,54 @@
 import React, { useState } from 'react';
+import '../Header.css'
+import { useQuery } from '@apollo/client';
+import { SEARCH_KEYWORD } from '../../graphql/queries'; // Import the query
+
+function capitalizeFirstLetter(input) {
+  // Function to capitalize the first letter of a string
+  return input.charAt(0).toUpperCase() + input.slice(1);
+}
 
 function KeywordSearch() {
   // State to store the keyword entered by the user
-  const [keyword, setKeyword] = useState('');
-
+  const [keyword, setKeyword] = useState("");
   const [showConfirmMessage, setshowConfirmMessage] = useState(false);
-  
+  const [keywordData, setKeywordData] = useState(null);
+
+  // State to track if the search is in progress
+  const [searchInProgress, setSearchInProgress] = useState(false);
+
   // Function to handle keyword input changes
   const handleKeywordChange = (e) => {
     setKeyword(e.target.value);
   };
-  
+
+  // GraphQL query to search for a keyword
+  const { loading, error, data } = useQuery(SEARCH_KEYWORD, {
+    variables: { keyword: capitalizeFirstLetter(keyword) }, // Capitalize the keyword
+    skip: !searchInProgress, // Skip the query if searchInProgress is false
+    onCompleted: (data) => {
+      // Update the keywordData state when the query completes
+      setKeywordData(data.searchKeyword);
+      // Reset searchInProgress to false after the query completes
+      setSearchInProgress(false);
+    },
+  });
+
   // Function to handle keyword search
   const handleKeywordSearch = (e) => {
     e.preventDefault();
-    // Add logic for fetching keyword data here
-    console.log(`Searching for cards with keyword: ${keyword}`);
-    setshowConfirmMessage(true);
+    if (!loading) {
+      setshowConfirmMessage(true); // Set showConfirmMessage to true on search
+      setSearchInProgress(true); // Set searchInProgress to true when search starts
+    }
   };
 
+  console.log('Current Keyword:', keyword);
+  console.log('Show Confirm Message:', showConfirmMessage);
+  console.log('GraphQL Data:', keywordData);
+
   return (
-    <div>
+    <div className='w-screen h-custom'>
       {/* Header */}
 
       {/* Search Form */}
@@ -34,14 +62,22 @@ function KeywordSearch() {
               value={keyword}
               onChange={handleKeywordChange}
             />
-            <button type="submit">Search</button>
+            <button type="submit" disabled={searchInProgress}>
+              {searchInProgress ? 'Searching...' : 'Search'}
+            </button>
           </div>
-       </form>
-      
+        </form>
 
         {/* Display Search Results */}
-        {/* Implement code to display search results here and delete following line */}
-        {showConfirmMessage && <p>Showing results for {keyword}</p>}
+        {loading && <p>Loading...</p>}
+        {error && <p>Error: {error.message}</p>}
+        {showConfirmMessage && keywordData && (
+          <div>
+            <h3>Keyword: {keywordData.Keyword}</h3>
+            <p>Description: {keywordData.Description}</p>
+            {keywordData.Example && <p>Example: {keywordData.Example}</p>}
+          </div>
+        )}
       </main>
     </div>
   );
