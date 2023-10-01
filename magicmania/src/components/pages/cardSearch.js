@@ -57,22 +57,25 @@ function CardSearch() {
                     {isLoading ? 'Searching...' : 'Search'}
                 </button>
             </div>
-            <div className="mt-4">
+            <div className="mt-4 items-center card-card flex justify-center">
                 {searchResults.length > 0 ? (
                 <ul>
                     {searchResults.map((card, index) => (
-                    <li key={index}>
-                        <strong>Name:</strong> {card.name}
-                        <br />
-                        <strong>Text:</strong> {card.text}
-                        <br />
-                        <strong>Rarity:</strong> {card.rarity}
-                        <br />
-                        <strong>Type:</strong> {card.type}
-                        <br />
+                   <li key={index} className='flex flex-col lg:flex-row items-center shadow-lg rounded-2xl p-4'>
                         {card.imageUrl && (
-                            <img src={card.imageUrl} alt={card.name} />
+                            <div className='lg:mr-4 card-img'>
+                                <img src={card.imageUrl} alt={card.name} />
+                            </div>
                         )}
+                        <div className='card-text '>
+                            <strong>Name:</strong><div className='ind-text'>{card.name}</div>
+                            <br />
+                            <strong>Text:</strong><div className='ind-text'>{card.text}</div>
+                            <br />
+                            <strong>Rarity:</strong><div className='ind-text'>{card.rarity}</div>
+                            <br />
+                            <strong>Type:</strong><div className='ind-text'>{card.type}</div>
+                        </div>
                         <hr />
                     </li>
                     ))}
