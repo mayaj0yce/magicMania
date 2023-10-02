@@ -17,7 +17,7 @@ function App() {
   return (
     <ApolloProvider client={client}> {/* Wrap App with ApolloProvider */}
       <Router>
-        <div className="App">
+        <div className="App whole-screen">
           <Header />
           <Routes>
             <Route exact path="/" element={<LandingPage />} />
