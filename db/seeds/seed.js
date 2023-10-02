@@ -15,11 +15,12 @@ const initialData = [
     Keyword: 'Abandon',
     Description:
       'Only used in Archenemy format. To turn a face-up ongoing scheme card face down and put it on the bottom of its owner\'s scheme deck.',
+    Example: 'No example available at this time.',
   },
   {
     Keyword: 'Absorb',
     Description:
-      'Absorb was introduced in Future Sight. By its nature as a damage prevention ability, this is a white ability. It has only been printed on one card so far, the timeshifted Lymph Sliver. It ended up being a little too powerful and stalled the game too much to reuse in greater number.',
+      'A keyword ability that prevents damage.',
     Example: 'If a source would deal damage to a Sliver, prevent 1 of that damage.',
   },
   {
@@ -31,22 +32,22 @@ const initialData = [
   {
     Keyword: 'Adapt',
     Description:
-      'Adapt is a tweaked version of Monstrosity. It is written as Adapt N, where N is any natural number. If a creature has no +1/+1 counters on it, you may pay the adapt cost to put N +1/+1 counters on that creature. In contrast to Monstrosity, if a creature somehow loses its +1/+1 counters, it can adapt again and pick up more. Alternatively, one can play counters in response to the activation to stop the creature from getting N counters.',
+      'A keyword action that puts +1/+1 counters on a creature that doesn\' have any yet.',
     Example: 'Tap 3 Forest: Adapt 1 (If this creature has no +1/+1 counters on it, put a +1/+1 counter on it.)',
   },
   {
     Keyword: 'Addendum',
-    Description: 'Spells with Addendum have additional or alternative effects if you cast the spell during your main phase. Addendum is found mostly on instants. The exception is Sentinel\'s Mark, which is an enchantment with flash. Addendum designs were made in two forms: instants with main phase upside, and functional sorceries with weaker instant versions.',
-    Example: 'Addendum - If you cast this spell during your main phase, you gain 2 life.',
+    Description: 'Spells with Addendum have additional or alternative effects if you cast the spell during your main phase.',
+    Example: 'If you cast this spell during your main phase, you may exile target creature with power 3 or greater until this spell leaves the battlefield.',
   },
   {
     Keyword: 'Affinity',
-    Description: 'Affinity is a keyword ability that reduces the mana cost of a spell by the number of permanents of a certain type that the player controls. It first appeared in the Mirrodin block. The ability is always written as "Affinity for [something]." The most common instance is "Affinity for artifacts" (This spell costs less to cast for each artifact you control.)',
+    Description: 'Affinity is a keyword ability that reduces the mana cost of a spell by the number of permanents of a certain type that the player controls.',
     Example: 'Affinity for artifacts (This spell costs less to cast for each artifact you control.)',
   },
   {
     Keyword: 'Afflict',
-    Description: 'Whenever a creature with this ability becomes blocked, defending player loses life equal to the Afflict value. If a creature has multiple instances of afflict, each triggers separately. Called "unstoppable" in design, the mechanic was created to convey the destructive and vicious power of the God-Pharaoh\'s legions, the Eternals.',
+    Description: 'Whenever a creature with this ability becomes blocked, defending player loses life equal to the Afflict value. If a creature has multiple instances of afflict, each triggers separately.',
     Example: 'Afflict 1 (Whenever this creature becomes blocked, defending player loses 1 life.)',
   },
   {
@@ -56,7 +57,7 @@ const initialData = [
   },
   {
     Keyword: 'Aftermath',
-    Description: 'Aftermath is an ability found on some split cards. It lets players cast one half of a split card only from their graveyard. It represents three static abilities. “Aftermath” means “You may cast this half of this split card from your graveyard,” “This half of this split card cannot be cast from any zone other than a graveyard,” and “If this spell was cast from a graveyard, exile it instead of putting it anywhere else any time it would leave the stack.”',
+    Description: 'A keyword ability that lets a player cast one half of a split card only from their graveyard.',
     Example: 'Aftermath (Cast this spell only from your graveyard. Then exile it.)',
   },
   {
@@ -86,7 +87,7 @@ const initialData = [
   },
   {
     Keyword: 'Assemble',
-    Description: 'Assemble was introduced as a joke in Future Sight and related to Contraptions. It was greatly expanded upon in Unstable. There is no functional difference between players assembling a contraption, and creatures assembling a contraption. If a card instructs you or a creature you control to assemble a Contraption, but your Contraption deck is empty, then nothing happens. However, Steamflogger Boss only cares about Contraptions assembled by creatures.',
+    Description: 'Assemble is a keyword action in the Unstable set that puts Contraptions onto the battlefield.',
     Example: 'When Steamflogger of the Month enters the battlefield, it assembles a Contraption for each Contraption you control. (To assemble a Contraption, put the top card of your Contraption deck face up onto one of your sprockets.)',
   },
   {
@@ -839,7 +840,671 @@ const initialData = [
     Description: 'The landfall ability word rewards a player each time a land enters the battlefield under their control. Generally being a sorcery-speed action means most landfall abilities are geared toward proactive gameplay (usually attacking) and incentivize playing more lands, even in aggressive decks.',
     Example: 'Landfall — Whenever a land enters the battlefield under your control, Plated Geopede gets +2/+2 until end of turn.',
   },
-  
+  {
+    Keyword: 'Landship',
+    Description: 'Landship is a mix-up of the Landfall and Kinship abilities. At the beginning of your upkeep, you may look at the top card of your library. If it\'s a land, you may reveal it. If you do, you can perform a certain action.',
+    Example: 'Landship — At the beginning of your upkeep, you may look at the top card of your library. If it\'s a land, you may reveal it. If you do, create a 1/1 green Elf Warrior creature token.',
+  },
+  {
+    Keyword: 'Landwalk',
+    Description: 'Landwalk is a generic term that appears within an object\'s rules text as “[type]walk,” where [type] is usually a land type, but it can also be the card type land plus any combination of land types, card types, and/or supertypes. A creature with landwalk can\'t be blocked as long as the defending player controls at least one land with the specified land type, type, or supertype.',
+    Example: 'Islandwalk (This creature can\'t be blocked as long as defending player controls an Island.)',
+  },
+  {
+    Keyword: 'Learn',
+    Description: 'If spell or ability instructs you to learn, you may do nothing or do one of the two following choices. Your first choice is that you can discard a card and then draw a card. Your second choice is to reveal a Lesson card from outside the game and put it into your hand.',
+    Example: 'Learn. (You may reveal a Lesson card you own from outside the game and put it into your hand, or discard a card to draw a card.)',
+  },
+  {
+    Keyword: 'Legacy',
+    Description: 'Legacy is an eternal format alongside Vintage. Since Vintage demands hard-to-acquire cards (e.g.: Black Lotus), Legacy became the most popular of the two for being less restrictive for new players to join.',
+    Example: 'No example available at this time.',
+  },
+  {
+    Keyword: 'Legendary landwalk',
+    Description: 'See Landwalk.',
+    Example: 'No example available at this time.',
+  },
+  {
+    Keyword: 'Level Up',
+    Description: 'The ability can only be activated anytime the player could cast a sorcery. When the ability resolves, a level counter is put on the creature, and its level is considered to be the number of level counters on the card.',
+    Example: 'Level up 2 G (2G: Put a level counter on this. Level up only as a sorcery.) LEVEL 1-3: 4/4, LEVEL 4+: 6/6, Trample',
+  },
+  {
+    Keyword: 'Lieutenant',
+    Description: 'Sometimes, highly competitive Commander players choose their commanders mostly for color identity, without the intent of building their decks around them. A creature with lieutenant gets (or grants) a bonus as long as you control your commander. Lieutenant is meant as a reward for players who intend to cast their commanders and try to keep them on the battlefield.',
+    Example: 'Lieutenant — As long as you control your commander, Angelic Field Marshal gets +2/+2 and creatures you control have vigilance.',
+  },
+  {
+    Keyword: 'Lifelink',
+    Description: 'Damage dealt by a source with lifelink causes that source\'s controller, or its owner if it has no controller, to gain that much life (in addition to any other results that damage causes).',
+    Example: 'Lifelink (Damage dealt by this creature also causes you to gain that much life.)',
+  },
+  {
+    Keyword: 'Living metal',
+    Description: 'Living Metal makes all Transformers in vehicle mode also count as a creature and does not require it to be crewed.',
+    Example: 'Living Metal (As long as it\'s your turn, this Vehicle is also a creature).',
+  },
+  {
+    Keyword: 'Living weapon',
+    Description: 'When a card with Living weapon enters the battlefield, it creates a 0/0 black Phyrexian Germ creature token and attaches itself to it. Thus Living weapons are themselves creatures until they die or their controller chooses to upgrade a different creature, with the detaching of the equipment and killing the Germ, as it is now a 0/0 creature. Due to state-based effects it is put into the graveyard and ceases to exist.',
+    Example: 'Living weapon (When this Equipment enters the battlefield, put a 0/0 black Phyrexian Germ creature token onto the battlefield, then attach this to it.)',
+  },
+  {
+    Keyword: 'Madness',
+    Description: 'Madness is a keyword ability on spells that allows a player to cast that spell for an alternate cost if the card is discarded.',
+    Example: 'Madness 1 Swamp (If you discard this card, you may cast it for its madness cost instead of putting it into your graveyard.)',
+  },
+  {
+    Keyword: 'Magecraft',
+    Description: 'Each magecraft ability has a different effect, although they all have the same trigger condition, whenever you cast or copy an instant or sorcery spell.',
+    Example: 'Magecraft — Whenever you cast or copy an instant or sorcery spell, each opponent loses 2 life and you gain 2 life.',
+  },
+  {
+    Keyword: 'Manifest',
+    Description: 'To manifest a card, turn it face down. It becomes a 2/2 face-down creature card with no text, no name, no subtypes, and no mana cost. Put that card onto the battlefield face down. That permanent is a manifested permanent as long as it remains face down. The effect defining its characteristics works while the card is face down and ends when it\'s turned face up.',
+    Example: 'Manifest the top card of your library. (Put it on the battlefield face down as a 2/2 creature. Turn it face up any time for its mana cost if it\'s a creature card.)',
+  },
+  {
+    Keyword: 'Megamorph',
+    Description: 'Megamorph creatures are basically morph creatures with one extra bonus. Turning them face-up by paying their megamorph cost puts a +1/+1 counter on the creature. Often the cards have an additional beneficial effect that is only activated when the megamorph cost has been paid.',
+    Example: 'Megamorph Tap 7 Plains (You may cast this card face down as a 2/2 creature for 3. Turn it face up at any time for its megamorph cost and put a +1/+1 counter on it.) When Shieldhide Dragon is turned face up, put a +1/+1 counter on each other Dragon creature you control.',
+  },
+  {
+    Keyword: 'Meld',
+    Description: 'A melded card is a single permanent represented by two cards. If it is one creature, it behaves as any other creature does. It can attack and block, has abilities, can be enchanted or equipped, or have counters put on it. A single spell that says "Destroy target creature" will destroy the whole permanent.',
+    Example: 'Tap 7: If you both own and control Urza, Lord Protector and an artifact named The Mightstone and Weakstone, exile them, then meld them into Urza, Planeswalker, Activate only as a sorcery.',
+  },
+  {
+    Keyword: 'Melee',
+    Description: 'Melee is a triggered keyword ability that makes creatures bigger if they attack.',
+    Example: 'Melee (Whenever this creature attacks, it gets +1/+1 until end of turn for each opponent you attacked with a creature this combat.)',
+  },
+  {
+    Keyword: 'Menace',
+    Description: 'Menace is an evergreen keyword ability. Creatures with menace can\'t be blocked except by two or more creatures.',
+    Example: 'Menace (This creature can\'t be blocked except by two or more creatures.)',
+  },
+  {
+    Keyword: 'Mentor',
+    Description: 'Mentor can only be found on creatures. When a creature with Mentor attacks, you may place a +1/+1 counter on an attacking creature with lesser power.',
+    Example: 'Mentor (Whenever this creature attacks, put a +1/+1 counter on target attacking creature with lesser power.)',
+  },
+  {
+    Keyword: 'Metalcraft',
+    Description: 'Metalcraft gives a bonus to a permanent or a spell if its controller also controls three or more artifacts.',
+    Example: 'Metalcraft — As long as you control three or more artifacts, Auriok Sunchaser gets +2/+2 and has flying.',
+  },
+  {
+    Keyword: 'Mill',
+    Description: 'Mill is a keyword action used in Magic to describe the action of a player taking cards from the top of their library and putting them into their graveyard. Milling is a strategy some decks use which takes advantage of the decking rule.',
+    Example: 'Target creature gets -3/-3 until end of turn. Target player mills three cards. You gain 3 life.',
+  },
+  {
+    Keyword: 'Miracle',
+    Description: 'Miracle provides an alternative cost for a card which can be used while drawing it if it is the first card drawn during a turn. The timing of casting it is similar to the timing of casting cards with Madness. If a player intends to cast a card for its miracle cost, the card must be revealed immediately.',
+    Example: 'Miracle Tap 1 Plains (You may cast this card for its Miracle cost when you draw it if it\'s the first card you drew this turn.)',
+  },
+  {
+    Keyword: 'Modular',
+    Description: 'Modular is a keyword ability that causes a permanent to enter the battlefield with a number of +1/+1 counters. When that permanent dies, its controller may put a +1/+1 counter onto an artifact creature for each +1/+1 counter the permanent had on it when it died.',
+    Example: 'Modular 3 (This enters the battlefield with three +1/+1 counters on it. When it dies, you may put its +1/+1 counters on target artifact creature.)',
+  },
+  {
+    Keyword: 'Monstrosity',
+    Description: 'Monstrosity is an activated ability you can activate any time you can pay for it. When it resolves, it checks whether the creature is already monstrous. If it\'s not, the ability puts a number of +1/+1 counters on the creature and causes the creature to become monstrous.',
+    Example: 'Tap 8 Mountain: Monstrosity 3 (If this creature isn\'t monstrous, put 3 +1/+1 counters on it and it becomes monstrous.) When Stoneshock Giant becomes monstrous, creatures without flying your opponents control can\'t block this turn.',
+  },
+  {
+    Keyword: 'Morbid',
+    Description: 'Morbid is an ability word introduced in Innistrad. It signals that a spell or ability has different effects, additional effects, or may only be used if a creature has died earlier in the same turn.',
+    Example: 'Morbid — When Hollowhenge Scavenger enters the battlefield, if a creature died this turn, you gain 5 life.',
+  },
+  {
+    Keyword: 'More Than Meets the Eye',
+    Description: 'More Than Meets the Eye is a way to combine modal double-faced cards with transforming double-faced cards. It is an alternative cost that lets the caster cast the converted side. A keyword was needed because the rules couldn\'t handle both.',
+    Example: 'More Than Meets the Eye Tap 2 Black (You may cast this card converted for 2 Black)',
+  },
+  {
+    Keyword: 'Morph',
+    Description: 'Morph is a keyword ability on permanents that allows the player to pay 3 to cast a card with the ability face down as a 2/2 colorless, typeless creature. The player can then turn that creature face-up at any time they could cast an instant by paying a variable Morph cost printed on each card.',
+    Example: 'Morph 1 Island (You may cast this face down as a 2/2 creature for 3. Turn it face up any time for its morph cost.)',
+  },
+  {
+    Keyword: 'Mountaincycling',
+    Description: 'Mountaincycling is a variant of the cycling ability. Unlike cycling (which allows you to draw a card), mountaincycling allows you to search your library for a Mountain card. The card you find can be a basic Mountain or any land card with the Mountain land type.',
+    Example: 'No example available at this time.',
+  },
+  {
+    Keyword: 'Mountainwalk',
+    Description: 'This creature can\'t be blocked as long as defending player controls a Mountain.',
+    Example: 'See Landwalk',
+  },
+  {
+    Keyword: 'Multikicker',
+    Description: 'Multikicker is a variant of the kicker keyword ability. It represents an optional additional cost that may be paid any number of times.',
+    Example: 'Multikicker 1 Mountain (You may pay an additional 1 Mountain any number of times as you cast this spell.) Skitter of Lizards enters the battlefield with a +1/+1 counter on it for each time it was kicked.',
+  },
+  {
+    Keyword: 'Mutate',
+    Description: 'Mutate is a keyword ability that is featured in Ikoria: Lair of Behemoths. It allows two or more permanents to merge.',
+    Example: 'Mutate 2 Plains (If you cast this spell for its mutate cost, put it over or under target non-Human creature you own. They mutate into the creature on top plus all abilities under it.). Whenever this creature mutates, other creatures you control get +X/+X until end of turn, where X is the number of times the creature has mutated.',
+  },
+  {
+    Keyword: 'Myriad',
+    Description: 'Whenever a creature with myriad attacks, its controller may create token copies of that creature for each other opponent, which are exiled at the end of combat. Those tokens may also attack planeswalkers controlled by the corresponding player.',
+    Example: 'Myriad (Whenever this creature attacks, for each opponent other than defending player, you may put a token that\'s a copy of this creature onto the battlefield tapped and attacking that player or a planeswalker they control. Exile the tokens at the end of combat.)',
+  },
+  {
+    Keyword: 'Nightbound',
+    Description: 'An ability found on the back faces of some double-faced cards. Cards with daybound and nightbound are face up when it\'s day and face down when it\'s night. Any time a player controls a permanent that is back face up with nightbound and it\'s day, that player transforms that permanent. This happens immediately and isn\'t a state-based action. Any time a player controls a permanent with nightbound, if it\'s neither day nor night and there are no permanents with daybound on the battlefield, it becomes night.',
+    Example: 'Nightbound (If a player cast at least two spells during their own turn, it becomes day next turn.)',
+  },
+  {
+    Keyword: 'Ninjutsu',
+    Description: 'Ninjutsu is an activated ability that functions only while the card with ninjutsu is in a player\'s hand.',
+    Example: 'Ninjutsu Tap 2 Water (2 Water, Return an unblocked attacker you control to hand: Put this card onto the battlefield from your hand tapped and attacking.)',
+  },
+  {
+    Keyword: 'Nonbasic landwalk',
+    Description: 'See Landwalk.',
+    Example: 'No example available at this time.',
+  },
+  {
+    Keyword: 'Offering',
+    Description: 'Offering is a keyword ability that allows a player to sacrifice an appropriate permanent to cast a card with Offering as though it had flash and at reduced mana cost.',
+    Example: 'Rat offering (You may cast this card any time you could cast an instant by sacrificing a Rat and paying the difference in mana costs between this and the sacrificed Rat. Mana cost includes color.)',
+  },
+  {
+    Keyword: 'Open an Attraction',
+    Description: 'Attractions are artifacts, but they don\'t have a mana cost. They aren\'t cast, and never even go to your hand. To get them from your Attraction deck to the battlefield, you\'ll need to open "open an attraction". When told to open an Attraction, put the top card of your Attraction deck onto the battlefield face up under your control.',
+    Example: 'When Complaints Clerk enters the battlefield, open an Attraction. (Put the top card of your Attraction deck onto the battlefield.)',
+  },
+  {
+    Keyword: 'Outlast',
+    Description: 'Outlast grants a +1/+1 counter on the creature for a small cost: two mana for commons, and one mana for uncommons.',
+    Example: 'Outlast Tap 2 Plains (2 Plains, Tap: Put a +1/+1 counter on this creature. Outlast only as a sorcery.)',
+  },
+  {
+    Keyword: 'Overload',
+    Description: 'Overload provides an alternate, usually more expensive, mana cost for a card which can be used when casting it, and upon doing it increases the effect of the card to each potential target.',
+    Example: 'Overload X (You may cast this spell for its overload cost. If you do, change its text by replacing all instances of "target" with "each".)',
+  },
+  {
+    Keyword: 'Pack tactics',
+    Description: 'Pack tactics is an ability word that gives an advantage if you attack with creatures with a total power 6 or greater.',
+    Example: 'Pack tactics — Whenever Minion of the Mighty attacks, if you attacked with creatures with total power 6 or greater this combat, you may put a Dragon creature card from your hand onto the battlefield tapped and attacking.',
+  },
+  {
+    Keyword: 'Parley',
+    Description: 'Parley abilities instruct each player to reveal the top card of their library. Then, an additional effect happens based on the number of nonland cards revealed this way. Finally, each player draws a card (the one that was just revealed).',
+    Example: 'Parley — Each player reveals the top card of their library. For each nonland card revealed this way, you create a 1/1 white Spirit creature token. Then each player draws a card.',
+  },
+  {
+    Keyword: 'Partner',
+    Description: 'A player can have two commanders if both have partner. Because both commanders start the game in the command zone, the remaining library is only 98 cards. Your two commanders are treated individually for all other Commander rules.',
+    Example: 'Partner (You can have two commanders if both have partner.)',
+  },
+  {
+    Keyword: 'Partner with',
+    Description: 'A keyword ability that lets two legendary creatures or planeswalkers be your commander in the Commander variant rather than one. “Partner with [name]” is a specialized version of the ability that works even outside of the Commander variant to help two cards reach the battlefield together.',
+    Example: 'Partner with Lore Weaver (When this creature enters the battlefield, target player may put Lore Weaver into their hand from their library, then shuffle.)',
+  },
+  {
+    Keyword: 'Persist',
+    Description: 'A keyword ability that can return a creature from the graveyard to the battlefield.',
+    Example: 'Persist (When this creature dies, if it had no -1/-1 counters on it, return it to the battlefield under its owner\'s control with a -1/-1 counter on it.)',
+  },
+  {
+    Keyword: 'Phasing',
+    Description: 'Phasing is a mechanic where permanents may phase out, causing them to be treated as if they don\'t exist until they automatically phase back in on their next untap step. This can be a protective action, or a means to temporarily disable an opponent\'s permanents.',
+    Example: 'Until your next turn, your life total can\'t change and you gain protection from everything. All permanents you control phase out. (While they\'re phased out, they\'re treated as though they don\'t exist. They phase in before you untap during your untap step.)',
+  },
+  {
+    Keyword: 'Plainscycling',
+    Description: 'Plainscycling is a variant of the cycling ability. Unlike cycling (which allows you to draw a card), plainscycling allows you to search your library for a Plains card. The card you find can be a basic Plains or any land card with the Plains land type.',
+    Example: 'See Landcycling',
+  },
+  {
+    Keyword: 'Plainswalk',
+    Description: 'This creature can\'t be blocked as long as defending player controls a Plains.',
+    Example: 'See Landwalk',
+  },
+  {
+    Keyword: 'Planeswalk',
+    Description: 'This creature can\'t be blocked as long as defending player controls a Planes.',
+    Example: 'See Landwalk',
+  },
+  {
+    Keyword: 'Play',
+    Description: 'Play is a keyword action which usually describes putting a land onto the battlefield from the hand. The equivalent for spells is "casting" them, although casting is much more complex than playing a land.',
+    Example: 'No example available at this time.',
+  },
+  {
+    Keyword: 'Poisonous',
+    Description: 'Poisonous is a keyword ability that allows the use of multiple poison counters.',
+    Example: 'Enchanted creature has poisonous 3. (Whenever it deals combat damage to a player, that player gets three poison counters. A player with ten or more poison counters loses the game.)',
+  },
+  {
+    Keyword: 'Populate',
+    Description: 'A keyword action that creates a copy of a creature token you control.',
+    Example: 'Put a 1/1 white Bird creature token with flying onto the battlefield, then populate. (Put a token onto the battlefield that\'s a copy of a creature token you control.)',
+  },
+  {
+    Keyword: 'Proliferate',
+    Description: 'When a player proliferates, they choose any number of players and/or permanents with counters on them, then put another of each kind of counter already there on these players or permanents.',
+    Example: 'Counter target spell, then proliferate. (Choose any number of permanents and/or players, then give each another counter of each kind already there.)',
+  },
+  {
+    Keyword: 'Protection',
+    Description: 'This ability represents a magical resistance to certain types of magic, often a specific color.',
+    Example: 'Protection from black (This creature can\'t be blocked, targeted, dealt damage, or enchanted by anything black.)',
+  },
+  {
+    Keyword: 'Prototype',
+    Description: 'Prototype is a keyword ability introduced in The Brothers\' War which allows an alternate version of a card to be cast for less than its normal mana cost. It is unique to artifacts and artifact creatures.',
+    Example: 'Prototype (You may cast this spell with different mana cost, color, and size. It keeps its abilities and types.) 3/3',
+  },
+  {
+    Keyword: 'Provoke',
+    Description: 'Provoke is a keyword ability on creatures that allows a player to, during their declare attackers step, untap a creature the defending player controls and require that creature to block the attacking creature with provoke. The block must still be legal, e.g. a non-flying creature cannot block a flying creature even when Provoke is used on it.',
+    Example: 'Provoke (Whenever this creature attacks, you may have target creature defending player controls untap and block it if able.)',
+  },
+  {
+    Keyword: 'Prowess',
+    Description: 'Creatures with prowess get +1/+1 until end of turn whenever a noncreature spell is cast by their controller.',
+    Example: 'Prowess (Whenever you cast a noncreature spell, this creature gets +1/+1 until end of turn.)',
+  },
+  {
+    Keyword: 'Prowl',
+    Description: 'Prowl is an alternative cost that appears on some Rogue creature or tribal cards. You may cast a card for its prowl cost if you dealt combat damage to a player the current turn with a creature that shared a creature type with the card with Prowl.',
+    Example: 'Prowl Tap 1 Black (You may cast this for its prowl cost if you dealt combat damage to a player this turn with a Rogue.)',
+  },
+  {
+    Keyword: 'Radiance',
+    Description: 'Radiance is an ability word associated with the Boros Legion of Ravnica. Radiance — Target creature and each other creature that shares a color with it get +1/+1 until end of turn.',
+    Example: 'Radiance — Target creature and each other creature that shares a color with it get +1/+1 until end of turn.',
+  },
+  {
+    Keyword: 'Raid',
+    Description: 'Raid is an ability word introduced in Khans of Tarkir, wherein it is the Mardu Horde clan mechanic. It gives an advantageous effect if a player has attacked with a creature the same turn.',
+    Example: 'Raid — When Mardu Heart-Piercer enters the battlefield, if you attacked this turn, Mardu Heart-Piercer deals 2 damage to target creature or player.',
+  },
+  {
+    Keyword: 'Rally',
+    Description: 'Every time an Ally enters the battlefield under your control, all your rally abilities will trigger. You can put those abilities onto the stack in any order. If an Ally with a rally ability enters the battlefield under your control at the same time as other Allies, that ability will trigger once for each of those Allies and once for the creature with the ability itself.',
+    Example: 'Rally — Whenever Chasm Guide or another Ally enters the battlefield under your control, creatures you control gain haste until end of turn.',
+  },
+  {
+    Keyword: 'Rampage',
+    Description: 'Rampage is a keyword ability that gives an attacking creature a bonus to its power and toughness when it is blocked by more than one creature.',
+    Example: 'Rampage 2 (Whenever this creature becomes blocked, it gets +2/+2 until end of turn for each creature blocking it beyond the first.)',
+  },
+  {
+    Keyword: 'Ravenous',
+    Description: 'A keyword ability found on some creature cards with X in their mana cost.',
+    Example: 'Ravenous (This creature enters the battlefield with X +1/+1 counters on it. If X is 5 or more, draw a card when it enters.)',
+  },
+  {
+    Keyword: 'Reach',
+    Description: 'A keyword ability that allows a creature to block an attacking creature with flying.',
+    Example: 'Reach (This creature can block creatures with flying.)',
+  },
+  {
+    Keyword: 'Read Ahead',
+    Description: 'A keyword ability found on some Sagas that allows their controller to choose which chapter it starts on.',
+    Example: 'Read ahead (Choose a chapter and start with that many lore counters. Add one after your draw step. Skipped chapters don\'t trigger. Sacrifice after III.)',
+  },
+  {
+    Keyword: 'Rebound',
+    Description: 'A keyword ability that allows an instant or sorcery spell to be cast a second time.',
+    Example: 'Rebound (If you cast this spell from your hand, exile it as it resolves. At the beginning of your next upkeep, you may cast this card from exile without paying its mana cost.)',
+  },
+  {
+    Keyword: 'Reconfigure',
+    Description: 'A keyword ability that allows an Equipment creature to temporarily stop being a creature and become attached to another creature.',
+    Example: 'No example available at this time.',
+  },
+  {
+    Keyword: 'Recover',
+    Description: 'A keyword ability that lets a player return a card from their graveyard to their hand.',
+    Example: 'Recover 2 Black (When a creature is put into your graveyard from the battlefield, you may pay 2 Black. If you do, return this card from your graveyard to your hand. Otherwise, exile this card.)',
+  },
+  {
+    Keyword: 'Regenerate',
+    Description: 'To replace a permanent\'s destruction with an alternate sequence of events.',
+    Example: 'Regenerate Cudgel Troll. (The next time this creature would be destroyed this turn, it isn\'t. Instead tap it, remove all damage from it, and remove it from combat.)',
+  },
+  {
+    Keyword: 'Reinforce',
+    Description: 'Reinforce is an activated keyword ability that functions only while the card with reinforce is in a player\'s hand.',
+    Example: 'Reinforce 1 — (Discard this card: Put a +1/+1 counter on target creature.)',
+  },
+  {
+    Keyword: 'Renown',
+    Description: 'A keyword ability that makes a creature stronger after it deals combat damage to a player.',
+    Example: 'Renown 1 (Whenever this creature deals combat damage to a player, if this creature is not renowned, put a +1/+1 counter on it and it becomes renowned.) When Relic Seeker becomes renowned, you may search your library for an Equipment card, reveal it, put it into your hand, then shuffle your library.',
+  },
+  {
+    Keyword: 'Replicate',
+    Description: 'A keyword ability that creates copies of a spell.',
+    Example: 'Replicate Mountain (When you cast this spell, copy it for each time you paid its replicate cost. You may choose new targets for the copies.)',
+  },
+  {
+    Keyword: 'Retrace',
+    Description: 'A keyword ability that lets a player cast a card from their graveyard.',
+    Example: 'Retrace (You may cast this card from your graveyard by discarding a land card in addition to paying its other costs.)',
+  },
+  {
+    Keyword: 'Reveal',
+    Description: 'To show a card to all players for a brief time.',
+    Example: 'No example available at this time.',
+  },
+  {
+    Keyword: 'Revolt',
+    Description: 'Revolt is very similar to Morbid, which checks if a creature died earlier in this turn.',
+    Example: 'Revolt — When Silkweaver Elite enters the battlefield, if a permanent you control left the battlefield this turn, draw a card.',
+  },
+  {
+    Keyword: 'Riot',
+    Description: 'A keyword ability that lets a player choose whether certain creatures enter the battlefield with haste or with a +1/+1 counter.',
+    Example: 'Riot (This creature enters the battlefield with your choice of a +1/+1 counter or haste.)',
+  },
+  {
+    Keyword: 'Ripple',
+    Description: 'A keyword ability that may let a player cast extra cards from their library for no cost.',
+    Example: 'Ripple 4 (When you cast this spell, you may reveal the top four cards of your library. You may cast any revealed cards with the same name as this spell without paying their mana costs. Put the rest on the bottom of your library.)',
+  },
+  {
+    Keyword: 'Roll to Visit Your Attractions',
+    Description: 'Roll to Visit Your Attractions is primarily a background game mechanic that links the open an attraction and visit mechanics together with the Attraction card.',
+    Example: 'To roll to visit your Attractions, roll a six-sided die. Then if you control one or more Attractions with a number lit up that is equal to that result, each of those Attractions has been “visited” and its visit ability triggers.',
+  },
+  {
+    Keyword: 'Sacrifice',
+    Description: 'To move a permanent you control to its owner\'s graveyard.',
+    Example: 'Target opponent sacrifices a creature.',
+  },
+  {
+    Keyword: 'Scavenge',
+    Description: 'A keyword ability that allows you to exile a creature card from your graveyard to put +1/+1 counters on a creature.',
+    Example: 'Scavenge 3 Swamp (Exile this card from your graveyard: Put a number of +1/+1 counters equal to this card\'s power on target creature. Scavenge only as a sorcery.)',
+  },
+  {
+    Keyword: 'Scry',
+    Description: 'To manipulate some of the cards on top of your library.',
+    Example: 'Scry 2. (Look at the top two cards of your library, then put any number of them on the bottom of your library and the rest on top in any order.)',
+  },
+  {
+    Keyword: 'Secret council',
+    Description: 'To secretly vote, each player writes down their chosen option without showing it to anyone else. Each player then keeps their vote secret until all players simultaneously reveal their votes.',
+    Example: 'Secret council — When Elrond of the White Council enters the battlefield, each player secretly votes for fellowship or aid, then those votes are revealed. For each fellowship vote, the voter chooses a creature they control. You gain control of each creature chosen this way, and they gain "This creature can\'t attack its owner." Then for each aid vote, put a +1/+1 counter on each creature you control.',
+  },
+  {
+    Keyword: 'Seek',
+    Description: 'Seek is a digital twist on a tutor effect. Certain cards allow you to seek a card with specific criteria, randomly pulling one from your library that meets that criteria without shuffling afterward which is something that couldn\'t happen at the tabletop without a player manually looking through their deck. While the reminder text is phrased traditionally as an instruction for the player to carry out, in fact, the game will resolve the effect automatically, and will not show the player the cards it randomly chose from, or any other cards in the library.',
+    Example: 'When Manor Guardian dies, each player seeks a nonland card with mana value 2 or less.',
+  },
+  {
+    Keyword: 'Set in motion',
+    Description: 'To move a scheme card off the top of your scheme deck and turn it face up.',
+    Example: 'No example available at this time.',
+  },
+  {
+    Keyword: 'Shadow',
+    Description: 'A keyword ability that restricts how a creature may be blocked and which creatures it can block.',
+    Example: 'Shadow (This creature can block or be blocked by only creatures with shadow.)',
+  },
+  {
+    Keyword: 'Shroud',
+    Description: 'A keyword ability that precludes a permanent or player from being targeted.',
+    Example: 'Shroud (This creature can\'t be the target of spells or abilities.)',
+  },
+  {
+    Keyword: 'Shuffle',
+    Description: 'To randomize the cards in a deck (before a game) or library (during a game).',
+    Example: 'No example available at this time.',
+  },
+  {
+    Keyword: 'Skulk',
+    Description: 'A keyword ability that restricts how a creature may be blocked.',
+    Example: 'Skulk (This creature can\'t be blocked by creatures with greater power.)',
+  },
+  {
+    Keyword: 'Slivercycling',
+    Description: 'Unlike a normal cycling ability, Slivercycling doesn\'t have you draw a card. Instead, it lets you search your library for a Sliver card.',
+    Example: 'No example available at this time.',
+  },
+  {
+    Keyword: 'Soulbond',
+    Description: 'A keyword ability that makes creatures better by pairing them together.',
+    Example: 'Soulbond (You may pair this creature with another unpaired creature when either enters the battlefield. They remain paired for as long as you control both of them.) As long as Wingcrafter is paired with another creature, both creatures have flying.',
+  },
+  {
+    Keyword: 'Soulshift',
+    Description: 'A keyword ability that lets a player return a card from their graveyard to their hand.',
+    Example: 'Soulshift 7 (When this creature dies, you may return target Spirit card with converted mana cost 7 or less from your graveyard to your hand.)',
+  },
+  {
+    Keyword: 'Specialize',
+    Description: 'Specialize is a digital-only combination of transform and perpetual mechanics. Cards with specialize feature a circled upward pointing triangle in the upper left corner of the card, similar to the MDFC arrow but colored black instead of white. This indicates that it is able to specialize. The ability invokes the choosing of a D&D character\'s new class during a campaign.',
+    Example: 'When this creature Specializes, conjure a duplicate of target creature card exiled with this creature into your hand. The duplicate perpetually gains "You may spend mana as though it were mana of any color to cast this spell." and "When this creature enters the battlefield each opponent loses 2 life and you gain 2 life.',
+  },
+  {
+    Keyword: 'Spectacle',
+    Description: 'A keyword ability that allows certain spells to be cast for an alternative cost if an opponent has lost life.',
+    Example: 'Spectacle Red (You may cast this spell for its spectacle cost rather than its mana cost if an opponent lost life this turn.)',
+  },
+  {
+    Keyword: 'Spell mastery',
+    Description: 'Check to see if there are two or more instant and/or sorcery cards in your graveyard as the spell resolves to determine whether the spell mastery ability applies. The spell itself won\'t count because it\'s still on the stack as you make this check.',
+    Example: 'Spell mastery — If there are two or more instant and/or sorcery cards in your graveyard, Ravaging Blaze also deals X damage to that creature\'s controller.',
+  },
+  {
+    Keyword: 'Splice',
+    Description: 'A keyword ability that lets a player add a card\'s rules text onto another spell.',
+    Example: 'Splice onto Arcane — Exile four cards from your graveyard. (As you cast an Arcane spell, you may reveal this card from your hand and pay its splice cost. If you do, add this card\'s effects to that spell.)',
+  },
+  {
+    Keyword: 'Split second',
+    Description: 'A keyword ability that makes it nearly impossible for a player to respond to a spell.',
+    Example: 'Split second (As long as this spell is on the stack, players can\'t cast spells or activate abilities that aren\'t mana abilities.)',
+  },
+  {
+    Keyword: 'Squad',
+    Description: 'A keyword ability that creates copies of a creature when it enters the battlefield.',
+    Example: 'Squad 2 (As an additional cost to cast this spell, you may pay 2 any number of times. When this creature enters the battlefield, create that many tokens that are copies of it.)',
+  },
+  {
+    Keyword: 'Storm',
+    Description: 'A keyword ability that creates copies of a spell.',
+    Example: 'Storm (When you cast this spell, copy it for each spell cast before it this turn. You may choose new targets for the copies.)',
+  },
+  {
+    Keyword: 'Strive',
+    Description: 'A spell with a strive ability lets you pump more mana into it to increase the number of targets.',
+    Example: 'Strive — Ajani\'s Presence costs 2 Plains more to cast for each target beyond the first. Any number of target creatures each get +1/+1 and gain indestructible until end of turn. (Damage and effects that say "destroy" don\'t destroy them.)',
+  },
+  {
+    Keyword: 'Sunburst',
+    Description: 'A keyword ability that can have a permanent enter the battlefield with +1/+1 counters or charge counters on it.',
+    Example: 'Sunburst (This enters the battlefield with a charge counter on it for each color of mana spent to cast it.)',
+  },
+  {
+    Keyword: 'Support',
+    Description: 'A keyword action that lets you put +1/+1 counters on creatures.',
+    Example: 'When Gladehart Cavalry enters the battlefield, support 6. (Put a +1/+1 counter on each of up to six other target creatures.)',
+  },
+  {
+    Keyword: 'Surge',
+    Description: 'A keyword ability that provides an alternative cost to cast a card if you or one of your teammates has cast another spell in the same turn.',
+    Example: 'When Reckless Bushwhacker enters the battlefield, if its surge cost was paid, other creatures you control get +1/+0 and gain haste until end of turn.',
+  },
+  {
+    Keyword: 'Surveil',
+    Description: 'To manipulate some of the cards on top of your library, sending some of them to your graveyard and rearranging the rest.',
+    Example: 'When Dimir Informant enters the battlefield, surveil 2. (Look at the top two cards of your library, then put any number of them into your graveyard and the rest on the top of your library in any order.)',
+  },
+  {
+    Keyword: 'Suspend',
+    Description: 'A keyword ability that provides an alternative way to play a card. A card is “suspended” if it\'s in the exile zone, has suspend, and has a time counter on it.',
+    Example: 'Suspend 3 — 0 (Rather than cast this card from your hand, pay 0 and exile it with three time counters on it. At the beginning of your upkeep, remove a time counter. When the last is removed, cast it without paying its mana cost.)',
+  },
+  {
+    Keyword: 'Swampcycling',
+    Description: 'Swampcycling is a variant of the cycling ability. Unlike cycling (which allows you to draw a card), Swampcycling allows you to search your library for a Swamp card.',
+    Example: 'No example available at this time.',
+  },
+  {
+    Keyword: 'Swampwalk',
+    Description: 'This creature can\'t be blocked as long as defending player controls a Swamp.',
+    Example: 'No example available at this time.',
+  },
+  {
+    Keyword: 'Sweep',
+    Description: 'Sweep cards require you to return some number of a specific type of basic land card to your hand as they resolve. The rest of the card\'s effect depends on how many land cards were returned.',
+    Example: 'Sweep — Return any number of Plains you control to their owner\'s hand. Target creature gets +1/+1 until end of turn for each Plains returned this way.',
+  },
+  {
+    Keyword: 'Tap',
+    Description: 'To tap a permanent, turn it 90 degrees from an upright position.',
+    Example: 'No example available at this time.',
+  },
+  {
+    Keyword: 'Tempting offer',
+    Description: 'A tempting offer allows a player to perform a certain beneficial action and then gives all opponents the chance to perform the same action. Then, for each opponent who does, the player may repeat the action.',
+    Example: 'Tempting offer — Put a +1/+1 counter on each creature you control. Each opponent may put a +1/+1 counter on each creature they control. For each opponent who does, put a +1/+1 counter on each creature you control.',
+  },
+  {
+    Keyword: 'Threshold',
+    Description: 'Threshold is an ability word that gives a card different or additional characteristics if its controller has seven or more cards in their graveyard.',
+    Example: 'Threshold — As long as seven or more cards are in your graveyard, Boneshard Slasher gets +2/+2 and has "When Boneshard Slasher becomes the target of a spell or ability, sacrifice it."',
+  },
+  {
+    Keyword: 'Totem armor',
+    Description: 'Totem armor is a static ability that appears on some Auras. “Totem armor” means “If enchanted permanent would be destroyed, instead remove all damage marked on it and destroy this Aura.”',
+    Example: 'Totem armor (If enchanted creature would be destroyed, instead remove all damage from it and destroy this Aura.)',
+  },
+  {
+    Keyword: 'Toxic',
+    Description: 'Any time a creature with toxic deals combat damage to a player, that player gets a number of poison counters equal to the toxic value of that creature. The toxic value is the number after the toxic keyword. Poison counters are handed out in addition to the damage being dealt.',
+    Example: 'Toxic 1 (Players dealt combat damage by this creature also get a poison counter.)',
+  },
+  {
+    Keyword: 'Training',
+    Description: 'A keyword ability that means “Whenever this creature and at least one other creature with power greater that this creature\'s power attack, put a +1/+1 counter on this creature.”',
+    Example: 'Training (Whenever this creature attacks with another creature with greater power, put a +1/+1 counter on this creature.)',
+  },
+  {
+    Keyword: 'Trample',
+    Description: 'The controller of an attacking creature with trample first assigns damage to the creature(s) blocking it. Once all those blocking creatures are assigned lethal damage, any excess damage is assigned as its controller chooses among those blocking creatures and the player, planeswalker, or battle the creature is attacking.',
+    Example: 'A 6/6 green creature with trample is blocked by a 2/2 creature with protection from green. The attacking creature\'s controller must assign at least 2 damage to the blocker, even though that damage will be prevented by the blocker\'s protection ability. The attacking creature\'s controller can divide the rest of the damage as they choose between the blocking creature and the defending player.',
+  },
+  {
+    Keyword: 'Transfigure',
+    Description: 'A keyword ability that lets a player search their library for a replacement creature card.',
+    Example: 'Transfigure [cost], Sacrifice this creature: Search your library for a creature card with the same converted mana cost as this creature and put that card onto the battlefield. Then shuffle your library. Transfigure only as a sorcery.)',
+  },
+  {
+    Keyword: 'Transform',
+    Description: 'To turn a double-faced card so its other face is up. To transform a permanent, turn it over so that its other face is up. Only transforming tokens and permanents represented by transforming double-faced cards can transform.',
+    Example: 'No example available at this time.',
+  },
+  {
+    Keyword: 'Transmute',
+    Description: 'Transmute is an activated ability that functions only while the card with transmute is in a player\'s hand. “Transmute [cost]” means “[Cost], Discard this card: Search your library for a card with the same mana value as the discarded card, reveal that card, and put it into your hand. Then shuffle your library. Activate only as a sorcery.”',
+    Example: 'Transmute [cost], Discard this card: Search your library for a card with the same converted mana cost as this card, reveal it, and put it into your hand. Then shuffle your library. Transmute only as a sorcery.)',
+  },
+  {
+    Keyword: 'Treasure',
+    Description: 'Treasure is a predefined token and artifact type. A Treasure token is a colorless artifact token with “Tap, Sacrifice this artifact: Add one mana of any color.”',
+    Example: 'A Food token is a colorless Food artifact token with “{2}, {T}, Sacrifice this artifact: You gain 3 life.”',
+  },
+  {
+    Keyword: 'Tribute',
+    Description: 'Tribute is a static ability that functions as the creature with tribute is entering the battlefield. “Tribute N” means “As this creature enters the battlefield, choose an opponent. That player may put an additional N +1/+1 counters on it as it enters the battlefield.”',
+    Example: 'Tribute 3 (As this creature enters the battlefield, an opponent of your choice may put three +1/+1 counters on it.)\nWhen Nessian Demolok enters the battlefield, if tribute wasn\'t paid, destroy target noncreature permanent.',
+  },
+  {
+    Keyword: 'Typecycling',
+    Description: 'A variant of the cycling ability. It allows the player to search their library for a card of a certain subtype instead of drawing the top card of their library.',
+    Example: 'No example available at this time.',
+  },
+  {
+    Keyword: 'Undaunted',
+    Description: 'A keyword ability that reduces the cost of a spell based on the number of opponents you have.',
+    Example: 'Undaunted (This spell costs 1 less to cast for each opponent.)',
+  },
+  {
+    Keyword: 'Underdog',
+    Description: 'Underdog is an ability word that gives cards a bonus in the next game within a match, when they have lost a previous game in that match.',
+    Example: 'Underdog — If you\'ve lost a game this match, Ruff, Underdog Champ and other Dogs you control get +1/+1.',
+  },
+  {
+    Keyword: 'Undergrowth',
+    Description: 'Undergrowth abilities care for the number of creature cards in your graveyard.',
+    Example: 'Undergrowth — Golgari Raiders enters the battlefield with a +1/+1 counter on it for each creature card in your graveyard.',
+  },
+  {
+    Keyword: 'Undying',
+    Description: 'A keyword ability that can return a creature from the graveyard to the battlefield.',
+    Example: 'Undying (When this creature dies, if it had no +1/+1 counters on it, return it to the battlefield under its owner\'s control with a +1/+1 counter on it.)',
+  },
+  {
+    Keyword: 'Unearth',
+    Description: 'A keyword ability that lets a player return a creature card from their graveyard to the battlefield.',
+    Example: 'Unearth Swamp (Swamp: Return this card from your graveyard to the battlefield. It gains haste. Exile it at the beginning of the next end step or if it would leave the battlefield. Unearth only as a sorcery.)',
+  },
+  {
+    Keyword: 'Unleash',
+    Description: 'Unleash is a keyword that represents two static abilities. “Unleash” means “You may have this permanent enter the battlefield with an additional +1/+1 counter on it” and “This permanent can\'t block as long as it has a +1/+1 counter on it.”',
+    Example: 'Unleash (You may have this creature enter the battlefield with a +1/+1 counter on it. It can\'t block as long as it has a +1/+1 counter on it.)',
+  },
+  {
+    Keyword: 'Untap',
+    Description: 'It is the process of rotating a permanent back to the upright position from a sideways position.',
+    Example: 'No example available at this time.',
+  },
+  {
+    Keyword: 'Vanishing',
+    Description: 'Vanishing is a keyword ability that limits the number of turns a permanent can remain on the battlefield, using time as a resource.',
+    Example: 'Vanishing 2 (This permanent enters the battlefield with two time counters on it. At the beginning of your upkeep, remove a time counter from it. When the last is removed, sacrifice it.)',
+  },
+  {
+    Keyword: 'Venture into the dungeon',
+    Description: 'If you venture into the dungeon while you don\'t have any dungeons in the command zone, you put the dungeon of your choice into the command zone and put a venture marker on the first room, at the top. The next time you venture into the dungeon, you\'ll move to the next room by placing the marker on that room. When you enter a room, the room ability of that room triggers. After the final room ability resolves or otherwise leaves the stack, the dungeon is removed from the game. Removing it from the game results in you completing the dungeon. When you complete a dungeon certain cards receive a bonus.',
+    Example: 'Tap an untapped legendary creature you control: Venture into the dungeon. Activate only as a sorcery.',
+  },
+  {
+    Keyword: 'Vigilance',
+    Description: 'A keyword ability that lets a creature attack without tapping.',
+    Example: 'Vigilance (Attacking doesn\'t cause this creature to tap.)',
+  },
+  {
+    Keyword: 'Vote',
+    Description: 'Some spells and abilities instruct players to vote for one choice from a list of options to determine some aspect of the effect of that spell or ability. To vote, each player, starting with a specified player and proceeding in turn order, chooses one of those choices.',
+    Example: 'Whenever Cirdan the Shipwright enters the battlefield or attacks, each player secretly votes for a player, then those votes are revealed. Each player draws a card for each vote they received. Each player who received no votes may put a permanent card from their hand onto the battlefield.',
+  },
+  {
+    Keyword: 'Ward',
+    Description: 'A triggered ability that can counter spells or abilities that target the permanent with ward.',
+    Example: 'Ward 2 (Whenever this creature becomes the target of a spell or ability an opponent controls, counter it unless that player pays 2).',
+  },
+  {
+    Mechanic: 'Will of the council',
+    Description: 'Will of the Council is a voting mechanic that gives players, generally, two different options to vote for at the table. Players, generally starting with the one who triggered Will of the Council, will vote in clockwise order as the card depicts. Depending on who voted for what, various effects will occur to various players.',
+    Example: 'Will of the council — Starting with you, each player votes for time or knowledge. If time gets more votes, take an extra turn after this one. If knowledge gets more votes or the vote is tied, draw three cards.',
+  },
+  {
+    Mechanic: 'Wither',
+    Description: 'Wither is a static ability. Damage dealt to a creature by a source with wither isn\'t marked on that creature. Rather, it causes that source\'s controller to put that many -1/-1 counters on that creature. The -1/-1 counters remain on the creature indefinitely. They won\'t be removed if the creature regenerates or the turn ends.',
+    Example: 'Wither (This deals damage to creatures in the form of -1/-1 counters.)',
+  },
+  {
+    Mechanic: 'Wizardcycling',
+    Description: 'Unlike the normal cycling ability, Wizardcycling doesn\'t allow you to draw a card. Instead, it lets you search your library for a Wizard card. After you find a Wizard card in your library, you reveal it, put it into your hand, then shuffle your library.',
+    Example: 'Wizardcycling 3 (3, Discard this card: Search your library for a Wizard card, reveal it, put it into your hand, then shuffle your library.)',
+  },
 ];
 
 // Seed the database
