@@ -25,3 +25,7 @@ export const CREATE_USER = gql`
     }
   }
 `;
+export const ADD_CARD = gql`
+mutation addCard($profileId: ID!, $card: )
+
+`
