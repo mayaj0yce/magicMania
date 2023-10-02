@@ -1,10 +1,10 @@
 const mongoose = require('mongoose');
 
-const magicDecksSchema = new mongoose.Schema({
+const deckSchema = new mongoose.Schema({
   cardName: {
     type: String,
     quantity: Number
   }
 });
 
-module.exports = mongoose.model('MagicDeck', magicDecksSchema);
+module.exports = mongoose.model( deckSchema);
