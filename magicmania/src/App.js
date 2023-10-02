@@ -13,6 +13,7 @@ import Signup from "./components/pages/signup";
 import "./index.css";
 
 function App() {
+  
   return (
     <ApolloProvider client={client}> {/* Wrap App with ApolloProvider */}
       <Router>

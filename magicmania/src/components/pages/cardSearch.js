@@ -25,7 +25,8 @@ function CardSearch() {
                 text: card.text || 'No text available',
                 rarity: card.rarity || 'Unknown',
                 type: card.type || 'Unknown',
-                imageUrl: card.imageUrl || '', 
+                imageUrl: card.imageUrl || '',
+                id: card.id || '', 
             }));
 
             setSearchResults(formattedCards);
@@ -35,6 +36,16 @@ function CardSearch() {
             setIsLoading(false)
         }
     };
+
+    const handleSaveCard = (cardData) => {
+        const savedCardData = JSON.parse(localStorage.getItem('savedCardData')) || [];
+        const isCardAlreadySaved = savedCardData.some((card) => card.id === cardData.id);
+
+        if (!isCardAlreadySaved) {
+            savedCardData.push(cardData);
+            localStorage.setItem('savedCardData', JSON.stringify(savedCardData));
+        }
+    }
 
     console.log(searchResults)
 
@@ -77,6 +88,12 @@ function CardSearch() {
                             <strong>Type:</strong><div className='ind-text'>{card.type}</div>
                         </div>
                         <hr />
+                        <button className='bg-blue-500 hover:bg-blue-600 text-white text-xl font-bold rounded focus:outline-none focus:ring-2 focus:ring-blue-400 goBtn w-fit px-6 py-3 mx-auto flex items-center cursor-pointer'
+                            onClick={() => handleSaveCard({
+                            imageUrl: card.imageUrl,
+                            name: card.name,
+                            id: card.id,
+                        })}>Save Card</button>
                     </li>
                     ))}
                 </ul>
