@@ -1,13 +1,39 @@
-import React, { useState } from 'react'
-import '../Header.css'
+import React, { useState } from 'react';
+import { useMutation } from '@apollo/client';
+import { CREATE_USER } from '../../graphql/mutations';
+import '../Header.css';
+
 
 const Signup = () => {
-    const [username, setUsername] = useState('');
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [createUser] = useMutation(CREATE_USER);
 
-    const handleSignUp = () => {
-    };
+  const handleSignUp = async () => {
+    try {
+      const response = await createUser({
+        variables: {
+          input: {
+            username,
+            email,
+            password,
+          },
+        },
+      });
+
+      // Handle the response here, e.g., show success message or redirect to login.
+      console.log('Registration successful:', response.data);
+
+      // Clear the form fields after successful registration
+      setUsername('');
+      setEmail('');
+      setPassword('');
+    } catch (error) {
+      // Handle errors, e.g., display an error message.
+      console.error('Error signing up:', error);
+    }
+  };
 
   return (
     <div className="flex justify-center items-center h-screen wholeSignup">
@@ -48,7 +74,7 @@ const Signup = () => {
         </button>
       </div>
     </div>
-  )
+  );  
 }
 
 export default Signup

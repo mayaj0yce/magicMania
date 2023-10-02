@@ -1,4 +1,3 @@
-// export default KeywordSearch;
 import React, { useState } from 'react';
 import '../Header.css'
 import { useQuery } from '@apollo/client';
@@ -24,7 +23,7 @@ function KeywordSearch() {
   };
 
   // GraphQL query to search for a keyword
-  const { loading, error, data } = useQuery(SEARCH_KEYWORD, {
+  const { loading, error } = useQuery(SEARCH_KEYWORD, {
     variables: { keyword: capitalizeFirstLetter(keyword) }, // Capitalize the keyword
     skip: !searchInProgress, // Skip the query if searchInProgress is false
     onCompleted: (data) => {

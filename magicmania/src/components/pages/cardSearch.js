@@ -68,9 +68,7 @@ function CardSearch() {
                 >
                     {isLoading ? 'Searching...' : 'Search'}
                 </button>
-            </div>
-
-            
+            </div>          
             <div className="mt-4 items-center card-card flex justify-center">
                 {searchResults.length > 0 ? (
                 <ul>
@@ -102,9 +100,7 @@ function CardSearch() {
                 </ul>
                 ) : (
                 <p>No results found.</p>
-                )}
-
-               
+                )}              
             </div>
         </div>
     )
