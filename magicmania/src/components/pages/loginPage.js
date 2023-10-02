@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import '../Header.css';
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../../graphql/mutations'; // Import the LOGIN_USER mutation
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 function LoginPage() {
   // State to store the user's credentials
@@ -10,7 +10,8 @@ function LoginPage() {
   const [password, setPassword] = useState('');
 
   // State to track whether login was successful
-  const [loginSuccess, setLoginSuccess] = useState(false);
+  const [loginSuccess, setLoginSuccess] = useState(null);
+  const navigate = useNavigate();
 
   // Use the useMutation hook to define the login mutation
   const [loginUser] = useMutation(LOGIN_USER);
@@ -39,10 +40,18 @@ function LoginPage() {
       // Handle the response here, e.g., show success message or redirect to a user page.
       console.log('Login successful:', response.data);
 
+      //Store the authentication token in the local storage
+      localStorage.setItem('authToken', response.data.login.token);
+      // console.log('Token:', response.data.login.token);
+
       // Clear the form fields after successful login
       setUsername('');
       setPassword('');
       setLoginSuccess(true); // Set loginSuccess to true
+
+      // Navigate to the user page on successful login
+      navigate('/User');
+
     } catch (error) {
       // Handle errors, e.g., display an error message.
       console.error('Login failed:', error);
