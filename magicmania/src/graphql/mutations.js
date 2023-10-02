@@ -26,6 +26,21 @@ export const CREATE_USER = gql`
   }
 `;
 
+// Define the LOGIN_USER mutation
+export const LOGIN_USER = gql`
+  mutation LoginUser($username: String!, $password: String!) {
+    login(username: $username, password: $password) {
+      user {
+        id
+        username
+        email
+        # Add more user fields as needed
+      }
+      token
+    }
+  }
+`;
+
 // export const ADD_CARD = gql`
 // mutation addCard($profileId: ID!, $card: )
 

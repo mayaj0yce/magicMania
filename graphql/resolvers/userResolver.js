@@ -39,31 +39,38 @@ const resolvers = {
       }
     },
     login: async (_, { username, password }) => {
-      const user = await User.findOne({ username });
+      try {
+        const user = await User.findOne({ username });
 
-      if (!user) {
-        throw new AuthenticationError('User not found');
+        if (!user) {
+          throw new AuthenticationError('User not found');
+        }
+
+        const passwordMatch = await bcrypt.compare(password, user.password);
+        console.log('Input Password:', password);
+        console.log('User Password Hash:', user.password);
+
+        if (!passwordMatch) {
+          throw new AuthenticationError('Incorrect password');
+        }
+
+        const token = generateToken(user);
+
+        return {
+          user,
+          token,
+        };
+      } catch (error) {
+        console.error('Error during login:', error);
+        throw new AuthenticationError('Authentication failed');
       }
-
-      const passwordMatch = await bcrypt.compare(password, user.passwordHash);
-
-      if (!passwordMatch) {
-        throw new AuthenticationError('Incorrect password');
-      }
-
-      const token = generateToken(user);
-
-      return {
-        user,
-        token,
-      };
-    },
-  },
-  Query: {
-    getUser: (_, { id }) => {
-      return User.findById(id);
-    },
-    // Add more queries here if needed
+    }
+    // Query: {
+    //   getUser: (_, { id }) => {
+    //     return User.findById(id);
+    //   },
+    //   // Add more queries here if needed
+    // },
   },
 };
 

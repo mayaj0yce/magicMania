@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { CREATE_USER } from '../../graphql/mutations';
+import { useNavigate } from 'react-router-dom';
 import '../Header.css';
 
 
@@ -9,6 +10,7 @@ const Signup = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [createUser] = useMutation(CREATE_USER);
+  const navigate = useNavigate();
 
   const handleSignUp = async () => {
     try {
@@ -29,6 +31,9 @@ const Signup = () => {
       setUsername('');
       setEmail('');
       setPassword('');
+
+      // Navigate to the login page on successful registration
+      navigate('/login');
     } catch (error) {
       // Handle errors, e.g., display an error message.
       console.error('Error signing up:', error);
