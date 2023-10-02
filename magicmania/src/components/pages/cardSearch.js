@@ -25,7 +25,8 @@ function CardSearch() {
                 text: card.text || 'No text available',
                 rarity: card.rarity || 'Unknown',
                 type: card.type || 'Unknown',
-                imageUrl: card.imageUrl || '', 
+                imageUrl: card.imageUrl || '',
+                id: card.id || '', 
             }));
 
             setSearchResults(formattedCards);
@@ -35,6 +36,16 @@ function CardSearch() {
             setIsLoading(false)
         }
     };
+
+    const handleSaveCard = (cardData) => {
+        const savedCardData = JSON.parse(localStorage.getItem('savedCardData')) || [];
+        const isCardAlreadySaved = savedCardData.some((card) => card.id === cardData.id);
+
+        if (!isCardAlreadySaved) {
+            savedCardData.push(cardData);
+            localStorage.setItem('savedCardData', JSON.stringify(savedCardData));
+        }
+    }
 
     console.log(searchResults)
 
@@ -57,25 +68,37 @@ function CardSearch() {
                     {isLoading ? 'Searching...' : 'Search'}
                 </button>
             </div>
-            <div className="mt-4">
+            <div className="mt-4 items-center card-card flex justify-center">
                 {searchResults.length > 0 ? (
                 <ul>
                     {searchResults.map((card, index) => (
-                    <li key={index}>
-                        <strong>Name:</strong> {card.name}
-                        <br />
-                        <strong>Text:</strong> {card.text}
-                        <br />
-                        <strong>Rarity:</strong> {card.rarity}
-                        <br />
-                        <strong>Type:</strong> {card.type}
-                        <br />
+                   <li key={index} className='flex flex-col lg:flex-row items-center shadow-lg rounded-2xl p-4'>
                         {card.imageUrl && (
-                            <img src={card.imageUrl} alt={card.name} />
+                            <div className='lg:mr-4 card-img'>
+                                <img src={card.imageUrl} alt={card.name} />
+                            </div>
                         )}
+<<<<<<< HEAD
                         {/* IF LOGGED IN THEN SHOW */}
                          <button>Add To Deck</button>
+=======
+                        <div className='card-text '>
+                            <strong>Name:</strong><div className='ind-text'>{card.name}</div>
+                            <br />
+                            <strong>Text:</strong><div className='ind-text'>{card.text}</div>
+                            <br />
+                            <strong>Rarity:</strong><div className='ind-text'>{card.rarity}</div>
+                            <br />
+                            <strong>Type:</strong><div className='ind-text'>{card.type}</div>
+                        </div>
+>>>>>>> 57463ae11b66ac9ed666e71f358cb2ff9fd1fa16
                         <hr />
+                        <button className='bg-blue-500 hover:bg-blue-600 text-white text-xl font-bold rounded focus:outline-none focus:ring-2 focus:ring-blue-400 goBtn w-fit px-6 py-3 mx-auto flex items-center cursor-pointer'
+                            onClick={() => handleSaveCard({
+                            imageUrl: card.imageUrl,
+                            name: card.name,
+                            id: card.id,
+                        })}>Save Card</button>
                     </li>
                     ))}
                 </ul>

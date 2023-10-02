@@ -1,4 +1,4 @@
-// seed.js
+// magicWordsSeed
 
 const mongoose = require('../connection'); // Import your mongoose setup
 const MagicWords = require('../models/magicWords'); // Import your Mongoose model
@@ -29,7 +29,7 @@ async function seedDatabase() {
   try {
     await MagicWords.deleteMany(); // Clear existing data
     await MagicWords.insertMany(initialData); // Insert new data
-    console.log('Database seeded successfully');
+    console.log('magicWords seeded successfully');
   } catch (error) {
     console.error('Error seeding database:', error);
   } finally {

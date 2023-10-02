@@ -17,13 +17,7 @@ const  userSchema = new mongoose.Schema({
     },
     decks: [
         {
-          name: String,
-          cards: [
-            {
-              cardName: String,
-              quantity: Number,
-            },
-          ],
+          cardId: String
         },
       ],
     });

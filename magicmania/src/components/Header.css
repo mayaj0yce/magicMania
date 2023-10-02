@@ -88,3 +88,67 @@
 .wholeSignup {
     margin-top: -100px !important;
 }
+
+/* card search page */
+.card-card {
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (min-width: 1024px) {
+    .card-text {
+        width: 60%;
+    }
+}
+
+.card-text {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ind-text {
+    font-weight: 500;
+}
+
+.card-img {
+   
+}
+/* userpage saved cards styling */
+.card-display {
+    justify-content: center;
+    align-items: center;
+}
+
+.save-card-btn {
+
+}
+
+.userPage {
+    justify-content: center;
+    align-items: center;
+}
+
+.saved-cards-title {
+    font-weight: bold;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.card-display-test {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+   height: 100%;
+}
+
+.showCards {
+    justify-content: center;
+    align-items: center;
+}
+
+.deleteBtn {
+    margin-top: 6px;
+}

@@ -14,6 +14,7 @@ import FullDeck from "./components/pages/fullDeck";
 import "./index.css";
 
 function App() {
+  
   return (
     <ApolloProvider client={client}> {/* Wrap App with ApolloProvider */}
       <Router>
