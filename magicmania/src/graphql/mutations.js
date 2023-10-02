@@ -10,3 +10,8 @@ export const CREATE_KEYWORD = gql`
     }
   }
 `;
+
+export const ADD_CARD = gql`
+mutation addCard($profileId: ID!, $card: )
+
+`
