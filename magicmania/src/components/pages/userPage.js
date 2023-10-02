@@ -2,16 +2,33 @@ import React, { useEffect, useState } from "react";
 import { UserInfo } from "../userInfo";
 import { CardDisplay} from '../cardDisplay';
 import '../Header.css'
+import { Link } from 'react-router-dom';
+import { FullDeck } from '../pages/fullDeck';
 
 const userInfo = [
-    {
-        username: 'sarahD',
-        email: 'sarababuy@email.com',
-    }
-    //use effect run once upon page load 
-    // query data base for logged in user and send that data to the props
+  {
+    username: 'sarahD',
+    email: 'sarababuy@email.com',
+  }
+  //use effect run once upon page load 
+  // query data base for logged in user and send that data to the props
 ]
 
+const cardDisplay = [
+  {
+    card: '1',
+    card2: '2',
+  }
+]
+const NavLinks = () => {
+  return (
+    <>
+      <Link to='/FullDeck' className="navLink hovernow">
+        FullDeck
+        </Link>
+    </>
+  );
+};
 
 function UserPage() {
 
