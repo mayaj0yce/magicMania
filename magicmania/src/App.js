@@ -10,7 +10,6 @@ import LoginPage from "./components/pages/loginPage";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Signup from "./components/pages/signup";
-import FullDeck from "./components/pages/fullDeck";
 import "./index.css";
 
 function App() {
@@ -27,7 +26,6 @@ function App() {
             <Route exact path="/User" element={<UserPage />} />
             <Route exact path="/login" element={<LoginPage />} />
             <Route exact path="/signup" element={<Signup />} />
-            <Route exact path="/fulldeck" element={<FullDeck />} />
           </Routes>
           <Footer />
         </div>

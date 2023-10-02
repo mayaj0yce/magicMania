@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import '../Header.css'
 
 
@@ -51,7 +51,7 @@ function CardSearch() {
 
     return (
         <div className="container mx-auto p-4">
-            <h2 className="text-2xl font-semibold mb-4">Search by Card</h2>
+            <h2 className="text-2xl font-semibold mb-4 text-center">Search by Card</h2>
             <div className="flex">
                 <input
                 type="text"
@@ -67,7 +67,7 @@ function CardSearch() {
                 >
                     {isLoading ? 'Searching...' : 'Search'}
                 </button>
-            </div>
+            </div>          
             <div className="mt-4 items-center card-card flex justify-center">
                 {searchResults.length > 0 ? (
                 <ul>
@@ -99,7 +99,7 @@ function CardSearch() {
                 </ul>
                 ) : (
                 <p>No results found.</p>
-                )}
+                )}              
             </div>
         </div>
     )
