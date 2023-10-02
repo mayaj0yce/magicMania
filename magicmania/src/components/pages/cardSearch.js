@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import '../Header.css'
 
 
@@ -51,7 +51,8 @@ function CardSearch() {
 
     return (
         <div className="container mx-auto p-4">
-            <h2 className="text-2xl font-semibold mb-4">Search by Card</h2>
+            <h2 className="text-2xl font-semibold mb-4 text-center">Search by Card</h2>
+
             <div className="flex">
                 <input
                 type="text"
@@ -68,6 +69,8 @@ function CardSearch() {
                     {isLoading ? 'Searching...' : 'Search'}
                 </button>
             </div>
+
+            
             <div className="mt-4 items-center card-card flex justify-center">
                 {searchResults.length > 0 ? (
                 <ul>
@@ -78,10 +81,6 @@ function CardSearch() {
                                 <img src={card.imageUrl} alt={card.name} />
                             </div>
                         )}
-<<<<<<< HEAD
-                        {/* IF LOGGED IN THEN SHOW */}
-                         <button>Add To Deck</button>
-=======
                         <div className='card-text '>
                             <strong>Name:</strong><div className='ind-text'>{card.name}</div>
                             <br />
@@ -91,7 +90,6 @@ function CardSearch() {
                             <br />
                             <strong>Type:</strong><div className='ind-text'>{card.type}</div>
                         </div>
->>>>>>> 57463ae11b66ac9ed666e71f358cb2ff9fd1fa16
                         <hr />
                         <button className='bg-blue-500 hover:bg-blue-600 text-white text-xl font-bold rounded focus:outline-none focus:ring-2 focus:ring-blue-400 goBtn w-fit px-6 py-3 mx-auto flex items-center cursor-pointer'
                             onClick={() => handleSaveCard({
