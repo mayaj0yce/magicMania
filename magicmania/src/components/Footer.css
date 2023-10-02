@@ -2,6 +2,9 @@
     row-gap: 1.5rem !important;
     padding: 1rem !important;
     bottom: 0;
+    background-image: linear-gradient(to bottom right, #814ae8, #80eaff);
+    color: white;
+    font-weight: 500;
 }
 
 .team-footer {

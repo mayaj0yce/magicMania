@@ -1,7 +1,3 @@
-/* custom height */
-.h-custom {
-    height: 80vh;
-}
 /* class for the entire screen, found in app.js */
 .whole-screen {
     background-color: rgba(230, 238, 255, 0.941);
@@ -11,13 +7,15 @@
     background-image: linear-gradient(to bottom right, #814ae8, #80eaff);
     position: sticky;
     top: 0;
+    color: white;
 }
 
 .navLink {
-    border: black solid 1px;
+    border: #814ae8 solid 1.5px;
     padding: 6px;
     transition: transform .4s;
     border-radius: 6px;
+    background-color: #814ae8;
 }
 
 /* .allNavLinks {
