@@ -836,7 +836,7 @@ const initialData = [
     Example: 'Islandwalk (This creature can\'t be blocked as long as defending player controls an Island.)',
   },
   {
-    KeyWord: 'Landfall',
+    Keyword: 'Landfall',
     Description: 'The landfall ability word rewards a player each time a land enters the battlefield under their control. Generally being a sorcery-speed action means most landfall abilities are geared toward proactive gameplay (usually attacking) and incentivize playing more lands, even in aggressive decks.',
     Example: 'Landfall — Whenever a land enters the battlefield under your control, Plated Geopede gets +2/+2 until end of turn.',
   },
