@@ -2,6 +2,10 @@
 .h-custom {
     height: 80vh;
 }
+/* class for the entire screen, found in app.js */
+.whole-screen {
+    background-color: rgba(230, 238, 255, 0.941);
+}
 
 .whole-nav {
     background-image: linear-gradient(to bottom right, #814ae8, #80eaff);
@@ -43,7 +47,6 @@
 .landingPageAll {
     padding-top: 6rem;
     text-align: center;
-    background-color: white;
 }
 
 .mainTitle {
@@ -95,6 +98,8 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
+    background-color: white;
+    border-radius: 10px;
 }
 
 @media (min-width: 1024px) {
@@ -142,6 +147,7 @@
    align-items: center;
    text-align: center;
    height: 100%;
+   background-color: white;
 }
 
 .showCards {
@@ -151,4 +157,39 @@
 
 .deleteBtn {
     margin-top: 6px;
+}
+
+/* keyword search page */
+
+.keyword-result {
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    background-color: white;
+    margin: 10px;
+}
+
+.keyword-Word {
+    font-weight: 600;
+    font-size: 2rem;
+    margin: 3px;
+}
+
+.keyword-title {
+    color: #814ae8;
+    border-bottom: solid black 1px;
+}
+
+.keyword-desc {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin: 15px;
+    margin-bottom: 25px;
+}
+
+.keyword-ex {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin: 15px;
+    margin-bottom: 25px;
 }

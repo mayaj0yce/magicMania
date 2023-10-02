@@ -35,7 +35,7 @@ function LoginPage() {
   const NavLinks = () => {
     return (
       <>
-        <Link to='/User' className="navLink hovernow">Login
+        <Link to='/User' className="">Login
           </Link>
       </>
     );
