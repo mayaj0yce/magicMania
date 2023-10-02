@@ -15,7 +15,7 @@ const resolvers = {
         const newUser = new User({
           username,
           email,
-          passwordHash: hashedPassword,
+          password: hashedPassword,
         });
 
         const savedUser = await newUser.save();
@@ -27,8 +27,15 @@ const resolvers = {
           token,
         };
       } catch (error) {
-        // Handle any database or validation errors here
-        throw new Error('Error creating user');
+        console.error('Error creating user:', error);
+        if (error.code === 11000 && error.keyPattern && error.keyValue) {
+          // Duplicate username error
+          throw new Error('Username is already taken.');
+        } else {
+          // Handle other errors
+          console.error('Error creating user:', error);
+          throw new Error('Error creating user');
+        }
       }
     },
     login: async (_, { username, password }) => {

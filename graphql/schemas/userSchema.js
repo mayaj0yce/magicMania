@@ -5,7 +5,6 @@ const userSchema = gql`
         id: ID!
         username: String!
         email: String!
-        password: String!
     }
 
     input CreateUserInput {
