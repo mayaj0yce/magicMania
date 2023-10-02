@@ -836,7 +836,7 @@ const initialData = [
     Example: 'Islandwalk (This creature can\'t be blocked as long as defending player controls an Island.)',
   },
   {
-    AbilityWord: 'Landfall',
+    KeyWord: 'Landfall',
     Description: 'The landfall ability word rewards a player each time a land enters the battlefield under their control. Generally being a sorcery-speed action means most landfall abilities are geared toward proactive gameplay (usually attacking) and incentivize playing more lands, even in aggressive decks.',
     Example: 'Landfall — Whenever a land enters the battlefield under your control, Plated Geopede gets +2/+2 until end of turn.',
   },
@@ -1491,17 +1491,17 @@ const initialData = [
     Example: 'Ward 2 (Whenever this creature becomes the target of a spell or ability an opponent controls, counter it unless that player pays 2).',
   },
   {
-    Mechanic: 'Will of the council',
+    Keyword: 'Will of the council',
     Description: 'Will of the Council is a voting mechanic that gives players, generally, two different options to vote for at the table. Players, generally starting with the one who triggered Will of the Council, will vote in clockwise order as the card depicts. Depending on who voted for what, various effects will occur to various players.',
     Example: 'Will of the council — Starting with you, each player votes for time or knowledge. If time gets more votes, take an extra turn after this one. If knowledge gets more votes or the vote is tied, draw three cards.',
   },
   {
-    Mechanic: 'Wither',
+    Keyword: 'Wither',
     Description: 'Wither is a static ability. Damage dealt to a creature by a source with wither isn\'t marked on that creature. Rather, it causes that source\'s controller to put that many -1/-1 counters on that creature. The -1/-1 counters remain on the creature indefinitely. They won\'t be removed if the creature regenerates or the turn ends.',
     Example: 'Wither (This deals damage to creatures in the form of -1/-1 counters.)',
   },
   {
-    Mechanic: 'Wizardcycling',
+    Keyword: 'Wizardcycling',
     Description: 'Unlike the normal cycling ability, Wizardcycling doesn\'t allow you to draw a card. Instead, it lets you search your library for a Wizard card. After you find a Wizard card in your library, you reveal it, put it into your hand, then shuffle your library.',
     Example: 'Wizardcycling 3 (3, Discard this card: Search your library for a Wizard card, reveal it, put it into your hand, then shuffle your library.)',
   },
