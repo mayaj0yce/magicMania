@@ -52,6 +52,7 @@ function CardSearch() {
     return (
         <div className="container mx-auto p-4">
             <h2 className="text-2xl font-semibold mb-4 text-center">Search by Card</h2>
+
             <div className="flex">
                 <input
                 type="text"
