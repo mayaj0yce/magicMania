@@ -73,7 +73,7 @@ function LoginPage() {
               placeholder="Enter your username"
               value={username}
               onChange={handleUsernameChange}
-              className="w-full p-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-300"
+              className="w-full p-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-300 bg-white"
             />
           </div>
           <div className="mb-4">
@@ -84,7 +84,7 @@ function LoginPage() {
               placeholder="Enter your password"
               value={password}
               onChange={handlePasswordChange}
-              className="w-full p-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-300"
+              className="w-full p-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-300 bg-white"
             />
           </div>
           <button

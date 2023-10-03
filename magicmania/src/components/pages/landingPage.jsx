@@ -9,7 +9,9 @@ function LandingPage() {
   return (
     <div className='landingPageAll '>
       <h2 className='mainTitle text-4xl'>Welcome to</h2>
-      <span className='text-5xl justify-center mainTitle font-semibold'>MagicMania</span>
+      <span className='text-5xl justify-center mainTitle font-semibold'>
+        <span> MagicMania</span>
+      </span>
       <p className='subtitle text-2xl'>Choose an option below to start your adventure</p>
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-4 ">

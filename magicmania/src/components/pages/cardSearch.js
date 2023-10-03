@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 // import { Link } from 'react-router-dom';
 import '../Header.css'
+import { GiCardPick } from 'react-icons/gi'
 
 
 function CardSearch() {
@@ -51,15 +52,17 @@ function CardSearch() {
 
     return (
         <div className="container mx-auto p-4">
-            <h2 className="text-2xl font-semibold mb-4 text-center">Search by Card</h2>
-
+            <div className='flex text-center justify-center'>
+                <h2 className="text-2xl font-semibold mb-4 text-center items-center">Search by Card</h2>
+                <span className='card-search-icon'><GiCardPick size={25}/></span>
+            </div>
             <div className="flex">
                 <input
                 type="text"
                 placeholder="Enter card name"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full p-2 border rounded-l-lg focus:outline-none focus:ring focus:border-blue-300"
+                className="w-full p-2 border rounded-l-lg focus:outline-none focus:ring focus:border-blue-300 bg-white"
                 />
                 <button
                 onClick={handleSearch}
