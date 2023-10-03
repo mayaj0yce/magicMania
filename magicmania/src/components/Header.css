@@ -80,11 +80,32 @@
     text-align: center;
 } */
 
+/* title animation */
+.magic-title-animation {
+    display: inline-block;
+    animation: bounce 2s infinite;
+    color: #8097ff;
+    padding: 5px;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-10px);
+    }
+    60% {
+      transform: translateY(-5px);
+    }
+}
+
 .subtitle {
     text-align: center;
     justify-content: center;
     align-items: center;
     padding-bottom: 22px;
+    padding-top: 10px;
 }
 
 .goBtn {
