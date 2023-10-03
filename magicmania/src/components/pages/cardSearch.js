@@ -27,7 +27,7 @@ function CardSearch() {
                 rarity: card.rarity || 'Unknown',
                 type: card.type || 'Unknown',
                 imageUrl: card.imageUrl || '',
-                id: card.id || '', 
+                id: card.id || '',
             }));
 
             setSearchResults(formattedCards);
@@ -62,48 +62,48 @@ function CardSearch() {
                 placeholder="Enter card name"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full p-2 border rounded-l-lg focus:outline-none focus:ring focus:border-blue-300 bg-white"
+                className="w-full p-2 border rounded-l-lg focus:outline-none focus:ring focus:border-blue-300 bg-whi
                 />
                 <button
-                onClick={handleSearch}
-                className="bg-blue-500 text-white p-2 rounded-r-lg hover:bg-blue-600 focus:outline-none focus:ring"
-                disabled={isLoading}
+                    onClick={handleSearch}
+                    className="bg-blue-500 text-white p-2 rounded-r-lg hover:bg-blue-600 focus:outline-none focus:ring"
+                    disabled={isLoading}
                 >
                     {isLoading ? 'Searching...' : 'Search'}
                 </button>
-            </div>          
+            </div>
             <div className="mt-4 items-center card-card flex justify-center">
                 {searchResults.length > 0 ? (
-                <ul>
-                    {searchResults.map((card, index) => (
-                   <li key={index} className='flex flex-col lg:flex-row items-center shadow-lg rounded-2xl p-4'>
-                        {card.imageUrl && (
-                            <div className='lg:mr-4 card-img'>
-                                <img src={card.imageUrl} alt={card.name} />
-                            </div>
-                        )}
-                        <div className='card-text '>
-                            <strong>Name:</strong><div className='ind-text'>{card.name}</div>
-                            <br />
-                            <strong>Text:</strong><div className='ind-text'>{card.text}</div>
-                            <br />
-                            <strong>Rarity:</strong><div className='ind-text'>{card.rarity}</div>
-                            <br />
-                            <strong>Type:</strong><div className='ind-text'>{card.type}</div>
-                        </div>
-                        <hr />
-                        <button className='bg-blue-500 hover:bg-blue-600 text-white text-xl font-bold rounded focus:outline-none focus:ring-2 focus:ring-blue-400 goBtn w-fit px-6 py-3 mx-auto flex items-center cursor-pointer'
-                            onClick={() => handleSaveCard({
-                            imageUrl: card.imageUrl,
-                            name: card.name,
-                            id: card.id,
-                        })}>Save Card</button>
-                    </li>
-                    ))}
-                </ul>
+                    <ul>
+                        {searchResults.map((card, index) => (
+                            <li key={index} className='flex flex-col lg:flex-row items-center shadow-lg rounded-2xl p-4'>
+                                {card.imageUrl && (
+                                    <div className='lg:mr-4 card-img'>
+                                        <img src={card.imageUrl} alt={card.name} />
+                                    </div>
+                                )}
+                                <div className='card-text '>
+                                    <strong>Name:</strong><div className='ind-text'>{card.name}</div>
+                                    <br />
+                                    <strong>Text:</strong><div className='ind-text'>{card.text}</div>
+                                    <br />
+                                    <strong>Rarity:</strong><div className='ind-text'>{card.rarity}</div>
+                                    <br />
+                                    <strong>Type:</strong><div className='ind-text'>{card.type}</div>
+                                </div>
+                                <hr />
+                                <button className='bg-blue-500 hover:bg-blue-600 text-white text-xl font-bold rounded focus:outline-none focus:ring-2 focus:ring-blue-400 goBtn w-fit px-6 py-3 mx-auto flex items-center cursor-pointer'
+                                    onClick={() => handleSaveCard({
+                                        imageUrl: card.imageUrl,
+                                        name: card.name,
+                                        id: card.id,
+                                    })}>Save Card</button>
+                            </li>
+                        ))}
+                    </ul>
                 ) : (
-                <p>No results found.</p>
-                )}              
+                    <p>No results found.</p>
+                )}
             </div>
         </div>
     )
