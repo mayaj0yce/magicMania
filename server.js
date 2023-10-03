@@ -22,6 +22,10 @@ app.use((req, res, next) => {
   next();
 });
 
+app.get('/*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../magicmania/build/index.html'));
+});
+
 // Combine your schemas (typeDefs) and resolvers into one
 const combinedResolvers = [resolvers, userResolvers];
 const combinedTypeDefs = [typeDefs, userShema];
