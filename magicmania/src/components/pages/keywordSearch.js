@@ -65,7 +65,7 @@ function KeywordSearch() {
               placeholder="Enter a keyword"
               value={keyword}
               onChange={handleKeywordChange}
-              className="w-full p-2 border rounded-l-lg focus:outline-none focus:ring focus:border-blue-300"
+              className="w-full p-2 border rounded-l-lg focus:outline-none focus:ring focus:border-blue-300 bg-white"
             />
             <button type="submit"  className="bg-blue-500 text-white p-2 rounded-r-lg hover:bg-blue-600 focus:outline-none focus:ring" disabled={searchInProgress}>
               {searchInProgress ? 'Searching...' : 'Search'}

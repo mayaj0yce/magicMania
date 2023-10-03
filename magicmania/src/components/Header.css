@@ -74,11 +74,11 @@
     text-align: center;
 }
 
-.mainTitle {
+/* .mainTitle {
     align-items: center;
     justify-content: center;
     text-align: center;
-}
+} */
 
 .subtitle {
     text-align: center;
@@ -125,6 +125,12 @@
     margin-right: auto;
     background-color: white;
     border-radius: 10px;
+}
+
+.card-search-icon {
+    margin-top: 1px;
+    margin-left: 2px;
+    color:#445ffa;
 }
 
 @media (min-width: 1024px) {
