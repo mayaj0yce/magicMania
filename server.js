@@ -2,6 +2,7 @@ const express = require('express');
 const { ApolloServer } = require('apollo-server-express');
 const mongoose = require('./db/connection');
 require('dotenv').config();
+const path = require('path');
 
 // Import typeDefs and resolvers
 const typeDefs = require('./graphql/schemas/typeDefs');
