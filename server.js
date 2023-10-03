@@ -24,7 +24,7 @@ app.use((req, res, next) => {
 });
 
 app.get('/*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../magicmania/build/index.html'));
+  res.sendFile(path.join(__dirname, '../magicmania/public/index.html'));
 });
 
 // Combine your schemas (typeDefs) and resolvers into one
