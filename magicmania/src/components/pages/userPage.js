@@ -14,7 +14,6 @@ const userInfo = [
 ]
 
 
-
 function UserPage() {
 
   const [savedCards, setSavedCards] = useState([]);
@@ -27,6 +26,10 @@ function UserPage() {
   return (
       <div className="userPage">
           <main className="block userInfo">
+        <nav > 
+           <Link to="/keywordSearch" className="link link-hover">Keyword Search</Link>
+          <Link to="/cardSearch" className="link link-hover">Card Search</Link>
+          </nav>
             <h2 className="text-5xl justify-center mainTitle font-semibold">Welcome, </h2>
             <UserInfo
               username={userInfo[0].username}
