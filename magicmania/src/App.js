@@ -10,6 +10,7 @@ import LoginPage from "./components/pages/loginPage";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Signup from "./components/pages/signup";
+import Layout from './components/layout';
 import "./index.css";
 
 function App() {
@@ -17,16 +18,18 @@ function App() {
   return (
     <ApolloProvider client={client}> {/* Wrap App with ApolloProvider */}
       <Router>
-        <div className="App">
+        <div className="App whole-screen">
           <Header />
-          <Routes>
-            <Route exact path="/" element={<LandingPage />} />
-            <Route exact path="/keywordSearch" element={<KeywordSearch />} />
-            <Route exact path="/cardSearch" element={<CardSearch />} />
-            <Route exact path="/User" element={<UserPage />} />
-            <Route exact path="/login" element={<LoginPage />} />
-            <Route exact path="/signup" element={<Signup />} />
-          </Routes>
+          <Layout>
+            <Routes>
+              <Route exact path="/" element={<LandingPage />} />
+              <Route exact path="/keywordSearch" element={<KeywordSearch />} />
+              <Route exact path="/cardSearch" element={<CardSearch />} />
+              <Route exact path="/User" element={<UserPage />} />
+              <Route exact path="/login" element={<LoginPage />} />
+              <Route exact path="/signup" element={<Signup />} />
+            </Routes>
+          </Layout>
           <Footer />
         </div>
       </Router>
