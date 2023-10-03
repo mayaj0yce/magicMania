@@ -52,4 +52,3 @@ function UserPage() {
 }
 
 export default UserPage
-// import { CgCardHearts } from 'react-icons/cg'

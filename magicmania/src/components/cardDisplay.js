@@ -17,7 +17,7 @@ export const CardDisplay = (props) => {
             <div className=''>
                 <div className=''>
                     <strong>Name:</strong>
-                    <div className=''>{props.name}</div>
+                    <div className='up-card-name'>{props.name}</div>
                 </div>
                 {props.imageUrl && (
                     <img src={props.imageUrl} alt={props.name} className='image-userpage'/>
