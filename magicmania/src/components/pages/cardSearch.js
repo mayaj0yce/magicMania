@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 // import { Link } from 'react-router-dom';
 import '../Header.css'
 import { GiCardPick } from 'react-icons/gi'
-
+import { getInclusionDirectives } from '@apollo/client/utilities';
+import GetUser from '../../utils/auth.js';
 
 function CardSearch() {
     const [searchTerm, setSearchTerm] = useState('');
@@ -92,12 +93,15 @@ function CardSearch() {
                             <strong>Type:</strong><div className='ind-text'>{card.type}</div>
                         </div>
                         <hr />
-                        <button className='bg-blue-500 hover:bg-blue-600 text-white text-xl font-bold rounded focus:outline-none focus:ring-2 focus:ring-blue-400 goBtn w-fit px-6 py-3 mx-auto flex items-center cursor-pointer'
-                            onClick={() => handleSaveCard({
-                            imageUrl: card.imageUrl,
-                            name: card.name,
-                            id: card.id,
-                        })}>Save Card</button>
+                        {GetUser.loggedIn() ? 
+                            <button className='bg-blue-500 hover:bg-blue-600 text-white text-xl font-bold rounded focus:outline-none focus:ring-2 focus:ring-blue-400 goBtn w-fit px-6 py-3 mx-auto flex items-center cursor-pointer'
+                                onClick={() => handleSaveCard({
+                                imageUrl: card.imageUrl,
+                                name: card.name,
+                                id: card.id,
+                            })}>Save Card</button> 
+                            : <></>
+                        }
                     </li>
                     ))}
                 </ul>

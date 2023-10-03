@@ -74,11 +74,11 @@
     text-align: center;
 }
 
-/* .mainTitle {
+.mainTitle {
     align-items: center;
     justify-content: center;
     text-align: center;
-} */
+}
 
 /* title animation */
 .magic-title-animation {
@@ -178,6 +178,10 @@
     align-items: center;
 }
 
+.up-card-name {
+    font-weight: 500;
+    padding-bottom: 10px;
+}
 /* .save-card-btn {
 
 } */
