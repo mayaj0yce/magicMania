@@ -32,7 +32,7 @@ const initialData = [
   {
     Keyword: 'Adapt',
     Description:
-      'A keyword action that puts +1/+1 counters on a creature that doesn\' have any yet.',
+      'A keyword action that puts +1/+1 counters on a creature that doesnt\' have any yet.',
     Example: 'Tap 3 Forest: Adapt 1 (If this creature has no +1/+1 counters on it, put a +1/+1 counter on it.)',
   },
   {
@@ -1510,13 +1510,16 @@ const initialData = [
 // Seed the database
 async function seedDatabase() {
   try {
-    await MagicWords.deleteMany(); // Clear existing data
-    await MagicWords.insertMany(initialData); // Insert new data
+    await MagicWords.deleteMany();
+     // Clear existing data
+    await MagicWords.insertMany(initialData);
+     // Insert new data
     console.log('magicWords seeded successfully');
   } catch (error) {
     console.error('Error seeding database:', error);
   } finally {
-    mongoose.connection.close(); // Close the database connection
+    mongoose.connection.close(); 
+    // Close the database connection
   }
 }
 
