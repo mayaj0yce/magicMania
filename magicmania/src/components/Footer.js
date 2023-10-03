@@ -5,7 +5,7 @@ import './Footer.css';
 
 const Footer = () => {
   return (
-    <footer className="footer footer-center bg-base-200 text-base-content rounded myfooter">
+    <footer className="footer footer-center text-base-content rounded myfooter">
       <nav className="grid grid-flow-col gap-4">
         <Link to="/" className='link link-hover'>Home</Link>
         <Link to="/login" className="link link-hover">Login</Link> 

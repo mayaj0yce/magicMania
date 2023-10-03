@@ -3,22 +3,38 @@ import { Link, useNavigate } from 'react-router-dom'; // Import useNavigate
 import './Header.css';
 import LogoPic from '../assets/images/logoimg.png';
 import { FaBars, FaTimes } from 'react-icons/fa';
+import { CgCardHearts } from 'react-icons/cg';
+import { AiOutlineHome, AiOutlineUserAdd } from 'react-icons/ai'
+import { TbLogout, TbLogin2 } from 'react-icons/tb';
 
 const NavLinks = () => {
     const isAuthenticated = !!localStorage.getItem('authToken'); // Check if the user is authenticated
   
     return (
       <>
-        <Link to="/" className='navLink hovernow'>Home</Link>
+        <div className="flex flex-col items-center nav-btn-full">
+          <Link to="/" className='navLink hovernow my-deck-btn nav-icon-btn'><AiOutlineHome size={30}/></Link>
+          <Link to="/" className='home-text'>Home</Link>
+        </div>
         {/* Conditionally render "Login" and "Signup" when the user is not authenticated */}
         {!isAuthenticated && (
           <>
-            <Link to="/login" className='navLink hovernow'>Login</Link>
-            <Link to="/signup" className='navLink hovernow'>Signup</Link>
+          <div className="flex flex-col items-center nav-btn-full">
+            <Link to="/login" className='navLink hovernow my-deck-btn nav-icon-btn'><TbLogin2 size={30}/></Link>
+            <Link to="/login" className='my-deck-text'>Login</Link>
+          </div>
+          <div className="flex flex-col items-center nav-btn-full">
+            <Link to="/signup" className='navLink hovernow my-deck-btn nav-icon-btn'><AiOutlineUserAdd size={30}/></Link>
+            <Link to="/signup" className='my-deck-text'>Signup</Link>
+          </div>
           </>
         )}
         {/* IF LOGGED IN THEN SHOW */}
-        {isAuthenticated && <Link to="/User" className='navLink hovernow'>UserPage</Link>}
+        {isAuthenticated && 
+        (<div className="flex flex-col items-center nav-btn-full">
+          <Link to="/User" className='navLink hovernow my-deck-btn nav-icon-btn'><CgCardHearts size={30}/></Link>
+          <Link to="/User" className='my-deck-text'>My Deck</Link>
+        </div>)}
       </>
     );
   };
@@ -53,7 +69,10 @@ const Header = () => {
             <NavLinks />
             {/* Render the "Logout" button when the user is logged in */}
             {localStorage.getItem('authToken') && (
-              <button className='navLink hovernow' onClick={handleLogout}>Logout</button>
+              <div className="flex flex-col items-center nav-btn-full">
+                <button className='navLink hovernow nav-icon-btn' onClick={handleLogout}><TbLogout size={30}/></button>
+                <button className='logout-text' onClick={handleLogout}>Logout</button>
+              </div>
             )}
           </div>
           <div className='md:hidden'>
@@ -67,7 +86,10 @@ const Header = () => {
             <NavLinks />
             {/* Render the "Logout" button in the mobile menu when the user is logged in */}
             {localStorage.getItem('authToken') && (
-              <button className='navLink hovernow' onClick={handleLogout}>Logout</button>
+              <div className="flex flex-col items-center nav-btn-full">
+                <button className='navLink hovernow nav-icon-btn' onClick={handleLogout}><TbLogout size={30}/></button>
+                <button className='logout-text' onClick={handleLogout}>Logout</button>
+              </div>
             )}
           </div>
         )}

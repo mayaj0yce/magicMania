@@ -1,7 +1,3 @@
-/* custom height */
-.h-custom {
-    height: 80vh;
-}
 /* class for the entire screen, found in app.js */
 .whole-screen {
     background-color: rgba(230, 238, 255, 0.941);
@@ -11,15 +7,45 @@
     background-image: linear-gradient(to bottom right, #814ae8, #80eaff);
     position: sticky;
     top: 0;
+    color: white;
+    
 }
 
 .navLink {
-    border: black solid 1px;
+    border: #814ae8 solid 3px;
     padding: 6px;
     transition: transform .4s;
     border-radius: 6px;
+    background-color: #814ae8;
 }
 
+.my-deck-text, .logout-text, .home-text {
+    font-size: 15px;
+}
+
+@media screen and (max-width: 885px) {
+    .my-deck-text, .logout-text, .home-text {
+        font-size: 15px;
+        display: flex;
+        flex-direction: row;
+    }
+    .nav-btn-full{
+        width: 80px;
+    }
+}
+
+.nav-icon-btn {
+    width: 3rem;
+    height: 3rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-btn-full {
+    padding: 5px;
+    justify-content: center;
+    width: 80px;
+}
 /* .allNavLinks {
     width: 65%;
 } */
@@ -29,7 +55,6 @@
 }
 
 .hovernow {
-    margin: 10px;
     box-shadow: 0 1px 2px rgb(56, 148, 233);
     transition: box-shadow 0.5s ease-in-out;
 }
