@@ -54,3 +54,14 @@ export const SAVE_CARD = gql`
     }
   }
 `;
+
+export const DELETE_USER_CARD = gql`
+mutation($cardId: ID!) {
+  deleteUserCard(cardId: $cardId) {
+    id
+    name
+    imageUrl
+    # Add any other fields you want to return after deletion
+   }
+  }
+`;
