@@ -41,7 +41,17 @@ export const LOGIN_USER = gql`
   }
 `;
 
-// export const ADD_CARD = gql`
-// mutation addCard($profileId: ID!, $card: )
-
-
+// Define the SAVE_CARD mutation
+export const SAVE_CARD = gql`
+  mutation SaveCard($input: SaveCardInput!) {
+    saveCard(input: $input) {
+      id
+      name
+      imageUrl
+      user {
+        id
+        # Add more user fields as needed
+      }
+    }
+  }
+`;
