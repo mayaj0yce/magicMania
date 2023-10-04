@@ -1,3 +1,7 @@
+const express = require('express');
+const { ApolloServer } = require('apollo-server-express');
+const path = require('path');
+
 // Import typeDefs and resolvers
 const typeDefs = require('./graphql/schemas/typeDefs');
 const resolvers = require('./graphql/resolvers/magicWordResolver');
