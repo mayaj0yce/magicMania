@@ -65,12 +65,13 @@
 
 .nav-dropdown {
     background-image: linear-gradient(to bottom right, #814ae8, #80eaff);
+    z-index: 100000;
 }
 
 
 /* landing page css */
 .landingPageAll {
-    padding-top: 6rem;
+    padding-top: 4rem;
     text-align: center;
 }
 
@@ -86,6 +87,7 @@
     animation: bounce 2s infinite;
     color: #8097ff;
     padding: 5px;
+    z-index: 1;
 }
 
 @keyframes bounce {
@@ -99,6 +101,10 @@
       transform: translateY(-5px);
     }
 }
+.z-index-test {
+    position: relative;
+    z-index: 1;
+} 
 
 .subtitle {
     text-align: center;
@@ -106,6 +112,12 @@
     align-items: center;
     padding-bottom: 22px;
     padding-top: 10px;
+}
+
+.search-title {
+    color: #8097ff;
+    border-bottom: #8097ff solid 2px;
+    font-size: 2rem;
 }
 
 .goBtn {
@@ -151,7 +163,7 @@
 .card-search-icon {
     margin-top: 1px;
     margin-left: 2px;
-    color:#445ffa;
+    color:#814ae8;
 }
 
 @media (min-width: 1024px) {
@@ -169,6 +181,9 @@
     font-weight: 500;
 }
 
+.no-image {
+    
+}
 /* .card-img {
    
 } */
@@ -248,4 +263,13 @@
     font-weight: 500;
     margin: 15px;
     margin-bottom: 25px;
+}
+
+.example-keyword {
+    margin-left: 10px;
+}
+
+.keyword-search-btn {
+    font-size: 20px;
+    font-weight: 500;
 }

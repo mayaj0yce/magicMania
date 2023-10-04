@@ -8,20 +8,20 @@ import '../Header.css'
 function LandingPage() {
   return (
     <div className='landingPageAll '>
-      <h2 className='mainTitle text-4xl'>Welcome to</h2>
-      <span className='text-5xl justify-center mainTitle font-semibold'>
+      <h2 className='mainTitle text-4xl text-black'>Welcome to</h2>
+      <span className='text-5xl justify-center mainTitle font-bold z-index-test'>
         <span className='magic-title-animation'> MagicMania</span>
       </span>
-      <p className='subtitle text-2xl'>Choose an option below to start your adventure</p>
+      <p className='subtitle text-2xl text-black'>Choose an option below to start your adventure</p>
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-4 ">
         {/* Keyword Search*/}
         <div className="bg-white rounded-lg shadow-md p-4 flex flex-col justify-center items-center">
-          <h3 className="mb-2 text-2xl font-semibold leading-tight text-gray-800">
+          <h3 className="mb-2 text-2xl font-semibold leading-tight  search-title">
             Keyword Search
           </h3>
           <Link to="/keywordSearch">
-            <p className='text-xl'>Search for keywords on Magic cards</p>
+            <p className='text-xl text-black'>Search for keywords on Magic cards</p>
             <img src={KeyWordImage} className='keywordImg mx-auto' alt="card w magnifyingglass"/>
             <button
               type="button"
@@ -37,11 +37,11 @@ function LandingPage() {
 
         {/* Card Search */}
         <div className="bg-white rounded-lg shadow-md p-4 flex flex-col justify-center items-center">
-          <h3 className="mb-2 text-2xl font-semibold leading-tight text-gray-800">
+          <h3 className="mb-2 text-2xl font-semibold leading-tight  search-title">
             Card Search
           </h3>
           <Link to="/cardSearch">
-            <p className='text-xl'>Search for Magic cards and build your own deck!</p>
+            <p className='text-xl text-black'>Search for Magic cards and build your own deck!</p>
             <img src={CardSearchImage} className='cardImg mx-auto' alt="cards"/>
             <button
               type="button"
