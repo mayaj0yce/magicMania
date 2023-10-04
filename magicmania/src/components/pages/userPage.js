@@ -11,9 +11,9 @@ function UserPage() {
   const userId = GetUser.getProfile().id;
 
   // Get the username from localStorage
-  const username = localStorage.getItem('username') || 'Guest';
+  const username = GetUser.getProfile().username|| 'Guest';
 
-  const { loading, error, data } = useQuery(GET_USER_CARDS, {
+  const { loading, data } = useQuery(GET_USER_CARDS, {
     variables: { userId },
     fetchPolicy: "network-only",
   });

@@ -2,14 +2,12 @@ import React, { useState } from 'react';
 import '../Header.css';
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../../graphql/mutations';
-import { useNavigate } from 'react-router-dom';
 import GetUser from '../../utils/auth.js';
 
 function LoginPage() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [loginSuccess, setLoginSuccess] = useState(null);
-  const navigate = useNavigate();
 
   const [loginUser] = useMutation(LOGIN_USER);
 
@@ -39,8 +37,6 @@ function LoginPage() {
       setPassword('');
       setLoginSuccess(true);
 
-      // Redirect to the user page after successful login
-      navigate('/User');
     } catch (error) {
       console.error('Login failed:', error);
       setLoginSuccess(false);
