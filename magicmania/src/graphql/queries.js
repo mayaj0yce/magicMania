@@ -9,3 +9,14 @@ export const SEARCH_KEYWORD = gql`
     }
   }
 `;
+
+export const GET_USER_CARDS = gql`
+  query GetUserCards($userId: String!) {
+    getUserCards(userId: $userId) {
+      id
+      name
+      imageUrl
+      # Add other card fields as needed
+    }
+  }
+`;
