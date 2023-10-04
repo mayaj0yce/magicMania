@@ -1,36 +1,28 @@
 import React, { useState } from 'react';
 import '../Header.css';
 import { useMutation } from '@apollo/client';
-import { LOGIN_USER } from '../../graphql/mutations'; // Import the LOGIN_USER mutation
+import { LOGIN_USER } from '../../graphql/mutations';
 import { useNavigate } from 'react-router-dom';
 import GetUser from '../../utils/auth.js';
 
 function LoginPage() {
-  // State to store the user's credentials
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-
-  // State to track whether login was successful
   const [loginSuccess, setLoginSuccess] = useState(null);
   const navigate = useNavigate();
 
-  // Use the useMutation hook to define the login mutation
   const [loginUser] = useMutation(LOGIN_USER);
 
-  // Function to handle username input changes
   const handleUsernameChange = (e) => {
     setUsername(e.target.value);
   };
 
-  // Function to handle password input changes
   const handlePasswordChange = (e) => {
     setPassword(e.target.value);
   };
 
-  // Function to handle the login action
   const handleLogin = async () => {
     try {
-      // Call the loginUser mutation with the username and password
       const response = await loginUser({
         variables: {
           username,
@@ -38,23 +30,20 @@ function LoginPage() {
         },
       });
 
-      // Handle the response here, e.g., show success message or redirect to a user page.
       console.log('Login successful:', response.data);
 
-      //Store the authentication token in the local storage
+      // Store the authentication token using GetUser.login
+      GetUser.login(response.data.login.token);
 
-      // localStorage.setItem('authToken', response.data.login.token);
-      // console.log('Token:', response.data.login.token);
-      GetUser.login(response.data.login.token)
-      // Clear the form fields after successful login
       setUsername('');
       setPassword('');
-      setLoginSuccess(true); // Set loginSuccess to true
+      setLoginSuccess(true);
 
+      // Redirect to the user page after successful login
+      navigate('/User');
     } catch (error) {
-      // Handle errors, e.g., display an error message.
       console.error('Login failed:', error);
-      setLoginSuccess(false); // Set loginSuccess to false on login failure
+      setLoginSuccess(false);
     }
   };
 

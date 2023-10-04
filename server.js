@@ -8,7 +8,9 @@ const path = require('path');
 const typeDefs = require('./graphql/schemas/typeDefs');
 const resolvers = require('./graphql/resolvers/magicWordResolver');
 const userResolvers = require('./graphql/resolvers/userResolver');
+const cardResolvers = require('./graphql/resolvers/saveCards');
 const userShema = require('./graphql/schemas/userSchema');
+const cardSchema = require('./graphql/schemas/saveCards');
 const authenticateToken = require('./graphql/middleware/auth');
 
 // Create an instance of Express
@@ -28,14 +30,20 @@ app.use((req, res, next) => {
 // });
 
 // Combine your schemas (typeDefs) and resolvers into one
-const combinedResolvers = [resolvers, userResolvers];
-const combinedTypeDefs = [typeDefs, userShema];
+const combinedResolvers = [resolvers, userResolvers, cardResolvers];
+const combinedTypeDefs = [typeDefs, userShema, cardSchema];
 
 // Create an instance of Apollo Server
 const server = new ApolloServer({
   typeDefs: combinedTypeDefs,
   resolvers: combinedResolvers,
+  context: ({ req }) => {
+    // Extract the user information from the request
+    const user = req.user;
+    return { user };
+  },
 });
+
 
 // Start the Apollo server and then Apply the Apollo Server instance as middleware to Express
 server.start().then(() => {
