@@ -1,8 +1,7 @@
 {
   "scripts": {
     "start": "node server.js",
-    "seed": "node db/seeds/magicWordsSeed.js && node db/seeds/userSeed.js",
-    "postinstall": "cd magicmania && npm run build && cp -r build ../build"
+    "seed": "node db/seeds/magicWordsSeed.js && node db/seeds/userSeed.js"
   },
   
   "dependencies": {
