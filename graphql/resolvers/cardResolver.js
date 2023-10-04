@@ -21,7 +21,13 @@ const resolvers = {
 
       await card.save();
 
-      return card;
+      return {
+        id: card.id,
+        name: card.name,
+        imageUrl: card.imageUrl,
+      };
     },
   },
 };
+
+module.exports = resolvers;
