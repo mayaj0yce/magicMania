@@ -11,7 +11,10 @@ type Card {
   
   type Query {
     getUserCards(userId: String!): [Card]
-    # Other queries...
+  }
+
+  type Mutation {
+    deleteUserCard(cardId: ID!): Card
   }
 `;
 
