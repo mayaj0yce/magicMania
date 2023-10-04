@@ -100,6 +100,9 @@ function CardSearch() {
           {isLoading ? 'Searching...' : 'Search'}
         </button>
       </div>
+      {searchResults.length === 0 &&(
+        <h3 className='text-gray-400 example-keyword'>Search for a card's name e.g.: "Millstone" or search for part of a card's name e.g.: "Mill"</h3>
+      )}
       <div className="mt-4 items-center card-card flex justify-center">
         {searchResults.length > 0 ? (
           <ul>
