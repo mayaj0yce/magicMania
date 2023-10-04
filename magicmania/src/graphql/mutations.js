@@ -41,6 +41,18 @@ export const LOGIN_USER = gql`
   }
 `;
 
+export const SAVE_CARD = gql`
+  mutation SaveCard($name: String!, $imageUrl: String!) {
+    saveCard(name: $name, imageUrl: $imageUrl) {
+      id
+      name
+      imageUrl
+      # Add more card fields as needed
+    }
+  }
+`;
+
+
 // export const ADD_CARD = gql`
 // mutation addCard($profileId: ID!, $card: )
 

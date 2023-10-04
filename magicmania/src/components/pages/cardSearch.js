@@ -1,14 +1,17 @@
 import React, { useState } from 'react';
+import { useMutation } from '@apollo/client';
+import { SAVE_CARD } from '../../graphql/mutations';
 // import { Link } from 'react-router-dom';
 import '../Header.css'
 import { GiCardPick } from 'react-icons/gi'
-import { getInclusionDirectives } from '@apollo/client/utilities';
+// import { getInclusionDirectives } from '@apollo/client/utilities';
 import GetUser from '../../utils/auth.js';
 
 function CardSearch() {
     const [searchTerm, setSearchTerm] = useState('');
     const [searchResults, setSearchResults] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
+    const [saveCard] = useMutation(SAVE_CARD);
 
     const handleSearch = async () => {
         setIsLoading(true);
@@ -39,15 +42,31 @@ function CardSearch() {
         }
     };
 
-    const handleSaveCard = (cardData) => {
-        const savedCardData = JSON.parse(localStorage.getItem('savedCardData')) || [];
-        const isCardAlreadySaved = savedCardData.some((card) => card.id === cardData.id);
+    const handleSaveCard = async (cardData) => {
+        try {
+          setIsLoading(true);
+          const { name, imageUrl } = cardData;
+      
+          // Execute the mutation with the card data
+          const response = await saveCard({
+            variables: {
+              name: name,       // Add name variable
+              imageUrl: imageUrl, // Add imageUrl variable
+            },
+          });
 
-        if (!isCardAlreadySaved) {
-            savedCardData.push(cardData);
-            localStorage.setItem('savedCardData', JSON.stringify(savedCardData));
-        }
+      // Handle success, e.g., show a success message
+      console.log('Card saved:', response.data);
+
+      // ... Additional logic if needed ...
+
+    } catch (error) {
+      // Handle errors, e.g., display an error message
+      console.error('Error saving card:', error);
+    } finally {
+      setIsLoading(false);
     }
+  };
 
     console.log(searchResults)
 

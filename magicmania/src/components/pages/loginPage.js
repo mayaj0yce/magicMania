@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import '../Header.css';
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../../graphql/mutations'; // Import the LOGIN_USER mutation
-import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../../utils/AuthContext';
 import GetUser from '../../utils/auth.js';
 
 function LoginPage() {
@@ -12,7 +12,10 @@ function LoginPage() {
 
   // State to track whether login was successful
   const [loginSuccess, setLoginSuccess] = useState(null);
-  const navigate = useNavigate();
+
+  // Use the useAuth hook to access authentication functions and user data
+  const { setUser } = useAuth(); // Get setUser from the AuthContext
+
 
   // Use the useMutation hook to define the login mutation
   const [loginUser] = useMutation(LOGIN_USER);
@@ -41,16 +44,17 @@ function LoginPage() {
       // Handle the response here, e.g., show success message or redirect to a user page.
       console.log('Login successful:', response.data);
 
-      //Store the authentication token in the local storage
+      // Store the user in AuthContext using setUser
+      setUser(response.data.user); // Set the user in AuthContext
+      console.log('User set in AuthContext:', response.data.user);
 
-      // localStorage.setItem('authToken', response.data.login.token);
-      // console.log('Token:', response.data.login.token);
-      GetUser.login(response.data.login.token)
+      //Store the authentication token in the local storage
+      GetUser.login(response.data.login.token);
+
       // Clear the form fields after successful login
       setUsername('');
       setPassword('');
       setLoginSuccess(true); // Set loginSuccess to true
-
     } catch (error) {
       // Handle errors, e.g., display an error message.
       console.error('Login failed:', error);
