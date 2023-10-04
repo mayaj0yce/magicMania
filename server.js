@@ -10,6 +10,9 @@ const getCardSchema = require('./graphql/schemas/getUserCards');
 const deleteUserCard = require('./graphql/resolvers/deleteUserCard');
 const authenticateToken = require('./graphql/middleware/auth');
 
+const mongoose = require('./db/connection');
+require('dotenv').config();
+
 // Create an instance of Express
 const app = express();
 const port = process.env.PORT || 3001;
@@ -36,6 +39,8 @@ const server = new ApolloServer({
     return { user };
   },
 });
+
+mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true });
 
 // Start the Apollo server and then Apply the Apollo Server instance as middleware to Express
 server.start().then(() => {
