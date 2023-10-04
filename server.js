@@ -50,11 +50,11 @@ server.start().then(() => {
 
 // Serve your React app's static files (build) in production
 if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, './magicmania/build')));
+  app.use(express.static(path.join(__dirname, 'magicmania', 'build')));
 
   // Express serve up index.html file if it doesn't recognize the route
   app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, './magicmania/build', 'index.html'));
+    res.sendFile(path.join(__dirname, 'magicmania', 'build', 'index.html'));
   });
 }
 
