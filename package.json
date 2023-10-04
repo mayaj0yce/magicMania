@@ -1,16 +1,9 @@
 {
   "scripts": {
     "start": "node server.js",
-<<<<<<< Updated upstream
-    "seed": "node db/seeds/magicWordsSeed.js && node db/seeds/userSeed.js",
-    "develop": " \"npm start\" \"cd magicmania & npm start\"",
-    "build": "react-scripts start"
-  },
-=======
     "seed": "node db/seeds/magicWordsSeed.js && node db/seeds/userSeed.js"
   },
   
->>>>>>> Stashed changes
   "dependencies": {
     "@apollo/client": "^3.8.4",
     "apollo-server-express": "^3.12.1",
