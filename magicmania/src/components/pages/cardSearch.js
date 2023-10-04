@@ -12,6 +12,8 @@ function CardSearch() {
 
   // Use the useMutation hook to define the saveCard mutation
   const [saveCardMutation] = useMutation(SAVE_CARD);
+  // this should help change the save button after click
+  const [savedCards, setSavedCards] = useState({});
 
   const handleSearch = async () => {
     setIsLoading(true);
@@ -62,9 +64,12 @@ function CardSearch() {
   
       // Handle the success response here
       console.log('Card saved successfully:', response.data.saveCard);
-  
-      // You can perform any additional actions after successfully saving the card here
-  
+      
+      setSavedCards((prevSavedCards) => ({
+        ...prevSavedCards,
+        [cardId]: true,
+      }));
+      
     } catch (error) {
       // Handle errors, e.g., display an error message.
       console.error('Error saving card:', error);
@@ -118,9 +123,9 @@ function CardSearch() {
                 {GetUser.loggedIn() ? (
                   <button
                     className="bg-blue-500 hover:bg-blue-600 text-white text-xl font-bold rounded focus:outline-none focus:ring-2 focus:ring-blue-400 goBtn w-fit px-6 py-3 mx-auto flex items-center cursor-pointer"
-                    onClick={() => handleSaveCard(card.id, card.imageUrl, card.name)} // Pass the card ID to handleSaveCard
+                    onClick={() => handleSaveCard(card.id, card.imageUrl, card.name)} 
                   >
-                    Save Card
+                    {savedCards[card.id] ? 'Saved Card' : 'Save Card'}
                   </button>
                 ) : <></>}
               </li>
