@@ -3,7 +3,7 @@ import { useMutation } from '@apollo/client';
 import { CREATE_USER } from '../../graphql/mutations';
 import { useNavigate } from 'react-router-dom';
 import '../Header.css';
-
+import GetUser from '../../utils/auth.js'; // Import the GetUser class
 
 const Signup = () => {
   const [username, setUsername] = useState('');
@@ -32,8 +32,11 @@ const Signup = () => {
       setEmail('');
       setPassword('');
 
-      // Navigate to the login page on successful registration
-      navigate('/login');
+      // Use the GetUser class to handle the login action
+      GetUser.login(response.data.createUser.token);
+
+      // Navigate to the user page on successful registration
+      navigate('/User');
     } catch (error) {
       // Handle errors, e.g., display an error message.
       console.error('Error signing up:', error);
@@ -82,4 +85,4 @@ const Signup = () => {
   );  
 }
 
-export default Signup
+export default Signup;
