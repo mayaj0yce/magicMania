@@ -1,11 +1,7 @@
 {
+ 
   "scripts": {
-    "start": "node server.js",
-    "seed": "node db/seeds/magicWordsSeed.js && node db/seeds/userSeed.js"
-  },
-
-  "scripts": {
-    "start": "node server/server.js --ignore magicmania",
+    "start": "node server.js --ignore magicmania",
     "develop": "concurrently \"cd server && npm run watch\" \"cd magicmania && npm start\"",
     "install": "cd server && npm i && cd ../magicmania && npm i",
     "seed": "node db/seeds/magicWordsSeed.js && node db/seeds/userSeed.js",
