@@ -18,7 +18,7 @@ const authenticateToken = require('./graphql/middleware/auth');
 
 // Create an instance of Express
 const app = express();
-const port = process.env.PORT || 3001; 
+const port = process.env.PORT || 3001;
 
 // Middleware to parse JSON requests
 app.use(express.json());
@@ -27,10 +27,6 @@ app.use((req, res, next) => {
   console.log('Received request:', req.body);
   next();
 });
-
-// app.get('/', (req, res) => {
-//   res.sendFile(path.join(__dirname, './magicmania/build/index.html'));
-// });
 
 // Combine your schemas (typeDefs) and resolvers into one
 const combinedResolvers = [resolvers, userResolvers, cardResolvers, getCardsResolvers, deleteUserCard];
@@ -47,29 +43,19 @@ const server = new ApolloServer({
   },
 });
 
-
 // Start the Apollo server and then Apply the Apollo Server instance as middleware to Express
 server.start().then(() => {
   server.applyMiddleware({ app });
 });
 
-// Define API routes here
-
-// Test route
-app.get('/api/test', (req, res) => {
-  res.json({ message: 'Hello from the server!' });
-});
-
-
 // Serve your React app's static files (build) in production
- if (process.env.NODE_ENV === 'production') {
-  app.use(express.static('magicmania/build')); 
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, 'magicmania/build')));
 
-// Express serve up index.html file if it doesn't recognize route
-const path = require('path');
-app.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
-});
+  // Express serve up index.html file if it doesn't recognize the route
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'magicmania/build', 'index.html'));
+  });
 }
 
 // Start the server
