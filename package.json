@@ -1,14 +1,15 @@
 {
   "scripts": {
-    "start": "node server.js",
+    "start": "node server.js --ignore magicmania",
+    "develop": "concurrently \"cd server && npm run watch\" \"cd magicmania && npm start\"",
     "seed": "node db/seeds/magicWordsSeed.js && node db/seeds/userSeed.js",
-    "develop": " \"npm start\" \"cd magicmania & npm start\"",
-    "build": "react-scripts start"
+    "build": "npm i && cd magicmania && npm i && npm run build"
   },
   "dependencies": {
     "@apollo/client": "^3.8.4",
     "apollo-server-express": "^3.12.1",
     "bcrypt": "^5.0.0",
+    "daisyui": "^3.8.3",
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
     "express-session": "^1.17.1",
@@ -16,5 +17,9 @@
     "mongoose": "^7.5.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
+  },
+  "engines": {
+    "npm": "8.19.2",
+    "node": "16.18.0"
   }
 }

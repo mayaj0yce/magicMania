@@ -1,9 +1,3 @@
-const express = require('express');
-const { ApolloServer } = require('apollo-server-express');
-const mongoose = require('./db/connection');
-require('dotenv').config();
-const path = require('path');
-
 // Import typeDefs and resolvers
 const typeDefs = require('./graphql/schemas/typeDefs');
 const resolvers = require('./graphql/resolvers/magicWordResolver');
@@ -50,11 +44,11 @@ server.start().then(() => {
 
 // Serve your React app's static files (build) in production
 if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, 'magicmania/build')));
+  app.use(express.static(path.join(__dirname, './magicmania/build')));
 
   // Express serve up index.html file if it doesn't recognize the route
   app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'magicmania/build', 'index.html'));
+    res.sendFile(path.join(__dirname, './magicmania/build', 'index.html'));
   });
 }
 
