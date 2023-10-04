@@ -46,6 +46,7 @@ function CardSearch() {
     try {
       // Get the user ID from the GetUser class
       const userId = GetUser.getProfile().id;
+      console.log('User ID:', userId); // Log the user ID
   
       // Call the saveCard mutation with the cardId, userId, imageUrl, and name
       const response = await saveCardMutation({

@@ -7,7 +7,7 @@ const saveCard = async (_, { input }) => {
 
     // Create and save the card document with the associated userId, imageUrl, and name
     const newCard = new Card({
-      userId,
+      userId, // Ensure that userId is correctly set
       imageUrl,
       name,
       // Other card properties if needed
