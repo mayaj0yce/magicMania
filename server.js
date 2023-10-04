@@ -52,7 +52,13 @@ app.get('/api/test', (req, res) => {
 
 // Serve your React app's static files (build) in production
  if (process.env.NODE_ENV === 'production') {
-  app.use(express.static('magicmania/build')); // Replace 'client/build' with build folder
+  app.use(express.static('magicmania/build')); 
+
+// Express serve up index.html file if it doesn't recognize route
+const path = require('path');
+app.get('*', (req, res) => {
+  res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+});
 }
 
 // Start the server
