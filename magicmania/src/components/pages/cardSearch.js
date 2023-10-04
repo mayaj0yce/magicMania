@@ -11,7 +11,7 @@ function CardSearch() {
   const [isLoading, setIsLoading] = useState(false);
 
   // Use the useMutation hook to define the saveCard mutation
-  const [saveCardMutation, { error: saveCardError }] = useMutation(SAVE_CARD);
+  const [saveCardMutation] = useMutation(SAVE_CARD);
 
   const handleSearch = async () => {
     setIsLoading(true);
@@ -42,32 +42,33 @@ function CardSearch() {
     }
   };
 
-  const handleSaveCard = async (cardId) => {
+  const handleSaveCard = async (cardId, imageUrl, name) => {
     try {
-      // Call the saveCard mutation with the cardId
+      // Get the user ID from the GetUser class
+      const userId = GetUser.getProfile().id;
+  
+      // Call the saveCard mutation with the cardId, userId, imageUrl, and name
       const response = await saveCardMutation({
         variables: {
           input: {
             cardId,
+            userId, // Include the user ID in the mutation input
+            imageUrl, // Include imageUrl
+            name, // Include name
           },
         },
-        context: {
-            headers: {
-                Authorization: `Bearer ${localStorage.getItem('id_token')}`,
-            },
-        },
       });
-
+  
       // Handle the success response here
       console.log('Card saved successfully:', response.data.saveCard);
-
+  
       // You can perform any additional actions after successfully saving the card here
-
+  
     } catch (error) {
       // Handle errors, e.g., display an error message.
       console.error('Error saving card:', error);
     }
-  };
+  };  
 
   console.log(searchResults);
 
@@ -92,8 +93,6 @@ function CardSearch() {
         >
           {isLoading ? 'Searching...' : 'Search'}
         </button>
-        {/* Display an error message if the mutation encounters an error */}
-{saveCardError && <p>Error saving card: {saveCardError.message}</p>}
       </div>
       <div className="mt-4 items-center card-card flex justify-center">
         {searchResults.length > 0 ? (
@@ -118,7 +117,7 @@ function CardSearch() {
                 {GetUser.loggedIn() ? (
                   <button
                     className="bg-blue-500 hover:bg-blue-600 text-white text-xl font-bold rounded focus:outline-none focus:ring-2 focus:ring-blue-400 goBtn w-fit px-6 py-3 mx-auto flex items-center cursor-pointer"
-                    onClick={() => handleSaveCard(card.id)} // Pass the card ID to handleSaveCard
+                    onClick={() => handleSaveCard(card.id, card.imageUrl, card.name)} // Pass the card ID to handleSaveCard
                   >
                     Save Card
                   </button>

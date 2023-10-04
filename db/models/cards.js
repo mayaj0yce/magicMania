@@ -5,11 +5,8 @@ const cardSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  imageUrl: {
-    type: String,
-    required: true,
-  },
-  user: {
+  imageUrl: String,
+  userId: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User', // Reference to the User model
     required: true,

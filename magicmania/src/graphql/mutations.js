@@ -50,7 +50,6 @@ export const SAVE_CARD = gql`
       imageUrl
       user {
         id
-        # Add more user fields as needed
       }
     }
   }

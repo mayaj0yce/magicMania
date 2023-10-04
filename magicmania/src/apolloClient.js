@@ -1,17 +1,22 @@
 import { ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
-import GetUser from './utils/auth'
 
-// Create an HTTP link to your GraphQL server
+// Create a function to get the token from localStorage
+const getTokenFromLocalStorage = () => {
+  const token = localStorage.getItem('authToken');
+  return token ? `Bearer ${token}` : '';
+};
+
+// Create an HTTP link to your GraphQL server with a dynamic Authorization header
 const httpLink = createHttpLink({
   uri: 'http://localhost:3001/graphql', // Set your server's GraphQL endpoint
   headers: {
-    Authorization: `Bearer ${GetUser.getToken()}`, // Get the token from storage
+    Authorization: getTokenFromLocalStorage(), // Set the Authorization header dynamically
   },
 });
 
 // Create an Apollo Client
 const client = new ApolloClient({
-  link: httpLink,
+  link: httpLink, // Use the HTTP link directly
   cache: new InMemoryCache(),
 });
 

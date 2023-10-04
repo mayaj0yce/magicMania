@@ -1,7 +1,7 @@
 const { gql } = require('apollo-server-express');
 
 const cardSchema = gql`
-type Card {
+  type Card {
     id: ID!
     name: String!
     imageUrl: String
@@ -14,6 +14,9 @@ type Card {
   
   input SaveCardInput {
     cardId: String!
+    userId: String! # Include userId
+    imageUrl: String! # Include imageUrl
+    name: String! # Include name
   }
 `;
 

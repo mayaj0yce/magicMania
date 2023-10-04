@@ -37,6 +37,11 @@ const combinedTypeDefs = [typeDefs, userShema, cardSchema];
 const server = new ApolloServer({
   typeDefs: combinedTypeDefs,
   resolvers: combinedResolvers,
+  context: ({ req }) => {
+    // Extract the user information from the request
+    const user = req.user;
+    return { user };
+  },
 });
 
 
