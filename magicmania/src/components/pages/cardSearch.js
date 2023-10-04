@@ -81,7 +81,7 @@ function CardSearch() {
   return (
     <div className="container mx-auto p-4">
       <div className="flex text-center justify-center">
-        <h2 className="text-2xl font-semibold mb-4 text-center items-center">Search by Card</h2>
+        <h2 className="text-2xl font-semibold mb-4 text-center items-center">Search by Card Name</h2>
         <span className="card-search-icon"><GiCardPick size={25} /></span>
       </div>
       <div className="flex">
@@ -94,7 +94,7 @@ function CardSearch() {
         />
         <button
           onClick={handleSearch}
-          className="bg-blue-500 text-white p-2 rounded-r-lg hover:bg-blue-600 focus:outline-none focus:ring"
+          className="bg-blue-500 text-white p-2 rounded-r-lg hover:bg-blue-600 focus:outline-none focus:ring px-8 keyword-search-btn"
           disabled={isLoading}
         >
           {isLoading ? 'Searching...' : 'Search'}
@@ -104,10 +104,14 @@ function CardSearch() {
         {searchResults.length > 0 ? (
           <ul>
             {searchResults.map((card, index) => (
-              <li key={index} className="flex flex-col lg:flex-row items-center shadow-lg rounded-2xl p-4">
-                {card.imageUrl && (
+              <li key={index} className={`flex flex-col lg:flex-row items-center shadow-lg rounded-2xl p-4 ${card.imageUrl ? '' : 'no-image'}`}>
+                {card.imageUrl ? (
                   <div className="lg:mr-4 card-img">
                     <img src={card.imageUrl} alt={card.name} />
+                  </div>
+                ) : (
+                  <div className='lg:mr-4 card-img'>
+                    <img src="/wizard.png" alt="No img avail"/>
                   </div>
                 )}
                 <div className="card-text">

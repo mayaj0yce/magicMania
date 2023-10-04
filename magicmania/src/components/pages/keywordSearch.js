@@ -53,9 +53,9 @@ function KeywordSearch() {
 
   return (
     <div className='container mx-auto p-4'>
-       <h2 className='text-2xl font semibold mb-4 text-center'> ✨Search for a keyword to understand the world of Magic!✨</h2>
+       <h2 className='text-2xl font-semibold mb-4 text-center text-black'> ✨Search for a keyword to understand the world of Magic!✨</h2>
       {/* Header */}
-
+    
       {/* Search Form */}
       {/* <main className="flex"> */}
         <form onSubmit={handleKeywordSearch}>
@@ -67,7 +67,7 @@ function KeywordSearch() {
               onChange={handleKeywordChange}
               className="w-full p-2 border rounded-l-lg focus:outline-none focus:ring focus:border-blue-300 bg-white"
             />
-            <button type="submit"  className="bg-blue-500 text-white p-2 rounded-r-lg hover:bg-blue-600 focus:outline-none focus:ring" disabled={searchInProgress}>
+            <button type="submit"  className="bg-blue-500 text-white p-2 rounded-r-lg hover:bg-blue-600 focus:outline-none focus:ring px-8 keyword-search-btn" disabled={searchInProgress}>
               {searchInProgress ? 'Searching...' : 'Search'}
             </button>
           </div>
@@ -85,7 +85,9 @@ function KeywordSearch() {
             {keywordData.Example && <p className='keyword-ex'><strong className='keyword-title'>🪄Example:</strong> {keywordData.Example}</p>}
           </div>
         )}
-      {/* </main> */}
+        {!showConfirmMessage && (
+           <h3 className='text-gray-400 example-keyword'>Example: Trample, Double Strike, Vigilance, etc...</h3>
+        )}
     </div>
   );
 }
