@@ -1,22 +1,25 @@
-const mongoose = require('mongoose');
-require('dotenv').config();
+const { MongoClient, ServerApiVersion } = require('mongodb');
+const uri = "mongodb+srv://hwmelander:passw0rd@cluster0.rr7k0xr.mongodb.net/?retryWrites=true&w=majority";
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/magic_db', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  retryWrites: true,
+// Create a MongoClient with a MongoClientOptions object to set the Stable API version
+const client = new MongoClient(uri, {
+  serverApi: {
+    version: ServerApiVersion.v1,
+    strict: true,
+    deprecationErrors: true,
+  }
 });
 
-const db = mongoose.connection;
-
-db.on('error', (error) => {
-  console.error('MongoDB connection error:', error);
-});
-
-db.once('open', () => {
-  console.log('Connected to MongoDB');
-  // You can run your seeding script here, after the connection is established
-  require('./seeds/index');
-});
-
-module.exports = mongoose;
+async function run() {
+  try {
+    // Connect the client to the server	(optional starting in v4.7)
+    await client.connect();
+    // Send a ping to confirm a successful connection
+    await client.db("admin").command({ ping: 1 });
+    console.log("Pinged your deployment. You successfully connected to MongoDB!");
+  } finally {
+    // Ensures that the client will close when you finish/error
+    await client.close();
+  }
+}
+run().catch(console.dir);
