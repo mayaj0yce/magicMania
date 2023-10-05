@@ -77,14 +77,12 @@ function LoginPage() {
           >
             Log In
           </button>
+          {/* Display Login Result */}
+          {!loginSuccess && loginSuccess !== null && (
+            <div className="text-red-500 mt-2">Login failed. Please check your username and password.</div>
+          )}
         </div>
       </main>
-
-      {/* Display Login Result */}
-      {loginSuccess && <p>Login successful!</p>}
-      {!loginSuccess && loginSuccess !== null && (
-        <p>Login failed. Please check your username and password.</p>
-      )}
     </div>
   );
 }
