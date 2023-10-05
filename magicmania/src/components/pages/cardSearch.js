@@ -48,7 +48,7 @@ function CardSearch() {
     try {
       // Get the user ID from the GetUser class
       const userId = GetUser.getProfile().id;
-      console.log('User ID:', userId); // Log the user ID
+      // console.log('User ID:', userId); // Log the user ID
   
       // Call the saveCard mutation with the cardId, userId, imageUrl, and name
       const response = await saveCardMutation({
@@ -63,7 +63,7 @@ function CardSearch() {
       });
   
       // Handle the success response here
-      console.log('Card saved successfully:', response.data.saveCard);
+      // console.log('Card saved successfully:', response.data.saveCard);
       
       setSavedCards((prevSavedCards) => ({
         ...prevSavedCards,
@@ -76,7 +76,7 @@ function CardSearch() {
     }
   };  
 
-  console.log(searchResults);
+  // console.log(searchResults);
 
   return (
     <div className="container mx-auto p-4">

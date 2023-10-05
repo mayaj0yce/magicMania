@@ -4,6 +4,7 @@ require('dotenv').config();
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/magic_db', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
+  retryWrites: true,
 });
 
 const db = mongoose.connection;

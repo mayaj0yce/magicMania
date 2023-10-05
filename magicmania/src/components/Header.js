@@ -55,8 +55,8 @@ const Header = () => {
     navigate('/login');
   };
 
-  console.log('Auth Token:', localStorage.getItem('authToken')); // Debugging
-  console.log('Is User Authenticated:', !!localStorage.getItem('authToken')); // Debugging
+  // console.log('Auth Token:', localStorage.getItem('authToken')); // Debugging
+  // console.log('Is User Authenticated:', !!localStorage.getItem('authToken')); // Debugging
 
   return (
     <header className='pb-2'>

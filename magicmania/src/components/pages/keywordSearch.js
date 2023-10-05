@@ -45,9 +45,9 @@ function KeywordSearch() {
     }
   };
 
-  console.log('Current Keyword:', keyword);
-  console.log('Show Confirm Message:', showConfirmMessage);
-  console.log('GraphQL Data:', keywordData);
+  // console.log('Current Keyword:', keyword);
+  // console.log('Show Confirm Message:', showConfirmMessage);
+  // console.log('GraphQL Data:', keywordData);
 
 
 
