@@ -8,7 +8,7 @@ const getTokenFromLocalStorage = () => {
 
 // Create an HTTP link to your GraphQL server with a dynamic Authorization header
 const httpLink = createHttpLink({
-  uri: 'http://localhost:3001/graphql', // Set your server's GraphQL endpoint
+  uri: '/graphql', // Set your server's GraphQL endpoint
   headers: {
     Authorization: getTokenFromLocalStorage(), // Set the Authorization header dynamically
   },
