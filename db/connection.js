@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 require('dotenv').config();
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/magic_db', {
+mongoose.connect(process.env.MONGODB_URI || 'mongodb+srv://hwmelander:<password>@cluster0.rr7k0xr.mongodb.net/?retryWrites=true&w=majority' || 'mongodb://localhost/magic_db', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   retryWrites: true,
