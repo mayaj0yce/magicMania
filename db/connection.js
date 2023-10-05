@@ -1,22 +1,13 @@
+const express = require('express');
 const mongoose = require('mongoose');
-require('dotenv').config();
+const app = express();
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/magic_db', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  retryWrites: true,
-});
+const MONGODB_URI = process.env.MONGODB_URI;
 
-const db = mongoose.connection;
+mongoose.connect(MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => console.log('Database connected!'))
+  .catch(err => console.error(err));
 
-db.on('error', (error) => {
-  console.error('MongoDB connection error:', error);
-});
+const PORT = process.env.PORT || 5000;
 
-db.once('open', () => {
-  console.log('Connected to MongoDB');
-  // You can run your seeding script here, after the connection is established
-  require('./seeds/index');
-});
-
-module.exports = mongoose;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
