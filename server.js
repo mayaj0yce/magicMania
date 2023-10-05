@@ -44,8 +44,6 @@ const server = new ApolloServer({
   },
 });
 
-mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true });
-
 // Start the Apollo server and then Apply the Apollo Server instance as middleware to Express
 server.start().then(() => {
   server.applyMiddleware({ app });
