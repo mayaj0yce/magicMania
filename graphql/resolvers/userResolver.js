@@ -65,12 +65,6 @@ const resolvers = {
         throw new AuthenticationError('Authentication failed');
       }
     }
-    // Query: {
-    //   getUser: (_, { id }) => {
-    //     return User.findById(id);
-    //   },
-    //   // Add more queries here if needed
-    // },
   },
 };
 
