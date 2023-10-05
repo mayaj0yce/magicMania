@@ -1,6 +1,6 @@
+# Welcome to Magic Mania
 
 ![Magic logo](magicmania/public/Mlogo.png)
-# Welcome to Magic Mania
 
 ## Table of Contents
 - [About Magic Mania](#about)
@@ -15,7 +15,7 @@
 Magic Mania is a web application dedicated to all things Magic: The Gathering. Whether you're a seasoned Planeswalker or a newcomer to the game, Magic Mania is your one-stop destination for all your MTG card needs.
 
 ## Installation
-This project is also deployed on heroku, so no installation is necessary. Visit it [here](<insertHerokuLinkHERE>)
+This project is also deployed on heroku, so no installation is necessary. Visit it [here]([<insertHerokuLinkHERE>](https://maniamagic-2b772cb3f9e0.herokuapp.com/User#/))
 
 
 ## License
@@ -69,7 +69,7 @@ For any questions, please contact one of contributors:
 ## Deployed Application:
 Visit the Project's source code on GitHub [here](https://github.com/mayaj0yce/magicMania)
 
-Visit [Magic Mania](<insertHerokuLinkHERE>) on Heroku!
+Visit [Magic Mania](https://maniamagic-2b772cb3f9e0.herokuapp.com/User#/) on Heroku!
 
 
 ## ScreenShots
